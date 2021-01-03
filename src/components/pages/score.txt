@@ -1,0 +1,45 @@
+    <section>
+      <h2>全曲リスト</h2>
+    </section>
+
+<div class="container">
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Artist</th>
+            <th scope="col">Composer</th>
+            <th scope="col">Arranger</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Show</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="scorelist in scorelists">
+            <th scope="row">{{ scorelist.id }}</th>
+            <td>{{ scorelist.title }}</td>
+            <td>{{ scorelist.artist }}</td>
+            <td>{{ scorelist.composer }}</td>
+            <td>{{ scorelist.arranger }}</td>
+            <td>{{ scorelist.publisher }}</td>
+            <td>
+              <button class="btn btn-primary">Show</button>
+            </td>
+            <td>
+              <button class="btn btn-success">Edit</button>
+            </td>
+            <td>
+              <button
+                class="btn btn-danger"
+                v-on:click="deleteScorelist(scorelist.id)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
