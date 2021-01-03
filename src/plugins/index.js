@@ -1,4 +1,3 @@
-/* global $ */
 const context = require.context('.', true, /.vue/)
 const components = {}
 
