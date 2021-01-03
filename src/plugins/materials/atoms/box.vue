@@ -1,0 +1,10 @@
+<template>
+  <div>aiueo</div>
+</template>
+<style scoped>
+div {
+  width: 100%;
+  height: 150px;
+  background-color: black;
+}
+</style>
