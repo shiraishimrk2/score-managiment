@@ -1,0 +1,43 @@
+<template>
+<div class="score-list">
+  <table>
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>アーティスト</th>
+        <th>指揮者</th>
+        <th>編曲者</th>
+        <th>出版社</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="scorelist in scorelists" v-bind:key="scorelist.id">
+        <td>{{ scorelist.title }}</td>
+        <td>{{ scorelist.artist }}</td>
+        <td>{{ scorelist.composer }}</td>
+        <td>{{ scorelist.arranger }}</td>
+        <td>{{ scorelist.publisher }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</template>
+<script>
+export default {
+  data: function () {
+    return {
+      scorelists: [],
+    };
+  },
+  methods: {
+    getScorelists() {
+      axios.get("/api/scores").then((res) => {
+        this.scorelists = res.data;
+      });
+    },
+  },
+  mounted() {
+    this.getScorelists();
+  },
+};
+</script>

@@ -1,3 +1,3 @@
 <template>
-  <h1>マイナス</h1>
+  <h1>Minus-button</h1>
 </template>

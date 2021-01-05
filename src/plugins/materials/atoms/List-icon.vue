@@ -3,7 +3,7 @@
     id="レイヤー_1"
     data-name="レイヤー 1"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 50 41.49"
+    viewBox="0 0 41.49 41.49"
   >
     <line
       id="線_33"
