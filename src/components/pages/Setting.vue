@@ -1,18 +1,18 @@
 <template>
   <div>
     <ul>
-      <li v-for="item in items" :key="item.id"><Clowd-box /></li>
+      <li><Clowd-box /></li>
     </ul>
     <Use-list />
   </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      items: [{ id: 1 }, { id: 2 }],
-    };
-  },
+  // data() {
+  //   return {
+  //     items: [{ id: 1 }, { id: 2 }],
+  //   };
+  // },
 };
 </script>
 <style scoped>
