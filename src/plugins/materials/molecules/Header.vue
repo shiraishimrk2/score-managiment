@@ -51,7 +51,6 @@
   position: relative;
   /* top: -200px; */
   /* z-index: -10; */
-  border: 1px solid;
 }
 .transform {
   transform: translateY(-70px);

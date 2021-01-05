@@ -52,7 +52,7 @@
   border-top: solid 2px #e8e8e8;
   width: 30%;
   height: 100%;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center;
 }
 
