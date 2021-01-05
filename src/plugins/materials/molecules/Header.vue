@@ -1,18 +1,103 @@
 <template>
-  <div>
-    <div class="z-index">
-      <Back-button />
-      <h2>{{ $route.name }}</h2>
+  <div class="header-box">
+    <div class="box-inner">
+      <Back-button class="back__icon" />
+      <h2 class="inner__title">{{ $route.name }}</h2>
       <Entry-button
         v-if="$route.name == '棚の設定' || $route.name == '楽曲追加'"
       />
     </div>
-    <Search-form class="up" v-if="$route.name == '楽譜リスト'" />
-    <!-- 登録ボタンどうしよう -->
+    <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
+    <div v-if="$route.name == '楽譜リスト'">
+      <button class="icon-button" @click="toggleAccordion()">
+        <Search-icon />
+      </button>
+      <!-- <Search-form-inner class="Accordion-Item" v-if="isOpened" /> -->
+      <Search-form-inner
+        class="Accordion-Item"
+        :class="{ transform: isOpened }"
+      />
+    </div>
   </div>
 </template>
+
+<style scoped>
+.header-box {
+  width: 100%;
+  height: 55px;
+}
+
+.inner__title {
+  margin-top: auto;
+}
+.box-inner {
+  height: 55px;
+  position: relative;
+  z-index: 1;
+  background-color: #f6f6f6;
+}
+
+.back__icon {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+}
+
+.Accordion-Item {
+  width: 100%;
+  height: 70px;
+  background: #f6f6f6;
+  transition: all 300ms 0s ease;
+  position: relative;
+  /* top: -200px; */
+  /* z-index: -10; */
+  border: 1px solid;
+}
+.transform {
+  transform: translateY(-70px);
+  /* opacity: 0; */
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  border: 0;
+  background-color: #f6f6f6;
+  z-index: 2;
+}
+/* 
+@keyframes accordion {
+  from {
+    transform: translateY(-70px);
+    z-index: -20;
+  }
+
+  to {
+    transform: translateY(5px);
+    z-index: 1;
+  }
+} */
+</style>
+
 <script>
 export default {
+  data() {
+    return {
+      isOpened: true,
+      isAnime: false,
+    };
+  },
+  methods: {
+    toggleAccordion() {
+      this.isOpened = !this.isOpened;
+      this.isAnime = !this.isAnime;
+      // console.log("1");
+    },
+  },
+
   // data() {
   //   var tamesi = $route.name;
   //   return {
@@ -29,14 +114,3 @@ export default {
   // },
 };
 </script>
-<style scoped>
-div {
-  width: 100%;
-  height: 50px;
-  background-color: #f6f6f6;
-}
-.z-index {
-  position: relative;
-  z-index: 1;
-}
-</style>
