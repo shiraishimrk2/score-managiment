@@ -64,4 +64,8 @@ export default {
 </script>
 
 <style scoped>
+.canvas {
+  border-radius: 8px;
+  background-color: #242a56;
+}
 </style>
