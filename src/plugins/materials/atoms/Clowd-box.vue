@@ -21,7 +21,7 @@ export default {
     //https://note.com/yusaku/n/n748e9322b2fe
     //https://oku.edu.mie-u.ac.jp/~okumura/javascript/circles.html
 
-    draw(radius) {
+    draw() {
       for (let i = 0; i < 3; i++) {
         let min1y = 0;
         let max1y = 30;
@@ -64,8 +64,4 @@ export default {
 </script>
 
 <style scoped>
-.canvas {
-  border-radius: 8px;
-  background-color: #242a56;
-}
 </style>

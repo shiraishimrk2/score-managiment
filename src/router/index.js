@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Title from '../components/pages/Title.vue'
-import First_Setting from '../components/pages/First-Setting.vue'
 import Score from '../components/pages/Score.vue'
 import Setting from '../components/pages/Setting.vue'
 import Notice from '../components/pages/Notice.vue'
@@ -17,11 +16,6 @@ const routes = [
       path: '/',
       name: 'タイトル',
       component:Title
-    },
-    {
-      path: '/first-setting',
-      name: '棚の設定',
-      component: First_Setting
     },
     {
       path: '/score',

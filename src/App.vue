@@ -21,6 +21,9 @@ body {
   background-color: #f6f6f6;
   margin: 0;
 }
+main {
+  overflow: hidden;
+}
 h1 {
   font-size: 1rem;
 }
