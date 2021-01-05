@@ -52,7 +52,7 @@
   border-top: solid 2px #e8e8e8;
   width: 30%;
   height: 100%;
-  /* padding: 10px; */
+  padding: 10px;
   text-align: center;
 }
 
@@ -116,15 +116,17 @@
   }
 }
 </style>
+
+
 <script>
-// import AddIcon from "../atoms/Add-icon.vue";
+import AddIcon from "../atoms/Add-icon.vue";
 // import Setting from "./icons/I_setting.vue";
 // import List from "./icons/I_list.vue";
 // import Notice from "./icons/I_notice.vue";
 
 // import SVGElement from "./Icon.vue";
 export default {
-  // components: { AddIcon },
+  components: { AddIcon },
   // name: "F_Menu",
   // components: {
   //   Setting,

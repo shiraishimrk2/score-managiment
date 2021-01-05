@@ -5,13 +5,12 @@
 </template>
 <style scoped>
 #add-icon {
-  width: 5em;
-  height: 5em;
+  width: 3.5em;
+  height: 3.5em;
   border-radius: 50%;
   background-color: #ff6e4b;
-  position: fixed;
-  right: 5%;
-  bottom: 10%;
+  position: relative;
+  padding: 0;
 }
 #icon {
   position: absolute;
@@ -19,4 +18,4 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-</style>%
+</style>
