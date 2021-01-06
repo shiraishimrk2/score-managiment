@@ -20,10 +20,6 @@
   </svg>
 </template>
 <style>
-svg {
-  max-width: 40px;
-}
-
 .cls-1,
 .cls-2,
 .cls-3 {

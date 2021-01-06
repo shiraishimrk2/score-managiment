@@ -17,8 +17,8 @@ export default {
 </script>
 <style scoped>
 canvas {
-  width: 130px;
-  height: 90px;
+  width: 100%;
+  height: 20%;
 }
 ul {
   white-space: nowrap;
