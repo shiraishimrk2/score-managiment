@@ -3,11 +3,8 @@
     <Use-list-button />
     <Return-button />
     <div>
-      <h3></h3>
+      <h3>{{ song[0].title }}</h3>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
         <li></li>
         <li></li>
       </ul>

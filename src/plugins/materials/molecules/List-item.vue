@@ -1,13 +1,14 @@
 <template>
   <div class="score-list">
     <ul class="song-box" @click="toggle()">
-      <li class="song" v-for="item in songs" v-bind:key="item.id">
-        <p>id{{ item.id }}</p>
+      <li class="song" v-for="song in songs" :key="song.id">
+        <p>{{ song.title }}</p>
       </li>
     </ul>
     <Score-Details
       class="Accordion-Item"
       :class="{ transform: isOpened, tamesi: isClosed }"
+      :song="songs"
     >
     </Score-Details>
   </div>
@@ -50,8 +51,6 @@ export default {
     // },
 
     toggle() {
-      // var tamesi = document.querySelectorAll(".song-box");
-      // var tamesi = document.getElementsByClassName("title");
       this.isOpened = !this.isOpened;
       this.isClosed = !this.isClosed;
       // console.log(index);
@@ -79,7 +78,7 @@ export default {
 }
 .transform {
   transform: translateY(280px);
-  overflow: hidden;
+  display: none;
 }
 .tamesi {
   transform: translateY(-300px);

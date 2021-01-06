@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header v-if="$route.name !== 'タイトル'">
-      <Header></Header>
+      <Header />
     </header>
 
     <main>
@@ -9,7 +9,7 @@
     </main>
 
     <footer v-if="$route.name !== 'タイトル' && $route.name !== '初期設定'">
-      <Footer-Menu></Footer-Menu>
+      <Footer-Menu />
     </footer>
   </div>
 </template>
