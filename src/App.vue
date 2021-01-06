@@ -14,9 +14,6 @@
   </div>
 </template>
 <style>
-/* * {
-  outline: 2px solid red;
-} */
 body {
   background-color: #f6f6f6;
   margin: 0;
