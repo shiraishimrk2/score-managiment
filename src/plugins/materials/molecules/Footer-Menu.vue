@@ -32,6 +32,7 @@
 <style scoped>
 #footer {
   width: 100%;
+  height: 7.5%;
   background-color: #f6f6f6;
   position: absolute;
   z-index: 0;
@@ -42,7 +43,7 @@
   display: flex;
   flex-wrap: wrap-reverse;
   justify-content: center;
-  align-items: flex-end;
+  /* align-items: flex-end; */
   padding: 0;
   margin: 0;
   width: 100%;
@@ -52,18 +53,18 @@
   border-top: solid 2px #e8e8e8;
   width: 30%;
   height: 100%;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center;
 }
 
 .nav-list__child:nth-of-type(2) {
-  width: 37%;
+  width: 35%;
   border-right: solid 1.5px #e8e8e8;
   border-left: solid 1.5px #e8e8e8;
 }
 
 .button__link {
-  /* display: block; */
+  display: block;
   width: 100%;
   height: 100%;
   align-self: center;
@@ -75,11 +76,15 @@
   margin-left: auto;
 }
 
+svg {
+  max-width: 40px;
+  padding: 10px;
+}
 @media screen and (min-width: 1024px) {
   #footer {
     top: 50px;
     height: 93%;
-    width: 6%;
+    width: 80px;
     position: fixed;
     border-top: none;
     border-right: solid 2px #e8e8e8;
@@ -105,7 +110,6 @@
 
   .button__link {
     display: block;
-    padding: 20%;
   }
 
   .nav-add-button {
