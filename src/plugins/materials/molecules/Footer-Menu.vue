@@ -87,7 +87,6 @@ svg {
     width: 80px;
     position: fixed;
     border-top: none;
-    background-color: #bce4ff;
     border-right: solid 2px #e8e8e8;
     padding: 0px;
   }
