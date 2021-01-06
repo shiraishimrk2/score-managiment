@@ -1,33 +1,31 @@
 <template>
   <div class="score-list">
-    <ul
-      class="song-box"
-      @click="
-        toggle();
-        sendindex(index);
-      "
-    >
-      <li class="song"></li>
-      <li class="song"></li>
-      <li class="song"></li>
+    <ul class="song-box" @click="toggle()">
+      <li class="song" v-for="item in songs" v-bind:key="item.id">
+        <p>id{{ item.id }}</p>
+      </li>
     </ul>
     <Score-Details
       class="Accordion-Item"
       :class="{ transform: isOpened, tamesi: isClosed }"
-      :song="scorelists"
     >
     </Score-Details>
   </div>
 </template>
 <script>
+// import axios from "axios";
+import songs from "../../../assets/song.json";
+
 export default {
   data: function () {
     return {
-      scorelists: [],
+      // scorelists: [],
       isOpened: true,
       isClosed: false,
-      indexlist: [],
+      // indexlist: [],
       // tamesi: tamesi,
+      // songs: [],
+      songs: songs,
     };
   },
   // computed: {
@@ -45,6 +43,12 @@ export default {
     //     this.scorelists = res.data;
     //   });
     // },
+    // getSong() {
+    //   axios.get("../../../assets/song.json").then((response) => {
+    //     this.songs = response.data;
+    //   });
+    // },
+
     toggle() {
       // var tamesi = document.querySelectorAll(".song-box");
       // var tamesi = document.getElementsByClassName("title");
@@ -57,9 +61,10 @@ export default {
     //   this.index.push(index);
     // },
   },
-  // mounted() {
-  //   this.getScorelists();
-  // },
+  mounted() {
+    // this.getScorelists();
+    // this.getSong();
+  },
 };
 </script>
 <style scoped>
@@ -74,7 +79,7 @@ export default {
 }
 .transform {
   transform: translateY(280px);
-  display: none;
+  overflow: hidden;
 }
 .tamesi {
   transform: translateY(-300px);
