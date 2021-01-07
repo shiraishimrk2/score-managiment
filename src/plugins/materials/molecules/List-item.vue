@@ -1,8 +1,8 @@
 <template>
   <div class="score-list">
     <ul class="song-box" @click="toggle()">
-      <li class="song" v-for="song in songs" :key="song.id">
-        <p>{{ song.title }}</p>
+      <li class="song" v-for="(song, index) in song_length" :key="song.id">
+        <h4>{{ song_info[index].title }}</h4>
       </li>
     </ul>
     <Score-Details
@@ -16,6 +16,19 @@
 <script>
 // import axios from "axios";
 import songs from "../../../assets/song.json";
+console.log(songs);
+
+var tamesi = songs[0].all_song[0];
+console.log(tamesi);
+
+var tamesi2 = tamesi.id;
+console.log(tamesi2);
+
+var song_length = songs[0].all_song.length;
+console.log(song_length);
+
+var song_info = songs[0].all_song;
+console.log(song_info);
 
 export default {
   data: function () {
@@ -23,10 +36,12 @@ export default {
       // scorelists: [],
       isOpened: true,
       isClosed: false,
-      // indexlist: [],
-      // tamesi: tamesi,
-      // songs: [],
       songs: songs,
+      song_length: song_length,
+      // indexlist: [],
+      tamesi: tamesi,
+      song_info: song_info,
+      // songs: [],
     };
   },
   // computed: {

@@ -1,5 +1,37 @@
 [
-    {"id": 1, "title": "夜に駆ける"},
-    {"id": 2, "title": "アンコール"},
-    {"id": 3, "title": "群青"}
+    {
+        "all_song": [
+            {
+                "id": 1,
+                "title": "夜に駆ける",
+                "artist": "YOASOBI",
+                "publisher": "WindsScore",
+                "composer": "Ayase",
+                "arranger": "郷間幹男",
+                "Type": "Airport",
+                "genre": "J-POP"
+            },
+            {
+                "id": 2,
+                "title": "アンコール",
+                "artist": "YOASOBI",
+                "publisher": "WindsScore",
+                "composer": "Ayase",
+                "arranger": "郷間幹男",
+                "genre": "J-POP"
+            },
+            {
+                "id": 3,
+                "title": "群青",
+                "artist": "YOASOBI",
+                "publisher": "WindsScore",
+                "composer": "Ayase",
+                "arranger": "郷間幹男",
+                "genre": "J-POP"
+            }
+        ]
+    },
+    {
+        "all_genre": []
+    }
 ]
