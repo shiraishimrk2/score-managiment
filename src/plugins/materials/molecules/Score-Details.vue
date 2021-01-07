@@ -3,7 +3,7 @@
     <Use-list-button />
     <Return-button />
     <div>
-      <h3>{{ song[0].title }}</h3>
+      <!-- <h3>{{ song_info.id }}</h3> -->
       <ul>
         <li></li>
         <li></li>
@@ -24,7 +24,7 @@
 <script>
 export default {
   props: {
-    song: {
+    song_info: {
       type: Array,
     },
   },
