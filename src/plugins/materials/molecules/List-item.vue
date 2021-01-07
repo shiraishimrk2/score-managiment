@@ -1,14 +1,23 @@
 <template>
   <div class="score-list">
-    <ul class="song-box" @click="toggle()">
-      <li class="song" v-for="(song, index) in song_length" :key="song.id">
-        <h4>{{ song_info[index].title }}</h4>
+    <ul
+      class="song-box"
+      @click="toggle(index)"
+      v-for="(song, index) in song_length"
+      :key="song.index"
+    >
+      <li class="song_item">
+        {{ song_info[index].title }}
+      </li>
+      <li class="song_item">
+        {{ song_info[index].id }}
       </li>
     </ul>
     <Score-Details
       class="Accordion-Item"
       :class="{ transform: isOpened, tamesi: isClosed }"
-      :song="songs"
+      :song_info="song_info"
+      :song_title="song_title"
     >
     </Score-Details>
   </div>
@@ -30,6 +39,8 @@ console.log(song_length);
 var song_info = songs[0].all_song;
 console.log(song_info);
 
+var i = { number: 0 };
+
 export default {
   data: function () {
     return {
@@ -42,6 +53,8 @@ export default {
       tamesi: tamesi,
       song_info: song_info,
       // songs: [],
+      // index: Number,
+      song_title: i,
     };
   },
   // computed: {
@@ -65,11 +78,15 @@ export default {
     //   });
     // },
 
-    toggle() {
+    toggle(index) {
       this.isOpened = !this.isOpened;
       this.isClosed = !this.isClosed;
-      // console.log(index);
-      // console.log(tamesi);
+      console.log(index);
+      var song_title = song_info[index].title;
+      console.log(song_title);
+      i.number = index;
+      console.log(i.number);
+      // this.song_title = song_title;
     },
     // sendindex(index) {
     //   this.index.push(index);
