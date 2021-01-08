@@ -26,6 +26,7 @@ body {
 main {
   height: 100%;
   overflow: hidden;
+  margin: 0 30px;
 }
 h1 {
   font-size: 1rem;
