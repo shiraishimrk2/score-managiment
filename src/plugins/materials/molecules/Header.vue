@@ -1,11 +1,9 @@
 <template>
   <div class="header-box">
     <div class="box-inner">
-      <Back-button class="back__icon" />
+      <Back-button class="back__icon" v-if="$route.name !== '楽譜リスト'" />
       <h2 class="inner__title">{{ $route.name }}</h2>
-      <Entry-button
-        v-if="$route.name == '棚の設定' || $route.name == '楽曲追加'"
-      />
+      <Entry-button v-if="$route.name == '楽曲追加'" />
     </div>
     <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
     <div v-if="$route.name == '楽譜リスト'">

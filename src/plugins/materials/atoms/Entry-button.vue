@@ -3,7 +3,7 @@
     <button class="icon-button" @click="toggleAccordion()">登録</button>
     <!-- <Search-form-inner class="Accordion-Item" v-if="isOpened" /> -->
 
-    <Score-Details class="Accordion-Item" :class="{ tamesi: isClosed }" />
+    <!-- <Score-Details class="Accordion-Item" :class="{ tamesi: isClosed }" /> -->
   </div>
 </template>
 <script>
