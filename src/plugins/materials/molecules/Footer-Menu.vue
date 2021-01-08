@@ -83,7 +83,7 @@ svg {
 @media screen and (min-width: 1024px) {
   #footer {
     top: 50px;
-    height: 95%;
+    height: 92%;
     width: 80px;
     position: fixed;
     border-top: none;
