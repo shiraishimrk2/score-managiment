@@ -1,9 +1,9 @@
 <template>
   <div>
     <h3>利用中曲リスト</h3>
-    <ul v-for="scorelist in scorelists" v-bind:key="scorelist.id">
+    <!-- <ul v-for="scorelist in scorelists" v-bind:key="scorelist.id">
       <li>{{ scorelist.title }}</li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 <style scoped>
@@ -17,7 +17,7 @@ export default {
   data: function () {
     return {
       name: "#app",
-      scorelists: [],
+      // scorelists: [],
     };
   },
   // methods: {

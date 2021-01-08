@@ -19,8 +19,9 @@
             <Notice-icon />
           </router-link>
         </li>
+
         <li class="nav-add-button">
-          <router-link to="/add-form">
+          <router-link to="/addform">
             <Add-icon />
           </router-link>
         </li>

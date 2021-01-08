@@ -8,7 +8,11 @@
                 "publisher": "WindsScore",
                 "composer": "Ayase",
                 "arranger": "郷間幹男",
-                "genre": "J-POP"
+                "genre": "J-POP",
+                "tag": [
+                    "しんみり",
+                    "あかるい"
+                ]
             },
             {
                 "id": 2,
@@ -17,7 +21,11 @@
                 "publisher": "WindsScore",
                 "composer": "Ayase",
                 "arranger": "郷間幹男",
-                "genre": "J-POP"
+                "genre": "J-POP",
+                "tag": [
+                    "ゆったり",
+                    "くらい"
+                ]
             },
             {
                 "id": 3,
@@ -26,7 +34,11 @@
                 "publisher": "WindsScore",
                 "composer": "Ayase",
                 "arranger": "郷間幹男",
-                "genre": "J-POP"
+                "genre": "J-POP",
+                "tag": [
+                    "はげしい",
+                    "こわい"
+                ]
             }
         ]
     },

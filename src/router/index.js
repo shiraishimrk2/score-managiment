@@ -4,7 +4,7 @@ import Title from '../components/pages/Title.vue'
 import Score from '../components/pages/Score.vue'
 import Setting from '../components/pages/Setting.vue'
 import Notice from '../components/pages/Notice.vue'
-import Add_Form from '../components/pages/Add-Form.vue'
+import AddForm from '../components/pages/AddForm.vue'
 import NotFound from '../components/pages/NotFound.vue'
 import Score_Details from '../plugins/materials/molecules/Score-Details.vue'
 import Genre from '../components/pages/Genre.vue'
@@ -33,9 +33,9 @@ const routes = [
       component:Notice
     },
     {
-      path: '/add-form',
+      path: '/addform',
       name: '楽曲追加',
-      component: Add_Form
+      component: AddForm
     },
     {
       path: '*',

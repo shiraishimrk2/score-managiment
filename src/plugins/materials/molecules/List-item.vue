@@ -25,13 +25,13 @@
 <script>
 // import axios from "axios";
 import songs from "../../../assets/song.json";
-console.log(songs);
+// console.log(songs);
 
-var tamesi = songs[0].all_song[0];
-console.log(tamesi);
+// var tamesi = songs[0].all_song[0];
+// console.log(tamesi);
 
-var tamesi2 = tamesi.id;
-console.log(tamesi2);
+// var tamesi2 = tamesi.id;
+// console.log(tamesi2);
 
 var song_length = songs[0].all_song.length;
 console.log(song_length);
@@ -50,7 +50,7 @@ export default {
       songs: songs,
       song_length: song_length,
       // indexlist: [],
-      tamesi: tamesi,
+      // tamesi: tamesi,
       song_info: song_info,
       // songs: [],
       // index: Number,
