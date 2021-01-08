@@ -3,5 +3,3 @@
     <p>あいうえお</p>
   </div>
 </template>
-<style scoped>
-</style>

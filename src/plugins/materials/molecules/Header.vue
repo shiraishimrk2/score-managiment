@@ -9,14 +9,12 @@
     </div>
     <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
     <div v-if="$route.name == '楽譜リスト'">
-      <button class="icon-button" @click="toggleAccordion()">
-        <Search-icon />
-      </button>
-      <!-- <Search-form-inner class="Accordion-Item" v-if="isOpened" /> -->
-      <Search-form-inner
-        class="Accordion-Item"
-        :class="{ transform: isOpened }"
-      />
+      <div class="accbox">
+        <label for="check"><Search-icon /></label>
+      </div>
+      <input type="checkbox" id="check" class="accbox-input" />
+
+      <Search-form-inner />
     </div>
   </div>
 </template>
@@ -35,6 +33,7 @@
   position: relative;
   z-index: 1;
   background-color: #f6f6f6;
+  border-bottom: solid 2px #e8e8e8;
 }
 
 .back__icon {
@@ -43,21 +42,7 @@
   top: 16px;
 }
 
-.Accordion-Item {
-  width: 100%;
-  height: 70px;
-  background: #f6f6f6;
-  transition: all 300ms 0s ease;
-  position: relative;
-  /* top: -200px; */
-  /* z-index: -10; */
-}
-.transform {
-  transform: translateY(-70px);
-  /* opacity: 0; */
-}
-
-.icon-button {
+.accbox {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -67,8 +52,63 @@
   background-color: #f6f6f6;
   z-index: 2;
 }
-/* 
-@keyframes accordion {
+
+/* .icon-button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  border: 0;
+  background-color: #f6f6f6;
+  z-index: 2;
+} */
+
+label {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+  z-index: 2;
+
+  
+}
+
+.accbox-icon {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.accbox-input {
+  display: none;
+}
+
+.form-inner {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  background: #efefef;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.accbox-input:checked + .form-inner {
+  padding: 5px;
+  opacity: 1;
+}
+
+/* .transform {
+  transform: translateY(-70px);
+
+  opacity: 0;
+} */
+
+/* @keyframes accordion {
   from {
     transform: translateY(-70px);
     z-index: -20;
@@ -96,20 +136,5 @@ export default {
       // console.log("1");
     },
   },
-
-  // data() {
-  //   var tamesi = $route.name;
-  //   return {
-  //     titleName: tamesi,
-  //   };
-  // },
-  // props: {
-  //   titleName: {
-  //     type: String,
-  //     setting: {
-  //       title: "管理",
-  //     },
-  //   },
-  // },
 };
 </script>
