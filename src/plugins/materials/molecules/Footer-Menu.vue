@@ -21,7 +21,7 @@
         </li>
 
         <li class="nav-add-button">
-          <router-link to="/addform">
+          <router-link to="/add-form">
             <Add-icon />
           </router-link>
         </li>

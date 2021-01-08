@@ -20,6 +20,18 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    song_info: {
+      type: Array,
+    },
+    song_index: {
+      type: Object,
+    },
+  },
+};
+</script>
 <style scoped>
 .details {
   width: 100%;
@@ -30,18 +42,3 @@
   background-color: #f6f6f6;
 }
 </style>
-<script>
-export default {
-  props: {
-    song_info: {
-      type: Array,
-    },
-    song_index: {
-      type: Object,
-    },
-    // index: {
-    //   type: Number,
-    // },
-  },
-};
-</script>

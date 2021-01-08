@@ -23,23 +23,22 @@
   </div>
 </template>
 <script>
-// import axios from "axios";
 import songs from "../../../assets/song.json";
 // console.log(songs);
 
-// var tamesi = songs[0].all_song[0];
+// const tamesi = songs[0].all_song[0];
 // console.log(tamesi);
 
-// var tamesi2 = tamesi.id;
+// const tamesi2 = tamesi.id;
 // console.log(tamesi2);
 
-var song_length = songs[0].all_song.length;
+const song_length = songs[0].all_song.length;
 console.log(song_length);
 
-var song_info = songs[0].all_song;
+const song_info = songs[0].all_song;
 console.log(song_info);
 
-var song_index = { number: 0 };
+const song_index = { number: 0 };
 
 export default {
   data: function () {
@@ -49,17 +48,14 @@ export default {
       isClosed: false,
       songs: songs,
       song_length: song_length,
-      // indexlist: [],
       // tamesi: tamesi,
       song_info: song_info,
-      // songs: [],
-      // index: Number,
       song_index: song_index,
     };
   },
   // computed: {
   //   song_list: function () {
-  //     for (var i = 0; i < this.scorelists.length; i++) {
+  //     for (const i = 0; i < this.scorelists.length; i++) {
   //       if ((this.scorelists[i].id = this.id)) {
   //         return this.scorelists[i];
   //       }
@@ -71,7 +67,7 @@ export default {
       this.isOpened = !this.isOpened;
       this.isClosed = !this.isClosed;
       // console.log(index);
-      // var song_number = song_info[index].title;
+      // const song_number = song_info[index].title;
       // console.log(song_number);
 
       song_index.number = index;
