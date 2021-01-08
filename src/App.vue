@@ -37,6 +37,7 @@ h2 {
   font-family: "Meylio UI";
   font-weight: 550;
   letter-spacing: 0.15em;
+  margin: 0px;
 }
 a {
   font-size: 1rem;

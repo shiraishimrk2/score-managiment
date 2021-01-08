@@ -47,32 +47,20 @@
   height: 40px;
   position: absolute;
   top: 7px;
-  right: 10px;
+  right: 13px;
   border: 0;
   background-color: #f6f6f6;
   z-index: 2;
 }
 
-/* .icon-button {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 7px;
-  right: 10px;
-  border: 0;
-  background-color: #f6f6f6;
-  z-index: 2;
-} */
-
 label {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   display: block;
   cursor: pointer;
+  padding: 3px 6px;
   transition: all 0.5s ease-in;
   z-index: 2;
-
-  
 }
 
 .accbox-icon {
@@ -93,12 +81,11 @@ label {
   background: #efefef;
   overflow: hidden;
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.3s;
   z-index: 2;
 }
 
 .accbox-input:checked + .form-inner {
-  padding: 5px;
   opacity: 1;
 }
 
