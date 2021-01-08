@@ -3,10 +3,13 @@
     <Use-list-button />
     <Return-button />
     <div>
-      <h3>{{ song_info[song_title.number].title }}</h3>
+      <h3>{{ song_info[song_index.number].title }}</h3>
       <ul>
-        <li></li>
-        <li></li>
+        <li>{{ song_info[song_index.number].artist }}</li>
+        <li>{{ song_info[song_index.number].publisher }}</li>
+        <li>{{ song_info[song_index.number].composer }}</li>
+        <li>{{ song_info[song_index.number].arranger }}</li>
+        <li>{{ song_info[song_index.number].genre }}</li>
       </ul>
     </div>
   </div>
@@ -27,7 +30,7 @@ export default {
     song_info: {
       type: Array,
     },
-    song_title: {
+    song_index: {
       type: Object,
     },
     // index: {

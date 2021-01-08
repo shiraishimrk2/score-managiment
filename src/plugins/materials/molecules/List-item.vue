@@ -17,7 +17,7 @@
       class="Accordion-Item"
       :class="{ transform: isOpened, tamesi: isClosed }"
       :song_info="song_info"
-      :song_title="song_title"
+      :song_index="song_index"
     >
     </Score-Details>
   </div>
@@ -39,7 +39,7 @@ console.log(song_length);
 var song_info = songs[0].all_song;
 console.log(song_info);
 
-var i = { number: 0 };
+var song_index = { number: 0 };
 
 export default {
   data: function () {
@@ -54,7 +54,7 @@ export default {
       song_info: song_info,
       // songs: [],
       // index: Number,
-      song_title: i,
+      song_index: song_index,
     };
   },
   // computed: {
@@ -67,26 +67,16 @@ export default {
   //   },
   // },
   methods: {
-    // getScorelists() {
-    //   axios.get("/api/scores").then((res) => {
-    //     this.scorelists = res.data;
-    //   });
-    // },
-    // getSong() {
-    //   axios.get("../../../assets/song.json").then((response) => {
-    //     this.songs = response.data;
-    //   });
-    // },
-
     toggle(index) {
       this.isOpened = !this.isOpened;
       this.isClosed = !this.isClosed;
-      console.log(index);
-      var song_title = song_info[index].title;
-      console.log(song_title);
-      i.number = index;
-      console.log(i.number);
-      // this.song_title = song_title;
+      // console.log(index);
+      // var song_number = song_info[index].title;
+      // console.log(song_number);
+
+      song_index.number = index;
+      console.log(song_index.number);
+      // this.song_number = song_number;
     },
     // sendindex(index) {
     //   this.index.push(index);
