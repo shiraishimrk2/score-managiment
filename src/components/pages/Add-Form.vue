@@ -3,54 +3,53 @@
     <div class="form-container">
       <div class="cloumn-1">
         <div class="form-box">
-          <label for="title" class="col-sm-3 col-form-label">曲名</label>
+          <label for="title">曲名</label>
           <input
             type="text"
             class="col-sm-9 form-control"
             id="title"
-            v-model="song_info.title"
+            v-model="add_data.title"
+            required
           />
         </div>
 
         <div class="form-box">
-          <label for="title" class="col-sm-3 col-form-label"
-            >アーティスト</label
-          >
+          <label for="artist">アーティスト</label>
           <input
             type="text"
             class="col-sm-9 form-control"
             id="artist"
-            v-model="song_info.artist"
+            v-model="add_data.artist"
           />
         </div>
 
         <div class="form-box">
-          <label for="title" class="col-sm-3 col-form-label">作曲者</label>
+          <label for="composer">作曲者</label>
           <input
             type="text"
             class="col-sm-9 form-control"
             id="composer"
-            v-model="song_info.composer"
+            v-model="add_data.composer"
           />
         </div>
 
         <div class="form-box">
-          <label for="title" class="col-sm-3 col-form-label">編曲者</label>
+          <label for="arranger">編曲者</label>
           <input
             type="text"
             class="col-sm-9 form-control"
             id="arranger"
-            v-model="song_info.arranger"
+            v-model="add_data.arranger"
           />
         </div>
 
         <div class="form-box">
-          <label for="title" class="col-sm-3 col-form-label">出版社</label>
+          <label for="publisher">出版社</label>
           <input
             type="text"
             class="col-sm-9 form-control"
             id="publisher"
-            v-model="song_info.publisher"
+            v-model="add_data.publisher"
           />
         </div>
         <div class="rack-box">
@@ -58,29 +57,32 @@
         </div>
       </div>
       <div class="colmun-2">
-        <button type="submit" class="btn btn-primary">登録</button>
+        <button type="submit">登録</button>
       </div>
     </div>
   </form>
 </template>
 <script>
-import songs from "../../assets/song.json";
-// import axios from "axios";
-// console.log(songs);
+import test from "./test.js";
 
-const song_info = songs[0].all_song;
-console.log(song_info);
+const add_data = {
+  title: "",
+  artist: "",
+  composer: "",
+  arranger: "",
+  publicher: "",
+};
 
 export default {
   data: function () {
     return {
-      songs: songs,
-      song_info: song_info,
+      add_data: add_data,
     };
   },
   methods: {
     submit() {
-      song_info.push();
+      test.form(add_data);
+      console.log("成功");
     },
   },
 };
@@ -94,7 +96,11 @@ export default {
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
-
+.test {
+  width: 100px;
+  height: 100px;
+  border: solid 1px black;
+}
 label {
   display: inline-block;
   color: #101748;
