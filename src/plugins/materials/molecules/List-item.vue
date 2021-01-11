@@ -9,8 +9,13 @@
       <li class="song_item">
         {{ song_info[index].title }}
       </li>
+
       <li class="song_item">
-        {{ song_info[index].id }}
+        {{ song_info[index].artist }}
+      </li>
+
+      <li class="song_item">
+        {{ song_info[index].arranger }}
       </li>
     </ul>
     <Score-Details
@@ -33,10 +38,10 @@ import songs from "../../../assets/song.json";
 // console.log(tamesi2);
 
 const song_length = songs[0].all_song.length;
-console.log(song_length);
+// console.log(song_length);
 
 const song_info = songs[0].all_song;
-console.log(song_info);
+// console.log(song_info);
 
 const song_index = { number: 0 };
 
@@ -53,15 +58,6 @@ export default {
       song_index: song_index,
     };
   },
-  // computed: {
-  //   song_list: function () {
-  //     for (const i = 0; i < this.scorelists.length; i++) {
-  //       if ((this.scorelists[i].id = this.id)) {
-  //         return this.scorelists[i];
-  //       }
-  //     }
-  //   },
-  // },
   methods: {
     toggle(index) {
       this.isOpened = !this.isOpened;
@@ -71,16 +67,12 @@ export default {
       // console.log(song_number);
 
       song_index.number = index;
-      console.log(song_index.number);
+      // console.log(song_index.number);
       // this.song_number = song_number;
     },
     // sendindex(index) {
     //   this.index.push(index);
     // },
-  },
-  mounted() {
-    // this.getScorelists();
-    // this.getSong();
   },
 };
 </script>

@@ -55,7 +55,7 @@ const routes = [
     path: '/list-edit',
     name: 'リスト編集',
     component: List_Edit
-  }
+  },
 ]
 
 const router = new VueRouter({

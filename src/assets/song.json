@@ -2,7 +2,6 @@
     {
         "all_song": [
             {
-                "id": 1,
                 "title": "夜に駆ける",
                 "artist": "YOASOBI",
                 "publisher": "WindsScore",
@@ -15,7 +14,6 @@
                 ]
             },
             {
-                "id": 2,
                 "title": "アンコール",
                 "artist": "YOASOBI",
                 "publisher": "WindsScore",
@@ -28,7 +26,6 @@
                 ]
             },
             {
-                "id": 3,
                 "title": "群青",
                 "artist": "YOASOBI",
                 "publisher": "WindsScore",
