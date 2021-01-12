@@ -52,10 +52,40 @@
             v-model="add_data.publisher"
           />
         </div>
-        <div class="rack-box">
-          <p>棚入力欄</p>
+
+        <div class="form-box">
+          <label for="publisher">ジャンル</label>
+          <input
+            type="text"
+            class="col-sm-9 form-control"
+            id="genre"
+            v-model="add_data.genre"
+            required
+          />
+        </div>
+
+        <div class="form-group row">
+          <label for="title">棚</label>
+          <input type="text" id="shelf" v-model="add_data.shelf" />
+          <p>の</p>
+        </div>
+        <div class="form-group row">
+          <input type="text" id="shelf-number" v-model="add_data.shelfNum" />
+          <p>段目</p>
         </div>
       </div>
+
+      <div class="form-box">
+        <label for="tag">キーワード</label>
+        <input
+          type="text"
+          class="col-sm-9 form-control"
+          id="tag"
+          v-model="add_data.tag"
+          required
+        />
+      </div>
+
       <div class="colmun-2">
         <button type="submit">登録</button>
       </div>
@@ -63,7 +93,7 @@
   </form>
 </template>
 <script>
-import test from "./test.js";
+import conversion from "./conversion.js";
 
 const add_data = {
   title: "",
@@ -71,6 +101,9 @@ const add_data = {
   composer: "",
   arranger: "",
   publicher: "",
+  sherf: "",
+  sherfNum: "",
+  tag: "",
 };
 
 export default {
@@ -81,7 +114,7 @@ export default {
   },
   methods: {
     submit() {
-      test.form(add_data);
+      conversion.form(add_data);
       console.log("成功");
     },
   },
