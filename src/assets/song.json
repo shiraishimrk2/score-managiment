@@ -8,6 +8,8 @@
                 "composer": "Ayase",
                 "arranger": "郷間幹男",
                 "genre": "J-POP",
+                "sherf": "A",
+                "sherfNum": "1",
                 "tag": [
                     "しんみり",
                     "あかるい"
@@ -20,6 +22,8 @@
                 "composer": "Ayase",
                 "arranger": "郷間幹男",
                 "genre": "J-POP",
+                "sherf": "A",
+                "sherfNum": "2",
                 "tag": [
                     "ゆったり",
                     "くらい"
@@ -32,10 +36,23 @@
                 "composer": "Ayase",
                 "arranger": "郷間幹男",
                 "genre": "J-POP",
+                "sherf": "A",
+                "sherfNum": "3",
                 "tag": [
                     "はげしい",
                     "こわい"
                 ]
+            },
+            {
+                "title": "しらん",
+                "artist": "",
+                "composer": "",
+                "arranger": "",
+                "publicher": "",
+                "sherf": "",
+                "sherfNum": "",
+                "tag": "あ",
+                "genre": "しらん"
             }
         ]
     },

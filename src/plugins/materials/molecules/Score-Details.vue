@@ -10,12 +10,12 @@
         <li>{{ song_info[song_index.number].composer }}</li>
         <li>{{ song_info[song_index.number].arranger }}</li>
         <li>{{ song_info[song_index.number].genre }}</li>
-        <li
+        <!-- <li
           v-for="(tag, index) in song_info[song_index.number].tag.length"
           :key="tag.id"
         >
           {{ song_info[song_index.number].tag[index] }}
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
