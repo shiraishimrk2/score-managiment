@@ -13,10 +13,7 @@
     <div class="colmun-2">
       <button type="submit">検索</button>
     </div>
-    <!-- <p v-for="(title, index) in all_titles" :key="title.id">
-      aa
-      {{ title[index] }}
-    </p> -->
+    <p>{{ result }}</p>
   </form>
 </template>
 <script>
@@ -28,12 +25,15 @@ export default {
   data: function () {
     return {
       keyword: "",
+      result: [],
     };
   },
   methods: {
     submit() {
       // console.log(this.keyword);
       let word = this.keyword;
+      let result = this.result;
+      // console.log(this.result);
       // console.log(json[0].all_song);
       var all_titles = json[0].all_song.filter(function (item) {
         // // console.log(item);
@@ -43,11 +43,12 @@ export default {
           return true;
         }
       });
-
       // console.log(all_titles);
       console.log(all_titles.length);
       for (var i = 0; i < all_titles.length; i++) {
-        console.log(all_titles[i].title);
+        result.push(all_titles[i].title);
+        // console.log(all_titles[i].title);
+        console.log(result);
         // return all_titles[i].title;
       }
     },
