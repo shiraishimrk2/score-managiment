@@ -22,3 +22,5 @@ function form(add_data) {
 }
 }
 export default { form };
+
+

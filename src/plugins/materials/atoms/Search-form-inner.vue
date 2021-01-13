@@ -1,5 +1,56 @@
 <template>
-  <div class="form-inner">
-    <p>あいうえお</p>
-  </div>
+  <form class="form-inner" v-on:submit.prevent="submit">
+    <div class="form-box">
+      <label for="keyword">キーワード</label>
+      <input
+        type="text"
+        class="col-sm-9 form-control"
+        id="keyword"
+        v-model="keyword"
+      />
+    </div>
+
+    <div class="colmun-2">
+      <button type="submit">検索</button>
+    </div>
+    <!-- <p v-for="(title, index) in all_titles" :key="title.id">
+      aa
+      {{ title[index] }}
+    </p> -->
+  </form>
 </template>
+<script>
+import json from "../../../assets/song.json";
+// const keyword = { word: "" };
+
+// console.log(all_titles);
+export default {
+  data: function () {
+    return {
+      keyword: "",
+    };
+  },
+  methods: {
+    submit() {
+      // console.log(this.keyword);
+      let word = this.keyword;
+      // console.log(json[0].all_song);
+      var all_titles = json[0].all_song.filter(function (item) {
+        // // console.log(item);
+        // console.log(item.title);
+        if (word == item.title) {
+          // console.log("成功");
+          return true;
+        }
+      });
+
+      // console.log(all_titles);
+      console.log(all_titles.length);
+      for (var i = 0; i < all_titles.length; i++) {
+        console.log(all_titles[i].title);
+        // return all_titles[i].title;
+      }
+    },
+  },
+};
+</script>
