@@ -1,49 +1,34 @@
 <template>
   <div class="score-list">
-    <!-- <p>{{ song[0].all_song[1].title }}</p> -->
+    <p>{{ song[0].all_song[1].title }}</p>
     <ul
       class="song-box"
       @click="toggle(index)"
-      v-for="(song, index) in song_length"
-      :key="song.index"
+      v-for="(songs, index) in song[0].all_song.length"
+      :key="songs.index"
     >
       <li class="song_item">
-        {{ song_info[index].title }}
+        {{ song[0].all_song[index].title }}
       </li>
 
       <li class="song_item">
-        {{ song_info[index].artist }}
+        {{ song[0].all_song[index].artist }}
       </li>
 
       <li class="song_item">
-        {{ song_info[index].arranger }}
+        {{ song[0].all_song[index].arranger }}
       </li>
     </ul>
     <Score-Details
       class="Accordion-Item"
       :class="{ transform: isOpened, tamesi: isClosed }"
-      :song_info="song_info"
+      :song_info="song[0].all_song"
       :song_index="song_index"
     >
     </Score-Details>
   </div>
 </template>
 <script>
-import songs from "../../../assets/song.json";
-// console.log(songs);
-
-// const tamesi = songs[0].all_song[0];
-// console.log(tamesi);
-
-// const tamesi2 = tamesi.id;
-// console.log(tamesi2);
-
-const song_length = songs[0].all_song.length;
-// console.log(song_length);
-
-const song_info = songs[0].all_song;
-// console.log(song_info);
-
 const song_index = { number: 0 };
 
 export default {
@@ -54,18 +39,14 @@ export default {
   },
   data: function () {
     return {
-      // scorelists: [],
       isOpened: true,
       isClosed: false,
-      songs: songs,
-      song_length: song_length,
-      // tamesi: tamesi,
-      song_info: song_info,
       song_index: song_index,
     };
   },
   methods: {
     toggle(index) {
+      // console.log(ta);
       this.isOpened = !this.isOpened;
       this.isClosed = !this.isClosed;
       // console.log(index);
