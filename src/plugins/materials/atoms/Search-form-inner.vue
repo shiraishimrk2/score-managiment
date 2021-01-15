@@ -17,10 +17,8 @@
   </form>
 </template>
 <script>
-import json from "../../../assets/song.json";
-// const keyword = { word: "" };
+import songs from "../../../assets/song.json";
 
-// console.log(all_titles);
 export default {
   data: function () {
     return {
@@ -34,11 +32,15 @@ export default {
       let word = this.keyword;
       let result = this.result;
       // console.log(this.result);
-      // console.log(json[0].all_song);
-      var all_titles = json[0].all_song.filter(function (item) {
+      // console.log(songs[0].all_song);
+      if (result.length !== 0) {
+        result.splice(0, result.length);
+      }
+      var all_titles = songs[0].all_song.filter(function (item) {
         // // console.log(item);
         // console.log(item.title);
-        if (word == item.title) {
+        console.log(item.tag);
+        if (word == item.title || word == item.tag) {
           // console.log("成功");
           return true;
         }
@@ -48,7 +50,7 @@ export default {
       for (var i = 0; i < all_titles.length; i++) {
         result.push(all_titles[i].title);
         // console.log(all_titles[i].title);
-        console.log(result);
+        // console.log(result);
         // return all_titles[i].title;
       }
     },
