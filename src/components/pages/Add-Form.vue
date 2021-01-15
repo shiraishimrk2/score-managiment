@@ -103,6 +103,7 @@ const add_data = {
   composer: "",
   arranger: "",
   publicher: "",
+  genle: "",
   sherf: "",
   sherfNum: "",
   tag: "",

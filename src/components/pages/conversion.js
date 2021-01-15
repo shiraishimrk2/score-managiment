@@ -10,6 +10,7 @@ function form(add_data) {
         const obj = JSON.parse(data);
         // console.log(obj)
         obj[0].all_song.push(add_data);
+        obj[1].all_genre.push(add_data.genre);
         const json = JSON.stringify(obj)
         fs.writeFile('src/assets/song.json', json, function (err) {
           if(err)console.log(err)
@@ -22,5 +23,3 @@ function form(add_data) {
 }
 }
 export default { form };
-
-

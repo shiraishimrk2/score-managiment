@@ -72,10 +72,27 @@
                 "sherfNum": "",
                 "tag": "あああ",
                 "genre": "あ"
+            },
+            {
+                "title": "白日",
+                "artist": "キングぬ―",
+                "composer": "しらね",
+                "arranger": "しらね",
+                "publicher": "",
+                "genle": "",
+                "sherf": "",
+                "sherfNum": "",
+                "tag": "あ",
+                "publisher": "しらね",
+                "genre": "J-POP",
+                "shelf": "あ",
+                "shelfNum": "あ"
             }
         ]
     },
     {
-        "all_genre": []
+        "all_genre": [
+            "J-POP"
+        ]
     }
 ]
