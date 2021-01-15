@@ -1,5 +1,6 @@
 <template>
   <div class="score-list">
+    <!-- <p>{{ song[0].all_song[1].title }}</p> -->
     <ul
       class="song-box"
       @click="toggle(index)"
@@ -46,6 +47,11 @@ const song_info = songs[0].all_song;
 const song_index = { number: 0 };
 
 export default {
+  computed: {
+    song: function () {
+      return this.$store.state.songs;
+    },
+  },
   data: function () {
     return {
       // scorelists: [],
