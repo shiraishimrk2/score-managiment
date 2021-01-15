@@ -1,27 +1,29 @@
 <template>
   <div class="score-list">
-    <p>{{ song[0].all_song[1].title }}</p>
-    <ul
-      class="song-box"
-      @click="toggle(index)"
-      v-for="(songs, index) in song[0].all_song.length"
-      :key="songs.index"
-    >
-      <li class="song_item">
-        {{ song[0].all_song[index].title }}
-      </li>
+    <div class="song-container">
+      <p>{{ song[0].all_song[1].title }}</p>
+      <ul
+        class="song-box"
+        @click="toggle(index)"
+        v-for="(songs, index) in song[0].all_song.length"
+        :key="songs.index"
+      >
+        <li class="song">
+          {{ song[0].all_song[index].title }}
+        </li>
 
-      <li class="song_item">
-        {{ song[0].all_song[index].artist }}
-      </li>
+        <li class="song">
+          {{ song[0].all_song[index].artist }}
+        </li>
 
-      <li class="song_item">
-        {{ song[0].all_song[index].arranger }}
-      </li>
-    </ul>
+        <li class="song">
+          {{ song[0].all_song[index].arranger }}
+        </li>
+      </ul>
+    </div>
     <Score-Details
       class="Accordion-Item"
-      :class="{ transform: isOpened, tamesi: isClosed }"
+      :class="{ start: isOpened, animation: isClosed }"
       :song_info="song[0].all_song"
       :song_index="song_index"
     >
@@ -63,21 +65,88 @@ export default {
   },
 };
 </script>
+
 <style scoped>
+/* .score-wrap {
+  position: relative;
+} */
+.score-list {
+  overflow: hidden;
+}
+
+.song-container {
+  width: 100%;
+  height: 430px;
+  display: block;
+  overflow-y: auto;
+
+  /* transition: all 0.5s; */
+}
+
+.song-box {
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(169, 178, 190);
+}
+
+.song {
+  margin: 10px;
+}
+
+.bg-box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+  visibility: hidden;
+}
+
 .Accordion-Item {
   width: 100%;
-  /* height: 50px; */
-  background: #f6f6f6;
-  transition: all 300ms 0s ease;
-  position: relative;
-  /* top: -200px; */
-  /* z-index: -10; */
+  height: 85%;
+  position: absolute;
+  z-index: 10;
+  background: #cfcfcf;
+  border-radius: 8px 8px 0 0;
 }
-.transform {
-  transform: translateY(280px);
+
+.start {
   display: none;
 }
-.tamesi {
-  transform: translateY(-300px);
+
+.animation {
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  /* overflow: hidden; */
+  /* display: none; */
+  /* visibility: hidden; */
+  /* opacity: 0; */
 }
+
+@keyframes slidein {
+  100% {
+    /* opacity: 1; */
+    /* visibility: visible; */
+    transform: translateY(-100%);
+  }
+}
+/* 
+.transform {
+  transform: translateY(120px);
+
+  display: block;
+  animation: try 1s linear 0s;
+}
+
+
+.tamesi {
+  transform: translateY(-600px);
+} */
 </style>
