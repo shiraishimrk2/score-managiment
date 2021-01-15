@@ -116,6 +116,7 @@ export default {
     submit() {
       conversion.form(add_data);
       console.log("成功");
+      console.log(add_data);
     },
   },
 };

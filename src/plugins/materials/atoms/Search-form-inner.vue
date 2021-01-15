@@ -18,9 +18,7 @@
 </template>
 <script>
 import json from "../../../assets/song.json";
-// const keyword = { word: "" };
 
-// console.log(all_titles);
 export default {
   data: function () {
     return {
@@ -35,6 +33,9 @@ export default {
       let result = this.result;
       // console.log(this.result);
       // console.log(json[0].all_song);
+      if (result.length !== 0) {
+        result.splice(0, result.length);
+      }
       var all_titles = json[0].all_song.filter(function (item) {
         // // console.log(item);
         // console.log(item.title);
