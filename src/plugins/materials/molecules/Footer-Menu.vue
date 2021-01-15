@@ -35,7 +35,7 @@
   width: 100%;
   height: 7.5%;
   background-color: #f6f6f6;
-  position: absolute;
+  position: fixed;
   z-index: 0;
   bottom: 0;
 }

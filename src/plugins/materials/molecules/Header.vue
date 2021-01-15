@@ -21,6 +21,7 @@
 .header-box {
   width: 100%;
   height: 55px;
+  position: fixed;
 }
 
 .inner__title {

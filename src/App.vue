@@ -24,9 +24,9 @@ body {
   margin: 0;
 }
 main {
-  height: 100%;
+  height: calc(100% - 55px);
   overflow: hidden;
-  margin: 0 30px;
+  /* margin: 0 30px ; */
 }
 h1 {
   font-size: 1rem;
