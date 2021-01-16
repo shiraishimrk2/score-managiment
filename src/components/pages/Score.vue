@@ -5,14 +5,24 @@
         <router-link to="/genre"><Clowd-box /></router-link>
         scorejenleの配列はバックからもってくる
       </li> -->
-      <li>
+      <li v-for="(genre,index) in song[1].all_genre.length" :key="genre.length">
         <router-link to="/genre"><Clowd-box /></router-link>
         <!-- scorejenleの配列はバックからもってくる -->
+        <p>{{song[1].all_genre[index]}}</p>
       </li>
     </ul>
     <Score-list />
   </div>
 </template>
+<script>
+export default {
+  computed: {
+    song: function () {
+      return this.$store.state.songs;
+    },
+  },
+};
+</script>
 <style scoped>
 router-link {
   font-size: 1rem;
