@@ -59,6 +59,7 @@ export default {
       // console.log(song_index.number);
       // this.song_number = song_number;
     },
+
     // sendindex(index) {
     //   this.index.push(index);
     // },
