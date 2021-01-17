@@ -24,7 +24,7 @@
     <Score-Details
       @close="toziru()"
       class="Accordion-Item"
-      :class="{ start: isOpened, animation: isClosed }"
+      :class="{ start: isOpened, animation: isClosed, tmaesi: isCenter }"
       :song_info="song[0].all_song"
       :song_index="song_index"
     />
@@ -42,7 +42,8 @@ export default {
   data: function () {
     return {
       isOpened: true, //初期で閉じている状態
-      isClosed: false, //クリックしたら開くアニメーション
+      isClosed: false, //クリックしたら開く
+      isCenter: false, //これは閉じるときのもの(必要ないかもしれない)
       song_index: song_index,
     };
   },
@@ -60,8 +61,9 @@ export default {
       // this.song_number = song_number;
     },
     toziru() {
-      this.isClosed = !this.isClosed;
       this.isOpened = !this.isOpened;
+      this.isCenter = !this.isCenter;
+      this.isClosed = !this.isClosed;
     },
   },
 };
@@ -136,6 +138,25 @@ export default {
     /* opacity: 1; */
     /* visibility: visible; */
     transform: translateY(-100%);
+  }
+}
+
+.tamesi {
+  animation-name: tamesi;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  /* overflow: hidden; */
+  /* display: none; */
+  /* visibility: hidden; */
+  /* opacity: 0; */
+}
+@keyframes tamesi {
+  100% {
+    /* opacity: 1; */
+    /* visibility: visible; */
+    transform: translateY(100%);
   }
 }
 /* 
