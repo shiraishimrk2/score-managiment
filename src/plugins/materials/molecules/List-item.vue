@@ -24,7 +24,7 @@
     <Score-Details
       @close="toziru()"
       class="Accordion-Item"
-      :class="{ start: isOpened, animation: isClosed, tmaesi: isCenter }"
+      :class="{ animation: isClosed }"
       :song_info="song[0].all_song"
       :song_index="song_index"
     />
@@ -41,17 +41,18 @@ export default {
   },
   data: function () {
     return {
-      isOpened: true, //初期で閉じている状態
+      // isOpened: true, //初期で閉じている状態
       isClosed: false, //クリックしたら開く
-      isCenter: false, //これは閉じるときのもの(必要ないかもしれない)
+      // isCenter: false, //これは閉じるときのもの(必要ないかもしれない)
       song_index: song_index,
     };
   },
   methods: {
     toggle(index) {
       // console.log(ta);
-      this.isOpened = !this.isOpened;
+      // this.isOpened = !this.isOpened;
       this.isClosed = !this.isClosed;
+      // this.isCenter = !this.isCenter;
       // console.log(index);
       // const song_number = song_info[index].title;
       // console.log(song_number);
@@ -61,7 +62,7 @@ export default {
       // this.song_number = song_number;
     },
     toziru() {
-      this.isOpened = !this.isOpened;
+      // this.isOpened = !this.isOpened;
       this.isCenter = !this.isCenter;
       this.isClosed = !this.isClosed;
     },
@@ -115,22 +116,24 @@ export default {
   z-index: 10;
   background: #cfcfcf;
   border-radius: 8px 8px 0 0;
+  transition: all 1500ms 0s ease;
 }
 
-.start {
+/* .start {
   display: none;
-}
+} */
 
 .animation {
-  animation-name: slidein;
+  /* animation-name: slidein;
   animation-duration: 1s;
   animation-delay: 0s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease;
+  animation-timing-function: ease; */
   /* overflow: hidden; */
   /* display: none; */
   /* visibility: hidden; */
   /* opacity: 0; */
+  transform: translateY(-100%);
 }
 
 @keyframes slidein {
