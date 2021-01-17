@@ -22,12 +22,12 @@
       </ul>
     </div>
     <Score-Details
+      @close="toziru()"
       class="Accordion-Item"
       :class="{ start: isOpened, animation: isClosed }"
       :song_info="song[0].all_song"
       :song_index="song_index"
-    >
-    </Score-Details>
+    />
   </div>
 </template>
 <script>
@@ -41,8 +41,8 @@ export default {
   },
   data: function () {
     return {
-      isOpened: true,
-      isClosed: false,
+      isOpened: true, //初期で閉じている状態
+      isClosed: false, //クリックしたら開くアニメーション
       song_index: song_index,
     };
   },
@@ -59,10 +59,10 @@ export default {
       // console.log(song_index.number);
       // this.song_number = song_number;
     },
-
-    // sendindex(index) {
-    //   this.index.push(index);
-    // },
+    toziru() {
+      this.isClosed = !this.isClosed;
+      this.isOpened = !this.isOpened;
+    },
   },
 };
 </script>
