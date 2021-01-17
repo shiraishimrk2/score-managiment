@@ -43,7 +43,7 @@ export default {
     return {
       isOpened: true, //初期で閉じている状態
       isClosed: false, //クリックしたら開く
-      isCenter: false,
+      isCenter: false, //これは閉じるときのもの(必要ないかもしれない)
       song_index: song_index,
     };
   },
