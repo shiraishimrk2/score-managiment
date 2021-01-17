@@ -1,5 +1,5 @@
 <template>
-  <div class="details">
+  <div class="details" @click="tamesi()">
     <Use-list-button />
     <Return-button />
     <div>
@@ -22,6 +22,20 @@
 </template>
 <script>
 export default {
+  data: function () {
+    return {
+      // isOpened: true,
+      // isClosed: false,
+    };
+  },
+  methods: {
+    tamesi() {
+      this.$emit("close");
+      // this.isOpened = !this.isOpened;
+      // this.isClosed = !this.isClosed;
+      // console.log("ok");
+    },
+  },
   props: {
     song_info: {
       type: Array,
@@ -29,6 +43,12 @@ export default {
     song_index: {
       type: Object,
     },
+    // class: {
+    //   type: String,
+    // },
+    // toggle: {
+    //   type: Function,
+    // },
   },
 };
 </script>

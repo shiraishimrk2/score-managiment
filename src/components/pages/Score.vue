@@ -1,14 +1,12 @@
 <template>
   <div>
     <ul>
-      <!-- <li v-for="scorejenle in scorejenles" :key="scorejenle.id">
+      <li
+        v-for="(genre, index) in song[1].all_genre.length"
+        :key="genre.length"
+      >
         <router-link to="/genre"><Clowd-box /></router-link>
-        scorejenleの配列はバックからもってくる
-      </li> -->
-      <li v-for="(genre,index) in song[1].all_genre.length" :key="genre.length">
-        <router-link to="/genre"><Clowd-box /></router-link>
-        <!-- scorejenleの配列はバックからもってくる -->
-        <p>{{song[1].all_genre[index]}}</p>
+        <p>{{ song[1].all_genre[index] }}</p>
       </li>
     </ul>
     <Score-list />
