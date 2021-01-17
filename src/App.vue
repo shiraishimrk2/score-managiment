@@ -16,6 +16,7 @@
 <style>
 html {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
