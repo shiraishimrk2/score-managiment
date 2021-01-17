@@ -42,7 +42,7 @@ export default {
   data: function () {
     return {
       isOpened: true, //初期で閉じている状態
-      isClosed: false, //クリックしたら開くアニメーション
+      isClosed: false, //クリックしたら開く
       isCenter: false,
       song_index: song_index,
     };
