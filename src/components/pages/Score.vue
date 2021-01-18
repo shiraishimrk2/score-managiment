@@ -26,6 +26,10 @@ export default {
   padding: 55px 30px 0 30px;
 }
 
+.genre-box::-webkit-scrollbar {
+  display: none;
+}
+
 router-link {
   font-size: 1rem;
 }
