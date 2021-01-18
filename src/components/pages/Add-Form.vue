@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-box">
-          <label for="publisher">ジャンル</label>
+          <label for="genre">ジャンル</label>
           <input
             type="text"
             class="col-sm-9 form-control"
@@ -65,12 +65,12 @@
         </div>
 
         <div class="form-group row">
-          <label for="title">棚</label>
+          <label for="rack">棚</label>
           <input type="text" id="shelf" v-model="add_data.shelf" />
           <p>の</p>
         </div>
         <div class="form-group row">
-          <input type="text" id="shelf-number" v-model="add_data.shelfNum" />
+          <input type="text" id="shelfNum" v-model="add_data.shelfNum" />
           <p>段目</p>
         </div>
       </div>
@@ -90,7 +90,7 @@
         <button type="submit">登録</button>
       </div>
 
-      <h1>{{ $store.state.songs[0].all_song[0] }}</h1>
+      <!-- <h1>{{ $store.state.songs[0].all_song[0] }}</h1> -->
     </div>
   </form>
 </template>
@@ -102,10 +102,10 @@ const add_data = {
   artist: "",
   composer: "",
   arranger: "",
-  publicher: "",
+  publisher: "",
   genle: "",
-  sherf: "",
-  sherfNum: "",
+  shelf: "",
+  shelfNum: "",
   tag: "",
 };
 

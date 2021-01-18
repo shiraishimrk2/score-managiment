@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul>
+    <ul class="genre-box">
       <li
         v-for="(genre, index) in song[1].all_genre.length"
         :key="genre.length"
@@ -22,6 +22,10 @@ export default {
 };
 </script>
 <style scoped>
+.genre-box {
+  padding: 55px 30px 0 30px;
+}
+
 router-link {
   font-size: 1rem;
 }

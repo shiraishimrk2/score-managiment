@@ -1,23 +1,28 @@
 <template>
   <div class="score-list">
     <div class="song-container">
-      <p>{{ song[0].all_song[1].title }}</p>
+      <!-- <p>{{ song[0].all_song[1].title }}</p> -->
       <ul
         class="song-box"
         @click="toggle(index)"
         v-for="(songs, index) in song[0].all_song.length"
         :key="songs.index"
       >
-        <li class="song">
+        <li class="song item1">
           {{ song[0].all_song[index].title }}
         </li>
 
-        <li class="song">
+        <li class="song item2">
           {{ song[0].all_song[index].artist }}
         </li>
 
-        <li class="song">
-          {{ song[0].all_song[index].arranger }}
+        <li class="song item3">
+          {{ song[0].all_song[index].shelf }} -
+          {{ song[0].all_song[index].shelfNum }}
+        </li>
+
+        <li class="song item4">
+          {{ song[0].all_song[index].publisher }}
         </li>
       </ul>
     </div>
@@ -30,83 +35,80 @@
     />
   </div>
 </template>
-<script>
-const song_index = { number: 0 };
 
-export default {
-  computed: {
-    song: function () {
-      return this.$store.state.songs;
-    },
-  },
-  data: function () {
-    return {
-      // isOpened: true, //初期で閉じている状態
-      isClosed: false, //クリックしたら開く
-      // isCenter: false, //これは閉じるときのもの(必要ないかもしれない)
-      song_index: song_index,
-    };
-  },
-  methods: {
-    toggle(index) {
-      // console.log(ta);
-      // this.isOpened = !this.isOpened;
-      this.isClosed = !this.isClosed;
-      // this.isCenter = !this.isCenter;
-      // console.log(index);
-      // const song_number = song_info[index].title;
-      // console.log(song_number);
-
-      song_index.number = index;
-      // console.log(song_index.number);
-      // this.song_number = song_number;
-    },
-    toziru() {
-      // this.isOpened = !this.isOpened;
-      this.isCenter = !this.isCenter;
-      this.isClosed = !this.isClosed;
-    },
-  },
-};
-</script>
 
 <style scoped>
-/* .score-wrap {
-  position: relative;
-} */
-.score-list {
-  overflow: hidden;
-}
-
 .song-container {
   width: 100%;
   height: 430px;
   display: block;
   overflow-y: auto;
+}
 
-  /* transition: all 0.5s; */
+.song-container::-webkit-scrollbar {
+  display: none;
 }
 
 .song-box {
   width: 100%;
-  height: 300px;
+  height: 65px;
   margin: 0;
   padding: 0;
-  background-color: rgb(169, 178, 190);
+  background-color: #f6f6f6;
+  border-bottom: solid 1px #d0d3e2;
+  /* display: inline; */
+  display: grid;
+  grid-template-areas:
+    "one two"
+    "three four ";
+  grid-template-columns: 2fr 1fr;
+  /* grid-template-rows: 1fr; */
 }
 
 .song {
-  margin: 10px;
+  /* margin-left: 30px;
+  margin-right: 30px; */
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 
-.bg-box {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0.4;
-  visibility: hidden;
+ul > .item1 {
+  grid-area: one;
+}
+ul > .item2 {
+  grid-area: two;
+}
+ul > .item3 {
+  grid-area: three;
+}
+ul > .item4 {
+  grid-area: four;
+}
+
+.item1,
+.item2 {
+  margin-top: 18px;
+  color: #101748;
+}
+
+.item3,
+.item4 {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #8f92a5;
+}
+
+.item1,
+.item3 {
+  margin-left: 30px;
+}
+
+.item2,
+.item4 {
+  text-align: right;
+  margin-right: 30px;
 }
 
 .Accordion-Item {
@@ -114,7 +116,7 @@ export default {
   height: 85%;
   position: absolute;
   z-index: 10;
-  background: #cfcfcf;
+  background: #e9e9e9;
   border-radius: 8px 8px 0 0;
   transition: all 1500ms 0s ease;
 }
@@ -133,7 +135,7 @@ export default {
   /* display: none; */
   /* visibility: hidden; */
   /* opacity: 0; */
-  transform: translateY(-100%);
+  transform: translateY(-90%);
 }
 
 @keyframes slidein {
@@ -175,3 +177,44 @@ export default {
   transform: translateY(-600px);
 } */
 </style>
+
+
+<script>
+const song_index = { number: 0 };
+
+export default {
+  computed: {
+    song: function () {
+      return this.$store.state.songs;
+    },
+  },
+  data: function () {
+    return {
+      // isOpened: true, //初期で閉じている状態
+      isClosed: false, //クリックしたら開く
+      // isCenter: false, //これは閉じるときのもの(必要ないかもしれない)
+      song_index: song_index,
+    };
+  },
+  methods: {
+    toggle(index) {
+      // console.log(ta);
+      // this.isOpened = !this.isOpened;
+      this.isClosed = !this.isClosed;
+      // this.isCenter = !this.isCenter;
+      // console.log(index);
+      // const song_number = song_info[index].title;
+      // console.log(song_number);
+
+      song_index.number = index;
+      // console.log(song_index.number);
+      // this.song_number = song_number;
+    },
+    toziru() {
+      // this.isOpened = !this.isOpened;
+      this.isCenter = !this.isCenter;
+      this.isClosed = !this.isClosed;
+    },
+  },
+};
+</script>
