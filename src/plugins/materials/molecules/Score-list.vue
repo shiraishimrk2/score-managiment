@@ -2,8 +2,10 @@
   <section class="list-title">
     <div class="title-box">
       <h3 class="title-inner">ALL List</h3>
-      <Sort-icon class="icon-inner" />
-      <Moviesort-icon class="icon-inner" />
+      <div class="icon-box">
+        <Sort-icon class="icon-inner" />
+        <Moviesort-icon class="icon-inner" />
+      </div>
     </div>
     <List-item />
   </section>
@@ -15,13 +17,14 @@
 }
 
 .title-box {
-  margin: 20px 30px;
+  margin: 10px 30px;
   padding-bottom: 10px;
   border-bottom: solid 2px #eff0f4;
   grid-template-columns: 1fr 1fr;
 }
 
 .title-inner {
+  width: 200px;
   display: inline;
   margin-top: 5px;
   font-size: 20px;
@@ -29,10 +32,11 @@
   font-weight: 600;
   color: #d0d3e2;
 }
-
 .icon-box {
-  /* display: inline-block; */
-  /* width: 100px; */
+  display: inline-block;
+  margin-right: auto;
+  width: 100%;
+  text-align: right;
 }
 
 .icon-inner {
