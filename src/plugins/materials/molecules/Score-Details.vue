@@ -1,5 +1,6 @@
 <template>
   <div class="details" @click="tamesi()">
+    <div class="button" @click="search()"></div>
     <Use-list-button />
     <Return-button />
     <div>
@@ -71,10 +72,20 @@ ul {
   float: left;
   color: #8f92a5;
 }
+.button {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
 </style>
 
 <script>
 export default {
+  computed: {
+    song: function () {
+      return this.$store.state.songs;
+    },
+  },
   data: function () {
     return {
       // isOpened: true,
@@ -87,6 +98,11 @@ export default {
       // this.isOpened = !this.isOpened;
       // this.isClosed = !this.isClosed;
       // console.log("ok");
+    },
+
+    search() {
+      this.$store.commit("search");
+      console.log(this.$store.state.result);
     },
   },
   props: {
