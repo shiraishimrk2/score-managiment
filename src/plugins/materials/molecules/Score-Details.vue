@@ -46,7 +46,7 @@
 h3 {
   color: #101748;
   font-weight: 600;
-  margin: 0;
+  margin: 0 30px;
 }
 
 ul {

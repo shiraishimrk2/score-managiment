@@ -6,6 +6,7 @@
           <label for="title">曲名</label>
           <input
             type="text"
+            placeholder="曲名"
             class="col-sm-9 form-control"
             id="title"
             v-model="add_data.title"
@@ -17,6 +18,7 @@
           <label for="artist">アーティスト</label>
           <input
             type="text"
+            placeholder="アーティスト"
             class="col-sm-9 form-control"
             id="artist"
             v-model="add_data.artist"
@@ -27,6 +29,7 @@
           <label for="composer">作曲者</label>
           <input
             type="text"
+            placeholder="作曲者"
             class="col-sm-9 form-control"
             id="composer"
             v-model="add_data.composer"
@@ -37,6 +40,7 @@
           <label for="arranger">編曲者</label>
           <input
             type="text"
+            placeholder="編曲者"
             class="col-sm-9 form-control"
             id="arranger"
             v-model="add_data.arranger"
@@ -47,6 +51,7 @@
           <label for="publisher">出版社</label>
           <input
             type="text"
+            placeholder="出版社"
             class="col-sm-9 form-control"
             id="publisher"
             v-model="add_data.publisher"
@@ -57,28 +62,32 @@
           <label for="genre">ジャンル</label>
           <input
             type="text"
+            placeholder="ジャンル"
             class="col-sm-9 form-control"
             id="genre"
             v-model="add_data.genre"
             required
           />
         </div>
+        <div class="rack-box">
+          <div class="form-box">
+            <label for="rack">棚番号</label>
+            <input type="text" id="shelf" v-model="add_data.shelf" />
+            <!-- <p>の</p> -->
+          </div>
 
-        <div class="form-group row">
-          <label for="rack">棚</label>
-          <input type="text" id="shelf" v-model="add_data.shelf" />
-          <p>の</p>
-        </div>
-        <div class="form-group row">
-          <input type="text" id="shelfNum" v-model="add_data.shelfNum" />
-          <p>段目</p>
+          <div class="form-box">
+            <label for="rack">－</label>
+            <input type="text" id="shelfNum" v-model="add_data.shelfNum" />
+            <!-- <p>段目</p> -->
+          </div>
         </div>
       </div>
-
       <div class="form-box">
         <label for="tag">キーワード</label>
         <input
           type="text"
+          placeholder="(例) 明るい"
           class="col-sm-9 form-control"
           id="tag"
           v-model="add_data.tag"
@@ -126,6 +135,11 @@ export default {
 </script>
 
 <style scoped>
+.form-container {
+  margin-top: 80px;
+  padding: 0 30px;
+}
+
 .form-box {
   margin-top: 20px;
   border-bottom: solid 1px #d0d3e2;

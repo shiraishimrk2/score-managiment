@@ -26,13 +26,15 @@
         </li>
       </ul>
     </div>
-    <Score-Details
-      @close="toziru()"
-      class="Accordion-Item"
-      :class="{ animation: isClosed }"
-      :song_info="song[0].all_song"
-      :song_index="song_index"
-    />
+    <div class="details-box">
+      <Score-Details
+        @close="toziru()"
+        class="Accordion-Item"
+        :class="{ animation: isClosed }"
+        :song_info="song[0].all_song"
+        :song_index="song_index"
+      />
+    </div>
   </div>
 </template>
 
@@ -40,9 +42,10 @@
 <style scoped>
 .song-container {
   width: 100%;
-  height: 430px;
+  height: 100%;
+  max-height: 380px;
   display: block;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .song-container::-webkit-scrollbar {
@@ -118,12 +121,17 @@ ul > .item4 {
   z-index: 10;
   background: #e9e9e9;
   border-radius: 8px 8px 0 0;
-  transition: all 1500ms 0s ease;
+  transition: all 1000ms 0s ease;
 }
 
 /* .start {
   display: none;
 } */
+
+.details-box {
+  margin: 80px 0;
+  background-color: rgb(230, 153, 153);
+}
 
 .animation {
   /* animation-name: slidein;
@@ -135,35 +143,10 @@ ul > .item4 {
   /* display: none; */
   /* visibility: hidden; */
   /* opacity: 0; */
-  transform: translateY(-90%);
+  /* padding: 20px 0; */
+  transform: translateY(-100%);
 }
 
-@keyframes slidein {
-  100% {
-    /* opacity: 1; */
-    /* visibility: visible; */
-    transform: translateY(-100%);
-  }
-}
-
-.tamesi {
-  animation-name: tamesi;
-  animation-duration: 1s;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
-  /* overflow: hidden; */
-  /* display: none; */
-  /* visibility: hidden; */
-  /* opacity: 0; */
-}
-@keyframes tamesi {
-  100% {
-    /* opacity: 1; */
-    /* visibility: visible; */
-    transform: translateY(100%);
-  }
-}
 /* 
 .transform {
   transform: translateY(120px);
