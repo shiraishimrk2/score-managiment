@@ -60,7 +60,7 @@
 
 .nav-list__child:nth-of-type(2) {
   width: 35%;
-  border-right: solid 1.5px #e8e8e8;
+  /* border-right: solid 1.5px #e8e8e8; */
   border-left: solid 1.5px #e8e8e8;
 }
 
@@ -78,15 +78,15 @@
 }
 
 svg {
-  max-width: 40px;
+  max-width: 35px;
   padding: 10px;
 }
 @media screen and (min-width: 1024px) {
   #footer {
     top: 50px;
-    height: 92%;
-    width: 80px;
-    position: fixed;
+    height: calc(100% - 50px);
+    width: 60px;
+    /* position: relative; */
     border-top: none;
     border-right: solid 2px #e8e8e8;
     padding: 0px;
@@ -94,7 +94,7 @@ svg {
 
   .nav-list {
     flex-direction: column;
-
+    flex-wrap: nowrap;
     width: 100%;
   }
 
@@ -116,8 +116,11 @@ svg {
   .nav-add-button {
     margin: 0;
     margin-top: auto;
-    /* flex-basis: 20%; */
+    flex-basis: 5%;
     /* margin-top: 50px; */
+  }
+  svg {
+    max-width: 30px;
   }
 }
 </style>

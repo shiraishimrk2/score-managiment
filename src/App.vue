@@ -48,15 +48,20 @@ li {
   list-style-type: none;
 }
 
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (min-width: 1024px) {
   #app {
     display: grid;
-    width: 100%;
+
     grid-template-areas:
       "hed hed hed"
       "fot wap wap";
     grid-template-rows: 55px 1fr;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 60px 1fr;
   }
 
   #app > header {
