@@ -88,6 +88,12 @@ label {
   opacity: 1;
 }
 
+@media screen and (min-width: 1024px) {
+  .header-box {
+    position: relative;
+  }
+}
+
 /* .transform {
   transform: translateY(-70px);
 

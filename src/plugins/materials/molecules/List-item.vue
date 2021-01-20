@@ -147,6 +147,12 @@ ul > .item4 {
   transform: translateY(-100%);
 }
 
+@media screen and (min-width: 1024px) {
+  .Accordion-Item {
+    width: calc(100% - 60px);
+  }
+}
+
 /* 
 .transform {
   transform: translateY(120px);
