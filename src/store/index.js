@@ -25,8 +25,7 @@ export default new Vuex.Store({
           state.result.push(table)
         }
       } 
-      
-          console.log(state.result)
+      console.log(state.result)
     }
   },
   actions: {

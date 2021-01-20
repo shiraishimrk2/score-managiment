@@ -6,7 +6,7 @@ module.exports = {
         productName: "score-managiment",
         appId: "score-managiment",
         win: {
-          icon: 'src/assets/logo.png',
+          icon: 'src/assets/app.ico',
           target: [
             {
               target: 'zip', // 'zip', 'nsis', 'portable'
