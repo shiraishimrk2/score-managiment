@@ -116,8 +116,9 @@ ul > .item4 {
 
 .Accordion-Item {
   width: 100%;
-  height: 85%;
+  height: 90%;
   position: absolute;
+  top: 100%;
   z-index: 10;
   background: #e9e9e9;
   border-radius: 8px 8px 0 0;
@@ -129,7 +130,7 @@ ul > .item4 {
 } */
 
 .details-box {
-  margin: 80px 0;
+  /* margin: 80px 0; */
   background-color: rgb(230, 153, 153);
 }
 
@@ -151,20 +152,37 @@ ul > .item4 {
   .Accordion-Item {
     width: calc(100% - 60px);
   }
+
+  .item2,
+  .item3,
+  .item4 {
+    text-align: right;
+  }
+
+  .song {
+    margin: 0;
+    margin-top: 15px;
+  }
+
+  .item1 {
+    margin-left: 30px;
+  }
+
+  .item4 {
+    margin-right: 30px;
+  }
+
+  .song-box {
+    height: 50px;
+    margin-right: 60px;
+    grid-template-areas: "one three two four ";
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+  }
+
+  .song-container {
+    max-height: 340px;
+  }
 }
-
-/* 
-.transform {
-  transform: translateY(120px);
-
-  display: block;
-  animation: try 1s linear 0s;
-}
-
-
-.tamesi {
-  transform: translateY(-600px);
-} */
 </style>
 
 

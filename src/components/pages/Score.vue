@@ -66,5 +66,11 @@ li > a {
   font-size: 1rem;
   display: block;
 }
+
+@media screen and (min-width: 1024px) {
+  .genre-box {
+    padding: 20px 30px 0 30px;
+  }
+}
 </style>
 

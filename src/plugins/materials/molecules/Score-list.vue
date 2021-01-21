@@ -17,9 +17,9 @@
 }
 
 .title-box {
-  margin: 10px 30px;
-  padding-bottom: 10px;
+  margin: 0px 30px;
   border-bottom: solid 2px #eff0f4;
+  display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
