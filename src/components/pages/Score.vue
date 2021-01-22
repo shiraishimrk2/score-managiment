@@ -1,12 +1,9 @@
 <template>
   <div>
     <ul class="genre-box">
-      <li
-        v-for="(genre, index) in song[1].all_genre.length"
-        :key="genre.length"
-      >
+      <li v-for="(genres, index) in genre.length" :key="genres.length">
         <router-link to="/genre"><Clowd-box /></router-link>
-        <p>{{ song[1].all_genre[index] }}</p>
+        <p>{{ genre[index] }}</p>
       </li>
     </ul>
     <Score-list />
@@ -17,6 +14,9 @@ export default {
   computed: {
     song: function () {
       return this.$store.state.songs;
+    },
+    genre: function () {
+      return this.$store.state.genre;
     },
   },
 };

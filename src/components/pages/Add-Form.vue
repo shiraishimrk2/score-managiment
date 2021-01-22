@@ -104,7 +104,7 @@
   </form>
 </template>
 <script>
-import conversion from "./conversion.js";
+import conversion from "../../assets/conversion.js";
 
 const add_data = {
   title: "",
