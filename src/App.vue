@@ -15,6 +15,7 @@
 </template>
 <style>
 html {
+  font-family: "Meylio UI";
   height: 100%;
   overflow: hidden;
 }
