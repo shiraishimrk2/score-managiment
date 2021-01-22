@@ -20,6 +20,15 @@
 import songs from "../../../assets/song.json";
 
 export default {
+  computed: {
+    song: function () {
+      return this.$store.state.songs;
+    },
+    // keyword(keyword){
+    //   this.$store.commit
+
+    // }
+  },
   data: function () {
     return {
       keyword: "",
@@ -31,6 +40,7 @@ export default {
       // console.log(this.keyword);
       let word = this.keyword;
       let result = this.result;
+      this.$store.commit("submit");
       // console.log(this.result);
       // console.log(songs[0].all_song);
       if (result.length !== 0) {

@@ -1,28 +1,28 @@
 <template>
   <div class="score-list">
     <div class="song-container">
-      <!-- <p>{{ song[0].all_song[1].title }}</p> -->
+      <!-- <p>{{ song[1].title }}</p> -->
       <ul
         class="song-box"
         @click="toggle(index)"
-        v-for="(songs, index) in song[0].all_song.length"
+        v-for="(songs, index) in song.length"
         :key="songs.index"
       >
         <li class="song item1">
-          {{ song[0].all_song[index].title }}
+          {{ song[index].title }}
         </li>
 
         <li class="song item2">
-          {{ song[0].all_song[index].artist }}
+          {{ song[index].artist }}
         </li>
 
         <li class="song item3">
-          {{ song[0].all_song[index].shelf }} -
-          {{ song[0].all_song[index].shelfNum }}
+          {{ song[index].shelf }} -
+          {{ song[index].shelfNum }}
         </li>
 
         <li class="song item4">
-          {{ song[0].all_song[index].publisher }}
+          {{ song[index].publisher }}
         </li>
       </ul>
     </div>
@@ -31,7 +31,7 @@
         @close="toziru()"
         class="Accordion-Item"
         :class="{ animation: isClosed }"
-        :song_info="song[0].all_song"
+        :song_info="song"
         :song_index="song_index"
       />
     </div>
