@@ -1,7 +1,7 @@
 <template>
   <form v-on:submit.prevent="submit">
     <div class="form-container">
-      <div class="cloumn-1">
+      <div class="column-1">
         <div class="form-box">
           <label for="title">曲名</label>
           <input
@@ -82,23 +82,22 @@
             <!-- <p>段目</p> -->
           </div>
         </div>
-      </div>
-      <div class="form-box">
-        <label for="tag">キーワード</label>
-        <input
-          type="text"
-          placeholder="(例) 明るい"
-          class="col-sm-9 form-control"
-          id="tag"
-          v-model="add_data.tag"
-          required
-        />
+        <div class="form-box">
+          <label for="tag">キーワード</label>
+          <input
+            type="text"
+            placeholder="(例) 明るい"
+            class="col-sm-9 form-control"
+            id="tag"
+            v-model="add_data.tag"
+            required
+          />
+        </div>
       </div>
 
       <div class="colmun-2">
         <button type="submit">登録</button>
       </div>
-
       <!-- <h1>{{ $store.state.songs[0].all_song[0] }}</h1> -->
     </div>
   </form>
@@ -192,13 +191,28 @@ input::placeholder {
 
   label {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 10px;
   }
 
+  .column-1,
+  .colmun-2 {
+    margin: 0 30px;
+  }
+
   .form-container {
+    margin-top: 0px;
     display: grid;
+    grid-template-areas: "right left";
     grid-template-columns: 1fr 1fr;
+  }
+
+  .column-1 {
+    grid-area: right;
+  }
+
+  .colmun-2 {
+    grid-area: left;
   }
 }
 </style>
