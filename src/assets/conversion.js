@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+
 //serve状態だとpathはsrc/assets/song.json
 //build状態だとpathはassets
 function form(add_data) {

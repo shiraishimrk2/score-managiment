@@ -1,25 +1,33 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import songs from '../../assets/song.json'
+// import songs from '../assets/song.json'
+// import songs from "@/assets/song.json"
+// import aaa from "tamesi"
 
-// const fs = require('fs');
-// var tamesi =fs.readFile("assets/song.json", "utf-8", (err) => {
-//   if (err) throw err;
-//   console.log(data);
-// });
+// const path = require('path')
+const fs = require('fs')
+const jsonData = JSON.parse(fs.readFileSync('assets/song.json','utf-8', function readFileCallBack(err){
+  if (err) {
+    console.log(err)
+  }
+}))
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     message: 'Hello Vuex',
-    songs: songs[0].all_song,
-    genre: songs[1].all_genre,
-    // tamesi:tamesi,
+    songs: jsonData[0].all_song,
+    genre: jsonData[1].all_genre,
+    // song:tame[0].all_song,
+    // data: process.env.jsonData,
+    // jdata:jsonData[0].all_song,
     result:[],
   },
   mutations: {
     search: function (state) {
-      // console.log(tamesi)
+      // console.log(state.jdata)
+      // console.log(state.song)
       // console.log(state.genre)
       // console.log(state.songs)
       // var a = state.songs[0].all_song[0].title

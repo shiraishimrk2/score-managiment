@@ -1,4 +1,14 @@
+var path = require('path')
+
 module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+        'tamesi':path.join(__dirname,'src','assets','song.json')
+      }
+    },
+  },
   pluginOptions: {
     
     electronBuilder: {
@@ -18,7 +28,8 @@ module.exports = {
           ]
         },
         files: [
-            "**/*"
+          "**/*",
+          "src/assets/song.json"
           // "src/assets/song.json"
           ],
           extraFiles: [
