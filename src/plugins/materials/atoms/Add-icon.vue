@@ -18,4 +18,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@media screen and (min-width: 1024px) {
+  #add-icon {
+    margin: 20px 0;
+  }
+}
 </style>

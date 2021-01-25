@@ -6,13 +6,14 @@
         :key="genre.length"
       >
         <router-link to="/genre"><Clowd-box /></router-link>
-        <p>{{ song[1].all_genre[index] }}</p>
+        <p class="genre-title">{{ song[1].all_genre[index] }}</p>
       </li>
     </ul>
     <Score-list />
   </div>
 </template>
 <script>
+// const number = { index: 0 };
 export default {
   computed: {
     song: function () {
@@ -22,12 +23,7 @@ export default {
 };
 </script>
 <style scoped>
-.genre-box {
-  padding: 55px 30px 0 30px;
-}
-
-.genre-box::-webkit-scrollbar {
-  display: none;
+.genre-title {
 }
 
 router-link {
@@ -37,17 +33,18 @@ body {
   background-color: white;
 }
 
-h1 {
-  text-align: center;
-}
-
-ul {
+.genre-box {
   scroll-snap-type: x mandatory;
   white-space: nowrap;
   overflow: auto;
   width: 100%;
   height: 200px;
   padding: 0;
+  padding: 55px 30px 0 30px;
+}
+
+.genre-box::-webkit-scrollbar {
+  display: none;
 }
 
 li {
@@ -59,6 +56,7 @@ li {
   background-color: gray;
   margin-right: 6%;
   border-radius: 15px;
+  position: relative;
 }
 
 li > a {
@@ -68,6 +66,12 @@ li > a {
 }
 
 @media screen and (min-width: 1024px) {
+  li {
+    width: 230px;
+    height: 150px;
+    margin-right: 70px;
+  }
+
   .genre-box {
     padding: 20px 30px 0 30px;
   }
