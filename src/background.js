@@ -2,13 +2,21 @@
 
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
-// import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
-// require('electron-reload')('assets/song.json');
+
+// import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
+
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
+
+// const fs =require('fs')
+//   fs.watchFile('assets/song.json',()=>{ // 監視対象が変更されたら
+//     win.reload(); // mainWindow(rendererプロセス)をreloadする
+//   });
+// const remote = require('remote')
+// remote.getCurrentWindow.reload();
 
 async function createWindow() {
   // Create the browser window.
@@ -21,6 +29,8 @@ async function createWindow() {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION
     }
   })
+  
+
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
