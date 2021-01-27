@@ -5,24 +5,24 @@
       <ul
         class="song-box"
         @click="toggle(index)"
-        v-for="(songs, index) in song.length"
-        :key="songs.index"
+        v-for="(songs, index) in tamesi"
+        :key="songs.id"
       >
         <li class="song item1">
-          {{ song[index].title }}
+          {{ tamesi[index].title }}
         </li>
 
         <li class="song item2">
-          {{ song[index].artist }}
+          {{ tamesi[index].artist }}
         </li>
 
         <li class="song item3">
-          {{ song[index].shelf }} -
-          {{ song[index].shelfNum }}
+          {{ tamesi[index].shelf }} -
+          {{ tamesi[index].shelfNum }}
         </li>
 
         <li class="song item4">
-          {{ song[index].publisher }}
+          {{ tamesi[index].publisher }}
         </li>
       </ul>
     </div>
@@ -31,7 +31,7 @@
         @close="toziru()"
         class="Accordion-Item"
         :class="{ animation: isClosed }"
-        :song_info="song"
+        :song_info="tamesi"
         :song_index="song_index"
       />
     </div>
@@ -188,11 +188,14 @@ ul > .item4 {
 
 <script>
 const song_index = { number: 0 };
-
 export default {
   computed: {
     song: function () {
       return this.$store.state.songs;
+    },
+    tamesi: function () {
+      console.log(this.$store.getters.songs);
+      return this.$store.getters.songs;
     },
   },
   data: function () {
