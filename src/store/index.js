@@ -22,18 +22,24 @@ export default new Vuex.Store({
     // song:tame[0].all_song,
     // data: process.env.jsonData,
     // jdata:jsonData[0].all_song,
-    result:[],
+    result: [],
+    Search_Word:''
+  },
+  getters: {
+    songs: function (state) {
+      return state.songs.filter(song => {
+        console.log(song.title.includes(state.Search_Word))
+        return song.title.includes(state.Search_Word) ||
+          song.artist.includes(state.Search_Word) ||
+          song.publisher.includes(state.Search_Word) ||
+          song.composer.includes(state.Search_Word) ||
+          song.arranger.includes(state.Search_Word) ||
+          song.genre.includes(state.Search_Word)
+      })
+    },
   },
   mutations: {
     search: function (state) {
-      // console.log(state.jdata)
-      // console.log(state.song)
-      // console.log(state.genre)
-      // console.log(state.songs)
-      // var a = state.songs[0].all_song[0].title
-      // var ueo = JSON.parse(JSON.stringify(a))
-      // console.log(ueo)
-      // console.log(state.songs[0].all_song[0].title)
       const length = state.songs.length;
       const regex = RegExp(/^[ぁ-んァ-ン一-龥]/);
       for (var i = 0; i < length; i++){
@@ -44,6 +50,9 @@ export default new Vuex.Store({
         }
       } 
       console.log(state.result)
+    },
+    song_search: function (state, keyword,) {
+      state.Search_Word=keyword
     }
   },
   actions: {

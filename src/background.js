@@ -11,10 +11,7 @@ protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
 
-// const fs =require('fs')
-//   fs.watchFile('assets/song.json',()=>{ // 監視対象が変更されたら
-//     win.reload(); // mainWindow(rendererプロセス)をreloadする
-//   });
+
 // const remote = require('remote')
 // remote.getCurrentWindow.reload();
 
@@ -29,9 +26,11 @@ async function createWindow() {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION
     }
   })
+  const fs =require('fs')
+  fs.watchFile('assets/song.json',()=>{ // 監視対象が変更されたら
+    win.reload(); // mainWindow(rendererプロセス)をreloadする
+  });
   
-
-
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
