@@ -2,7 +2,7 @@
   <div>
     <nav id="footer">
       <ul class="nav-list">
-        <li class="nav-list__child">
+        <li class="nav-list__child nav-list__childtop">
           <router-link to="/setting" class="button__link">
             <Setting-icon />
           </router-link>
@@ -62,6 +62,7 @@
   width: 35%;
   /* border-right: solid 1.5px #e8e8e8; */
   border-left: solid 1.5px #e8e8e8;
+  border-right: solid 1.5px #e8e8e8;
 }
 
 .button__link {
@@ -83,11 +84,10 @@ svg {
 }
 @media screen and (min-width: 1024px) {
   #footer {
-    top: 50px;
-    height: calc(100% - 50px);
+    top: 60px;
+    height: calc(100% - 60px);
     width: 60px;
-    /* position: relative; */
-    border-top: none;
+    border-top: solid 2px #e8e8e8;
     border-right: solid 2px #e8e8e8;
     padding: 0px;
   }
@@ -96,6 +96,10 @@ svg {
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
+  }
+
+  .nav-list__childtop {
+    margin-top: 30px;
   }
 
   .nav-list__child {
@@ -107,6 +111,7 @@ svg {
 
   .nav-list__child:nth-of-type(2) {
     width: 100%;
+    border: none;
   }
 
   .button__link {

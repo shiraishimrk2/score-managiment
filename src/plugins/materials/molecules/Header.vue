@@ -6,7 +6,7 @@
       <Entry-button v-if="$route.name == '楽曲追加'" />
     </div>
     <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
-    <div v-if="$route.name == '楽譜リスト'">
+    <div class="accbox-container" v-if="$route.name == '楽譜リスト'">
       <div class="accbox">
         <label for="check"><Search-icon /></label>
       </div>
@@ -20,41 +20,42 @@
 <style scoped>
 .header-box {
   width: 100%;
-  height: 55px;
-  position: fixed;
+  height: 45px;
+  background-color: #f6f6f6;
+  border-bottom: solid 2px #e8e8e8;
+  /* position: fixed; */
 }
 
 .inner__title {
   margin-top: auto;
+  padding: 10px;
 }
 .box-inner {
-  height: 55px;
+  height: 45px;
   position: relative;
   z-index: 1;
-  background-color: #f6f6f6;
-  border-bottom: solid 2px #e8e8e8;
 }
 
 .back__icon {
   position: absolute;
   left: 20px;
-  top: 16px;
+  top: 18px;
 }
 
 .accbox {
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   position: absolute;
   top: 7px;
-  right: 13px;
+  right: 22px;
   border: 0;
   background-color: #f6f6f6;
   z-index: 2;
 }
 
 label {
-  /* width: 100%;
-  height: 100%; */
+  width: 100%;
+  height: 100%;
   display: block;
   cursor: pointer;
   padding: 3px 6px;
@@ -77,11 +78,14 @@ label {
   width: 100%;
   height: 70px;
   position: absolute;
-  background: #efefef;
+  background: #f6f6f6;
+  border-bottom: solid 2px #e8e8e8;
+  border-top: solid 2px #e8e8e8;
   overflow: hidden;
   opacity: 0;
   transition: 0.3s;
   z-index: 2;
+  text-align: center;
 }
 
 .accbox-input:checked + .form-inner {
@@ -91,26 +95,37 @@ label {
 @media screen and (min-width: 1024px) {
   .header-box {
     position: relative;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+  }
+
+  .inner__title {
+    text-align: left;
+    padding: 0;
+    padding-left: 120px;
+    margin: 20px 0;
+    /* font-size: 20px; */
+  }
+
+  .form-inner {
+    border-top: none;
+  }
+
+  .box-inner {
+    height: 60px;
+  }
+
+  .accbox {
+    top: 16px;
+    left: 950px;
+  }
+
+  .form-inner {
+    height: 60px;
+    opacity: 1;
   }
 }
-
-/* .transform {
-  transform: translateY(-70px);
-
-  opacity: 0;
-} */
-
-/* @keyframes accordion {
-  from {
-    transform: translateY(-70px);
-    z-index: -20;
-  }
-
-  to {
-    transform: translateY(5px);
-    z-index: 1;
-  }
-} */
 </style>
 
 <script>

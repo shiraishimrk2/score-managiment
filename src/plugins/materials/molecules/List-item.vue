@@ -69,12 +69,13 @@
 }
 
 .song {
-  /* margin-left: 30px;
-  margin-right: 30px; */
   display: inline-block;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 ul > .item1 {
@@ -157,10 +158,12 @@ ul > .item4 {
   .item3,
   .item4 {
     text-align: right;
+    margin-left: 20px;
   }
 
   .song {
     margin: 0;
+    margin-left: 20px;
     margin-top: 15px;
   }
 
@@ -175,12 +178,13 @@ ul > .item4 {
   .song-box {
     height: 50px;
     margin-right: 60px;
+    text-overflow: ellipsis;
     grid-template-areas: "one three two four ";
     grid-template-columns: 3fr 1fr 1fr 1fr;
   }
 
   .song-container {
-    max-height: 340px;
+    max-height: 500px;
   }
 }
 </style>
