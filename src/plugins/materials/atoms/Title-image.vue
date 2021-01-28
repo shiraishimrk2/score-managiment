@@ -1,11 +1,17 @@
 <template>
-  <img
-    src="../assets/title.png"
-    class="title-image"
-    width="300px"
-    height="150px"
-  />
+  <img src="../assets/title.png" class="title-image" />
 </template>
 
 <style scoped>
+.title-image {
+  width: 280px;
+  height: 140px;
+}
+
+@media screen and (min-width: 1024px) {
+  .title-image {
+    width: 580px;
+    height: 290px;
+  }
+}
 </style>
