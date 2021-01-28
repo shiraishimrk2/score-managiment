@@ -28,7 +28,8 @@
         </li>
         <li class="details-item">
           <span class="details-titel">棚番号</span>
-          {{ song_info[song_index.number].shalfNum }}
+          {{ song_info[song_index.number].shelf }}ー
+          {{ song_info[song_index.number].shelfNum }}
         </li>
 
         <!-- <li
