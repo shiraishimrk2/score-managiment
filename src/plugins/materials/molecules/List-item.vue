@@ -58,7 +58,7 @@
   margin: 0;
   padding: 0;
   background-color: #f6f6f6;
-  border-bottom: solid 1px #d0d3e2;
+  border-bottom: solid 1px#eff0f4;
   /* display: inline; */
   display: grid;
   grid-template-areas:

@@ -7,12 +7,14 @@
     </div>
     <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
     <div v-if="$route.name == '楽譜リスト'">
-      <div class="accbox">
-        <label for="check"><Search-icon /></label>
-      </div>
-      <input type="checkbox" id="check" class="accbox-input" />
+      <div class="grid-box">
+        <div class="accbox">
+          <label for="check"><Search-icon /></label>
+        </div>
+        <input type="checkbox" id="check" class="accbox-input" />
 
-      <Search-form-inner />
+        <Search-form-inner />
+      </div>
     </div>
   </div>
 </template>
@@ -82,6 +84,7 @@ label {
   opacity: 0;
   transition: 0.3s;
   z-index: 2;
+  /* pointer-events: none; */
 }
 
 .accbox-input:checked + .form-inner {
@@ -91,6 +94,15 @@ label {
 @media screen and (min-width: 1024px) {
   .header-box {
     position: relative;
+  }
+
+  .inner__title {
+    text-align: left;
+  }
+
+  .grid-box {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
   }
 }
 

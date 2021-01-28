@@ -33,7 +33,7 @@
 <style scoped>
 #footer {
   width: 100%;
-  height: 7.5%;
+  height: 8%;
   background-color: #f6f6f6;
   position: fixed;
   z-index: 0;
@@ -60,7 +60,7 @@
 
 .nav-list__child:nth-of-type(2) {
   width: 35%;
-  /* border-right: solid 1.5px #e8e8e8; */
+  border-right: solid 1.5px #e8e8e8;
   border-left: solid 1.5px #e8e8e8;
 }
 
@@ -107,10 +107,12 @@ svg {
 
   .nav-list__child:nth-of-type(2) {
     width: 100%;
+    border: none;
   }
 
   .button__link {
     display: block;
+    margin-top: 30px;
   }
 
   .nav-add-button {
