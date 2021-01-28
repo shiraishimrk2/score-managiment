@@ -18,6 +18,7 @@
 
 .title-box {
   margin: 0px 30px;
+  height: 40px;
   border-bottom: solid 2px #eff0f4;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -42,6 +43,6 @@
 .icon-inner {
   /* float: right; */
   display: inline;
-  padding: 10px 5px;
+  padding-left: 10px;
 }
 </style>

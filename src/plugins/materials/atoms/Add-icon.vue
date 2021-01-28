@@ -11,6 +11,7 @@
   background-color: #ff6e4b;
   position: relative;
   padding: 0;
+  margin: 20px 0;
 }
 #icon {
   position: absolute;

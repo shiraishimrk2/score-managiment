@@ -15,17 +15,6 @@
         </div>
 
         <div class="form-box">
-          <label for="artist">アーティスト</label>
-          <input
-            type="text"
-            placeholder="アーティスト"
-            class="col-sm-9 form-control"
-            id="artist"
-            v-model="add_data.artist"
-          />
-        </div>
-
-        <div class="form-box">
           <label for="composer">作曲者</label>
           <input
             type="text"
@@ -69,6 +58,18 @@
             required
           />
         </div>
+
+        <div class="form-box">
+          <label for="artist">アーティスト</label>
+          <input
+            type="text"
+            placeholder="アーティスト"
+            class="col-sm-9 form-control"
+            id="artist"
+            v-model="add_data.artist"
+          />
+        </div>
+
         <div class="rack-box">
           <div class="form-box">
             <label for="rack">棚番号</label>
@@ -135,7 +136,7 @@ export default {
 
 <style scoped>
 .form-container {
-  margin-top: 80px;
+  margin-top: 50px;
   padding: 0 30px;
 }
 
