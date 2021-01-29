@@ -5,6 +5,7 @@
         class="genre-inner"
         v-for="(genres, index) in genre.length"
         :key="genres.length"
+        @click="genre_click(index)"
       >
         <router-link to="/genre"><Clowd-box /></router-link>
         <p class="genre-title">{{ genre[index] }}</p>
@@ -21,6 +22,11 @@ export default {
     },
     genre: function () {
       return this.$store.state.genre;
+    },
+  },
+  methods: {
+    genre_click: function (index) {
+      this.$store.commit("genre_click", index);
     },
   },
 };
