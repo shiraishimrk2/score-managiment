@@ -251,6 +251,19 @@
                 "shelfNum": "しらん",
                 "tag": "しらん",
                 "genre": "しらん"
+            },
+            {
+                "title": "夜に駆ける",
+                "artist": "YOASOBI",
+                "composer": "Ayase",
+                "arranger": "郷間幹男",
+                "publisher": "WindsScore",
+                "genre": "J-POP",
+                "shelf": "A",
+                "shelfNum": "1",
+                "tag": [
+                    "あかるい"
+                ]
             }
         ]
     },
@@ -275,7 +288,8 @@
             "p",
             "ss",
             "J-POP",
-            "しらん"
+            "しらん",
+            "J-POP"
         ]
     }
 ]

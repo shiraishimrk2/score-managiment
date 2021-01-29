@@ -1,7 +1,9 @@
 <template>
   <div>
     <ul>
-      <li><Clowd-box /></li>
+      <router-link to="/score-edit">
+        <li><Clowd-box /></li
+      ></router-link>
     </ul>
     <Use-list />
   </div>

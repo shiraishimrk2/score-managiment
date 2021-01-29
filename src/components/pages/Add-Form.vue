@@ -112,7 +112,7 @@ const add_data = {
   composer: "",
   arranger: "",
   publisher: "",
-  genle: "",
+  genre: "",
   shelf: "",
   shelfNum: "",
   tag: "",

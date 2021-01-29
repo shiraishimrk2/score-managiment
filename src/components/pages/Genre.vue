@@ -1,3 +1,9 @@
 <template>
-  <h1>ジャンル</h1>
+  <div>
+    <Clowd-box />
+    <List-item />
+  </div>
 </template>
+<script>
+export default {};
+</script>
