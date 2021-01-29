@@ -54,6 +54,12 @@ export default new Vuex.Store({
     },
     song_search: function (state, keyword,) {
       state.Search_Word=keyword
+    },
+    genre_click: function (state,index) {
+      state.Search_Word=state.genre[index]
+    },
+    search_reset: function (state) {
+      state.Search_Word=''
     }
   },
   actions: {

@@ -1,9 +1,13 @@
 <template>
   <div class="details" @click="tamesi()">
     <div class="button" @click="search()"></div>
-    <Use-list-button v-if="$route.name == '楽譜リスト'" />
-    <Return-button v-if="$route.name == '楽譜リスト'" />
-    <div v-if="$route.name == '楽譜リスト'">
+    <Use-list-button
+      v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
+    />
+    <Return-button
+      v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
+    />
+    <div v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'">
       <h3>{{ song_info[song_index.number].title }}</h3>
       <ul class="details-box">
         <li class="details-item">
@@ -41,7 +45,7 @@
       </ul>
     </div>
 
-    <div v-else>
+    <div v-else-if="$route.name == 'リスト編集'">
       <form v-on:submit.prevent="submit">
         <div class="form-container">
           <div class="column-1">

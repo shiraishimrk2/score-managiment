@@ -1,7 +1,9 @@
 <template>
   <div class="header-box">
     <div class="box-inner">
-      <Back-button class="back__icon" v-if="$route.name !== '楽譜リスト'" />
+      <div @click="search_reset()">
+        <Back-button class="back__icon" v-if="$route.name !== '楽譜リスト'" />
+      </div>
       <h2 class="inner__title">{{ $route.name }}</h2>
       <Entry-button v-if="$route.name == '楽曲追加'" />
     </div>
@@ -141,6 +143,10 @@ export default {
       this.isOpened = !this.isOpened;
       this.isAnime = !this.isAnime;
       // console.log("1");
+    },
+    search_reset() {
+      console.log("a");
+      this.$store.commit("search_reset");
     },
   },
 };

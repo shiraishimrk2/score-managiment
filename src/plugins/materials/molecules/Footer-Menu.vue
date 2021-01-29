@@ -2,25 +2,25 @@
   <div>
     <nav id="footer">
       <ul class="nav-list">
-        <li class="nav-list__child nav-list__childtop">
+        <li class="nav-list__child nav-list__childtop" @click="search_reset()">
           <router-link to="/setting" class="button__link">
             <Setting-icon />
           </router-link>
         </li>
 
-        <li class="nav-list__child">
+        <li class="nav-list__child" @click="search_reset()">
           <router-link to="/score" class="button__link">
             <List-icon />
           </router-link>
         </li>
 
-        <li class="nav-list__child">
+        <li class="nav-list__child" @click="search_reset()">
           <router-link to="/notice" class="button__link">
             <Notice-icon />
           </router-link>
         </li>
 
-        <li class="nav-add-button">
+        <li class="nav-add-button" @click="search_reset()">
           <router-link to="/add-form">
             <Add-icon />
           </router-link>
@@ -141,6 +141,11 @@ import AddIcon from "../atoms/Add-icon.vue";
 // import SVGElement from "./Icon.vue";
 export default {
   components: { AddIcon },
+  methods: {
+    search_reset() {
+      this.$store.commit("search_reset");
+    },
+  },
   // name: "F_Menu",
   // components: {
   //   Setting,
