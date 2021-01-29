@@ -38,7 +38,6 @@
   </div>
 </template>
 
-
 <style scoped>
 .song-container {
   width: 100%;
@@ -188,7 +187,6 @@ ul > .item4 {
   }
 }
 </style>
-
 
 <script>
 const song_index = { number: 0 };

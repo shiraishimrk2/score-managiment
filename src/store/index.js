@@ -37,6 +37,7 @@ export default new Vuex.Store({
           song.genre.includes(state.Search_Word)
       })
     },
+    // genres:function(state,)
   },
   mutations: {
     search: function (state) {
