@@ -1,17 +1,24 @@
 <template>
-  <div class="title-container">
-    <router-link to="/score" class="tap-item">
-      <div class="title-box">
-        <Title-image class="title-img" />
-        <p class="title-text blinking">Tap Start</p>
+  <router-link to="/score">
+    <div class="title-container">
+      <div class="tap-item">
+        <div class="title-box">
+          <Title-image class="title-img" />
+          <p class="title-text blinking">Tap Start</p>
+        </div>
       </div>
-    </router-link>
-  </div>
+    </div>
+  </router-link>
 </template>
 
 <style scoped>
 html {
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.title-container {
   width: 100%;
   height: 100%;
 }
@@ -52,7 +59,7 @@ html {
 
 @media screen and (min-width: 1024px) {
   .title-text {
-    top: 55%;
+    top: 60%;
     left: 10%;
   }
 }

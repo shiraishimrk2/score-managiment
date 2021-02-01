@@ -5,7 +5,7 @@
         <Back-button class="back__icon" v-if="$route.name !== '楽譜リスト'" />
       </div>
       <h2 class="inner__title">{{ $route.name }}</h2>
-      <Entry-button v-if="$route.name == '楽曲追加'" />
+      <!-- <Entry-button v-if="$route.name == '楽曲追加'" /> -->
     </div>
     <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
     <div class="accbox-container" v-if="$route.name == '楽譜リスト'">
@@ -18,7 +18,6 @@
     </div>
   </div>
 </template>
-
 <style scoped>
 .header-box {
   width: 100%;
@@ -35,13 +34,13 @@
 .box-inner {
   height: 45px;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .back__icon {
   position: absolute;
-  left: 20px;
-  top: 18px;
+  left: 13px;
+  top: 13px;
 }
 
 .accbox {
@@ -52,7 +51,7 @@
   right: 22px;
   border: 0;
   background-color: #f6f6f6;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 label {
@@ -62,14 +61,15 @@ label {
   cursor: pointer;
   padding: 3px 6px;
   transition: all 0.5s ease-in;
-  z-index: 2;
+  /* z-index: 2; */
+  background-color: #f6f6f6;
 }
 
 .accbox-icon {
   width: 100%;
   height: 100%;
   position: relative;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .accbox-input {
@@ -86,8 +86,9 @@ label {
   overflow: hidden;
   opacity: 0;
   transition: 0.3s;
-  z-index: 2;
+  z-index: 1;
   text-align: center;
+  /* pointer-events: none; */
 }
 
 .accbox-input:checked + .form-inner {
@@ -100,6 +101,11 @@ label {
     height: 60px;
     display: grid;
     grid-template-columns: 1.5fr 0.8fr;
+  }
+
+  .back__icon {
+    left: 20px;
+    top: 18px;
   }
 
   .inner__title {

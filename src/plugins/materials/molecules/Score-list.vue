@@ -48,7 +48,7 @@ export default {
   font-size: 20px;
   letter-spacing: 0.15em;
   font-weight: 600;
-  color: #8f92a5;
+  color: #d0d3e2;
 }
 .icon-box {
   display: inline-block;
@@ -61,5 +61,11 @@ export default {
   /* float: right; */
   display: inline;
   padding-left: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .title-box {
+    margin: 0 50px;
+  }
 }
 </style>

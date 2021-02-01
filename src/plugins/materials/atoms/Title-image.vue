@@ -10,8 +10,8 @@
 
 @media screen and (min-width: 1024px) {
   .title-image {
-    width: 580px;
-    height: 290px;
+    width: 340px;
+    height: 180px;
   }
 }
 </style>

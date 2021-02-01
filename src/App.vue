@@ -16,6 +16,7 @@
 <style>
 html {
   font-family: "Meylio UI";
+  letter-spacing: 0.15em;
   height: 100%;
   overflow: hidden;
 }
@@ -39,7 +40,6 @@ h2 {
   text-align: center;
   font-family: "Meylio UI";
   font-weight: 550;
-  letter-spacing: 0.15em;
   margin: 0px;
 }
 a {

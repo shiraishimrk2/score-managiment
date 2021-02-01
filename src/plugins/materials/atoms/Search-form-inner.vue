@@ -37,7 +37,7 @@ export default {
 </script>
 <style scoped>
 .form-inner {
- 
+  z-index: 1;
 }
 
 .form-input {
@@ -46,10 +46,10 @@ export default {
   text-align: left;
   background: #e9e9e9;
   color: #8f92a5;
-  width: 70%;
+  width: 80%;
   height: 39px;
   border-radius: 8px;
-  margin: 15px;
+  margin: 15px 30px;
   float: left;
 }
 
@@ -71,6 +71,7 @@ input::placeholder {
 @media screen and (min-width: 1024px) {
   .form-inner {
     width: 100%;
+    z-index: 0;
   }
 
   .form-input {
