@@ -7,6 +7,7 @@
         <div class="button-box">
           <Use-list-button
             v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
+            :song_index='song_index'
           />
           <Return-button
             v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"

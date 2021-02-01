@@ -23,6 +23,7 @@ export default new Vuex.Store({
     // data: process.env.jsonData,
     // jdata:jsonData[0].all_song,
     result: [],
+    lends:[],
     Search_Word: '',
     tamesi:[]
   },
@@ -70,7 +71,24 @@ export default new Vuex.Store({
     search_reset: function (state) {
       state.Search_Word=''
     },
-    
+    lendScore(state, song_index){
+      state.songs[song_index.number].click = "true"
+      console.log(state.songs[song_index.number])
+
+      if("click" in state.songs[song_index.number]==true){
+        state.lends.push(state.songs[song_index.number])
+      }
+      console.log(state.lends)
+      // console.log(state.songs[song_index])
+      // // console.log(state.songs)
+      // console.log(state.songs.includes('click'))
+      // var lendResult = state.songs.filter((v) => v.click)
+      // console.log(lendResult)
+      // state.lends.push(lendResult[0])
+      // console.log(state.lends)
+        // if( item.click == true )return false;
+    },
+
   },
   actions: {
   },
