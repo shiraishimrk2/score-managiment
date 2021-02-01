@@ -145,7 +145,6 @@ export default {
       // console.log("1");
     },
     search_reset() {
-      console.log("a");
       this.$store.commit("search_reset");
     },
   },

@@ -4,18 +4,24 @@
       <li
         class="genre-inner"
         v-for="(genres, index) in genre.length"
-        :key="genres.length"
+        :key="genres.id"
         @click="genre_click(index)"
       >
-        <router-link to="/genre"><Clowd-box /></router-link>
+        <Clowd-box />
         <p class="genre-title">{{ genre[index] }}</p>
       </li>
     </ul>
-    <Score-list />
+    <Score-list :genre_index="genre_index" />
   </div>
 </template>
 <script>
+const genre_index = { number: 0 };
 export default {
+  data: function () {
+    return {
+      genre_index: genre_index,
+    };
+  },
   computed: {
     song: function () {
       return this.$store.state.songs;
@@ -27,6 +33,8 @@ export default {
   methods: {
     genre_click: function (index) {
       this.$store.commit("genre_click", index);
+      genre_index.number = index;
+      console.log(this.genre_index);
     },
   },
 };

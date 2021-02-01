@@ -23,11 +23,14 @@ export default new Vuex.Store({
     // data: process.env.jsonData,
     // jdata:jsonData[0].all_song,
     result: [],
-    Search_Word:''
+    Search_Word: '',
+    tamesi:[]
   },
   getters: {
     songs: function (state) {
+    
       return state.songs.filter(song => {
+        // console.log(song.title)
         console.log(song.title.includes(state.Search_Word))
         return song.title.includes(state.Search_Word) ||
           song.artist.includes(state.Search_Word) ||
@@ -55,12 +58,19 @@ export default new Vuex.Store({
     song_search: function (state, keyword,) {
       state.Search_Word=keyword
     },
-    genre_click: function (state,index) {
-      state.Search_Word=state.genre[index]
+    genre_click: function (state, index) {
+      if (index == 0) {
+        state.Search_Word=''
+      }
+      else {
+      state.Search_Word=state.genre[index]  
+      }
+      
     },
     search_reset: function (state) {
       state.Search_Word=''
-    }
+    },
+    
   },
   actions: {
   },

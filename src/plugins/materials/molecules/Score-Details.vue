@@ -56,7 +56,7 @@
                 placeholder="曲名"
                 class="col-sm-9 form-control"
                 id="title"
-                v-model="edit_data.title"
+                v-model="title"
                 required
               />
             </div>
@@ -68,7 +68,7 @@
                 placeholder="作曲者"
                 class="col-sm-9 form-control"
                 id="composer"
-                v-model="edit_data.composer"
+                v-model="composer"
               />
             </div>
 
@@ -79,7 +79,7 @@
                 placeholder="編曲者"
                 class="col-sm-9 form-control"
                 id="arranger"
-                v-model="edit_data.arranger"
+                v-model="arranger"
               />
             </div>
 
@@ -90,7 +90,7 @@
                 placeholder="出版社"
                 class="col-sm-9 form-control"
                 id="publisher"
-                v-model="edit_data.publisher"
+                v-model="publisher"
               />
             </div>
 
@@ -101,7 +101,7 @@
                 placeholder="ジャンル"
                 class="col-sm-9 form-control"
                 id="genre"
-                v-model="edit_data.genre"
+                v-model="genre"
                 required
               />
             </div>
@@ -113,20 +113,20 @@
                 placeholder="アーティスト"
                 class="col-sm-9 form-control"
                 id="artist"
-                v-model="edit_data.artist"
+                v-model="artist"
               />
             </div>
 
             <div class="rack-box">
               <div class="form-box">
                 <label for="rack">棚番号</label>
-                <input type="text" id="shelf" v-model="edit_data.shelf" />
+                <input type="text" id="shelf" v-model="shelf" />
                 <!-- <p>の</p> -->
               </div>
 
               <div class="form-box">
                 <label for="rack">－</label>
-                <input type="text" id="shelfNum" v-model="edit_data.shelfNum" />
+                <input type="text" id="shelfNum" v-model="shelfNum" />
                 <!-- <p>段目</p> -->
               </div>
             </div>
@@ -137,7 +137,7 @@
                 placeholder="(例) 明るい"
                 class="col-sm-9 form-control"
                 id="tag"
-                v-model="edit_data.tag"
+                v-model="tag"
                 required
               />
             </div>
@@ -274,10 +274,93 @@ ul {
 <script>
 import edit from "../../../assets/edit.js";
 
+// const edit_data = {
+//   title: "",
+//   artist: "",
+//   composer: "",
+//   arranger: "",
+//   publisher: "",
+//   genre: "",
+//   shelf: "",
+//   shelfNum: "",
+//   tag: "",
+// };
 export default {
   computed: {
     song: function () {
       return this.$store.state.songs;
+    },
+    title: {
+      get() {
+        return this.song_info[this.song_index.number].title;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    artist: {
+      get() {
+        return this.song_info[this.song_index.number].artist;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    composer: {
+      get() {
+        return this.song_info[this.song_index.number].composer;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    arranger: {
+      get() {
+        return this.song_info[this.song_index.number].arranger;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    publisher: {
+      get() {
+        return this.song_info[this.song_index.number].publisher;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    genre: {
+      get() {
+        return this.song_info[this.song_index.number].genre;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    shelf: {
+      get() {
+        return this.song_info[this.song_index.number].shelf;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    shelfNum: {
+      get() {
+        return this.song_info[this.song_index.number].shelfNum;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    tag: {
+      get() {
+        return this.song_info[this.song_index.number].tag;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
     },
   },
   data: function () {
@@ -304,10 +387,11 @@ export default {
       // this.isClosed = !this.isClosed;
       // console.log("ok");
     },
-
     search() {
-      this.$store.commit("search");
-      console.log(this.$store.state.result);
+      console.log(this.song_info[this.song_index.number].title);
+      console.log(this.song_index.number);
+      // this.$store.commit("search");
+      // console.log(this.$store.state.result);
     },
     submit() {
       edit.form(this.edit_data, this.song_index);
