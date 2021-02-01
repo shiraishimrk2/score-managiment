@@ -196,7 +196,7 @@ export default {
       return this.$store.state.songs;
     },
     tamesi: function () {
-      console.log(this.$store.getters.songs);
+      // console.log(this.$store.getters.songs);
       return this.$store.getters.songs;
     },
   },
@@ -219,6 +219,8 @@ export default {
       // console.log(song_number);
 
       song_index.number = index;
+
+      // console.log(this.song_index.number);
       // console.log(song_index.number);
       // this.song_number = song_number;
     },

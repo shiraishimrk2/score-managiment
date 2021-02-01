@@ -1,15 +1,32 @@
 <template>
   <section class="list-title">
     <div class="title-box">
-      <h3 class="title-inner">ALL List</h3>
+      <h3 class="title-inner" v-if="$route.name == '楽譜リスト'">
+        {{ genre[genre_index.number] }}
+      </h3>
+      <h3 class="title-inner" v-if="$route.name == 'リスト編集'">ALL LIST</h3>
       <div class="icon-box">
-        <Sort-icon class="icon-inner" />
         <Moviesort-icon class="icon-inner" />
       </div>
     </div>
     <List-item />
   </section>
 </template>
+<script>
+export default {
+  computed: {
+    genre: function () {
+      return this.$store.state.genre;
+    },
+  },
+  props: {
+    genre_index: {
+      type: Object,
+    },
+  },
+};
+</script>
+
 
 <style scoped>
 .list-title {
@@ -31,7 +48,7 @@
   font-size: 20px;
   letter-spacing: 0.15em;
   font-weight: 600;
-  color: #d0d3e2;
+  color: #8f92a5;
 }
 .icon-box {
   display: inline-block;

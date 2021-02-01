@@ -1,7 +1,7 @@
 <template>
   <div>
     <Clowd-box />
-    <List-item />
+    <Score-list />
   </div>
 </template>
 <script>
