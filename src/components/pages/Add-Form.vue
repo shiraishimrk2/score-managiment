@@ -3,7 +3,7 @@
     <div class="form-container">
       <div class="column-1">
         <div class="form-box">
-          <label for="title">曲名</label>
+          <label for="title">曲名*</label>
           <input
             type="text"
             placeholder="曲名"
@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-box">
-          <label for="genre">ジャンル</label>
+          <label for="genre">ジャンル*</label>
           <input
             type="text"
             placeholder="ジャンル"
@@ -72,14 +72,19 @@
 
         <div class="rack-box">
           <div class="form-box">
-            <label for="rack">棚番号</label>
-            <input type="text" id="shelf" v-model="add_data.shelf" />
+            <label for="rack">棚番号*</label>
+            <input type="text" id="shelf" v-model="add_data.shelf" required />
             <!-- <p>の</p> -->
           </div>
 
           <div class="form-box">
             <label for="rack">－</label>
-            <input type="text" id="shelfNum" v-model="add_data.shelfNum" />
+            <input
+              type="text"
+              id="shelfNum"
+              v-model="add_data.shelfNum"
+              required
+            />
             <!-- <p>段目</p> -->
           </div>
         </div>
@@ -91,13 +96,12 @@
             class="col-sm-9 form-control"
             id="tag"
             v-model="add_data.tag"
-            required
           />
         </div>
       </div>
 
       <div class="colmun-2">
-        <button type="submit">登録</button>
+        <button type="submit" class="add-button">登録</button>
       </div>
       <!-- <h1>{{ $store.state.songs[0].all_song[0] }}</h1> -->
     </div>
@@ -185,6 +189,21 @@ input::placeholder {
   margin: 20px;
 }
 
+.add-button {
+  width: 40px;
+  height: 40px;
+  border-style: none;
+  outline: none;
+  background: #f6f6f6;
+  color: #101748;
+  font-size: 14px;
+  /* font-weight: 600; */
+
+  position: absolute;
+  top: 3px;
+  right: 20px;
+}
+
 @media screen and (min-width: 1024px) {
   .form-box {
     margin-top: 30px;
@@ -202,18 +221,28 @@ input::placeholder {
   }
 
   .form-container {
-    margin-top: 0px;
+    margin-top: 30px;
     display: grid;
-    grid-template-areas: "right left";
+    grid-template-areas: "left right";
     grid-template-columns: 1fr 1fr;
   }
 
   .column-1 {
-    grid-area: right;
+    grid-area: left;
   }
 
   .colmun-2 {
-    grid-area: left;
+    grid-area: right;
+  }
+
+  .add-button {
+    width: 80px;
+    border-radius: 3px;
+    background: #101748;
+    color: #fff;
+    font-size: 14px;
+
+    position: static;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="movie-icon">
+  <div>
     <img src="../assets/genre.png" class="genre g-box" />
     <img src="../assets/l-genre.png" class="l-genre g-box" />
   </div>
@@ -21,7 +21,7 @@
 }
 
 .g-box:hover {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 1024px) {

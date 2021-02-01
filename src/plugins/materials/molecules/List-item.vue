@@ -29,7 +29,6 @@
     <div class="details-box">
       <Score-Details
         @close="toziru()"
-        class="Accordion-Item"
         :class="{ animation: isClosed }"
         :song_info="tamesi"
         :song_index="song_index"
@@ -114,45 +113,16 @@ ul > .item4 {
   margin-right: 30px;
 }
 
-.Accordion-Item {
-  width: 100%;
-  height: 90%;
-  position: absolute;
-  top: 100%;
-  z-index: 10;
-  background: #e9e9e9;
-  border-radius: 8px 8px 0 0;
-  transition: all 1000ms 0s ease;
-}
-
-/* .start {
-  display: none;
-} */
-
 .details-box {
-  /* margin: 80px 0; */
-  background-color: rgb(230, 153, 153);
+  width: 100%;
+  height: 100%;
 }
 
 .animation {
-  /* animation-name: slidein;
-  animation-duration: 1s;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease; */
-  /* overflow: hidden; */
-  /* display: none; */
-  /* visibility: hidden; */
-  /* opacity: 0; */
-  /* padding: 20px 0; */
   transform: translateY(-100%);
 }
 
 @media screen and (min-width: 1024px) {
-  .Accordion-Item {
-    width: calc(100% - 60px);
-  }
-
   .item2,
   .item3,
   .item4 {
@@ -167,11 +137,11 @@ ul > .item4 {
   }
 
   .item1 {
-    margin-left: 30px;
+    margin-left: 50px;
   }
 
   .item4 {
-    margin-right: 30px;
+    margin-right: 50px;
   }
 
   .song-box {
@@ -179,7 +149,7 @@ ul > .item4 {
     margin-right: 60px;
     text-overflow: ellipsis;
     grid-template-areas: "one three two four ";
-    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr 0.5fr 1.5fr 1.5fr;
   }
 
   .song-container {
@@ -187,7 +157,6 @@ ul > .item4 {
   }
 }
 </style>
-
 <script>
 const song_index = { number: 0 };
 export default {

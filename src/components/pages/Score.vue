@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="genre-container">
     <ul class="genre-box">
       <li
         class="genre-inner"
@@ -47,16 +47,12 @@ export default {
   overflow: auto;
   width: 100%;
   height: 180px;
-  -webkit-overflow-scrolling: touch; /* スクロールを滑らかにする */
-  /* padding: 0; */
+  position: relative;
+  z-index: 0;
 }
 
 .genre-box::-webkit-scrollbar {
   display: none;
-}
-
-router-link {
-  font-size: 1rem;
 }
 
 .genre-inner {
@@ -65,11 +61,12 @@ router-link {
   width: 130px;
   height: 150px;
   white-space: normal;
-  background-color: gray;
+  background-color: #fff;
   margin-right: 35px;
   border-radius: 8px;
   position: relative;
   top: 20px;
+  z-index: 0;
 }
 
 .genre-title {
@@ -89,7 +86,12 @@ li > a {
 
 @media screen and (min-width: 1024px) {
   .genre-box {
-    padding: 0 30px;
+    padding: 0 50px;
+    margin: 35px 0 0 0;
+  }
+
+  .genre-box::-webkit-scrollbar {
+    display: initial;
   }
 
   .genre-inner {
@@ -101,4 +103,3 @@ li > a {
   }
 }
 </style>
-

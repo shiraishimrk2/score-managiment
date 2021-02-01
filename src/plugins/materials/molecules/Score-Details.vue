@@ -1,162 +1,238 @@
 <template>
-  <div class="details" @click="tamesi()">
-    <div class="button" @click="search()"></div>
-    <Use-list-button
-      v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
-    />
-    <Return-button
-      v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
-    />
-    <div v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'">
-      <h3>{{ song_info[song_index.number].title }}</h3>
-      <ul class="details-box">
-        <li class="details-item">
-          <span class="details-titel">作曲者</span>
-          {{ song_info[song_index.number].composer }}
-        </li>
-        <li class="details-item">
-          <span class="details-titel">編曲者</span>
-          {{ song_info[song_index.number].arranger }}
-        </li>
-        <li class="details-item">
-          <span class="details-titel">出版社</span>
-          {{ song_info[song_index.number].publisher }}
-        </li>
-        <li class="details-item">
-          <span class="details-titel">ジャンル</span>
-          {{ song_info[song_index.number].genre }}
-        </li>
-        <li class="details-item">
-          <span class="details-titel">アーティスト</span>
-          {{ song_info[song_index.number].artist }}
-        </li>
-        <li class="details-item">
-          <span class="details-titel">棚番号</span>
-          {{ song_info[song_index.number].shelf }}ー
-          {{ song_info[song_index.number].shelfNum }}
-        </li>
+  <div class="Accordion-Item">
+    <div class="details">
+      <div class="bg-box" @click="tamesi()"></div>
 
-        <!-- <li
-          v-for="(tag, index) in song_info[song_index.number].tag.length"
-          :key="tag.id"
-        >
-          {{ song_info[song_index.number].tag[index] }}
-        </li> -->
-      </ul>
-    </div>
-
-    <div v-else-if="$route.name == 'リスト編集'">
-      <form v-on:submit.prevent="submit">
-        <div class="form-container">
-          <div class="column-1">
-            <div class="form-box">
-              <label for="title">曲名</label>
-              <input
-                type="text"
-                placeholder="曲名"
-                class="col-sm-9 form-control"
-                id="title"
-                v-model="title"
-                required
-              />
-            </div>
-
-            <div class="form-box">
-              <label for="composer">作曲者</label>
-              <input
-                type="text"
-                placeholder="作曲者"
-                class="col-sm-9 form-control"
-                id="composer"
-                v-model="composer"
-              />
-            </div>
-
-            <div class="form-box">
-              <label for="arranger">編曲者</label>
-              <input
-                type="text"
-                placeholder="編曲者"
-                class="col-sm-9 form-control"
-                id="arranger"
-                v-model="arranger"
-              />
-            </div>
-
-            <div class="form-box">
-              <label for="publisher">出版社</label>
-              <input
-                type="text"
-                placeholder="出版社"
-                class="col-sm-9 form-control"
-                id="publisher"
-                v-model="publisher"
-              />
-            </div>
-
-            <div class="form-box">
-              <label for="genre">ジャンル</label>
-              <input
-                type="text"
-                placeholder="ジャンル"
-                class="col-sm-9 form-control"
-                id="genre"
-                v-model="genre"
-                required
-              />
-            </div>
-
-            <div class="form-box">
-              <label for="artist">アーティスト</label>
-              <input
-                type="text"
-                placeholder="アーティスト"
-                class="col-sm-9 form-control"
-                id="artist"
-                v-model="artist"
-              />
-            </div>
-
-            <div class="rack-box">
-              <div class="form-box">
-                <label for="rack">棚番号</label>
-                <input type="text" id="shelf" v-model="shelf" />
-                <!-- <p>の</p> -->
-              </div>
-
-              <div class="form-box">
-                <label for="rack">－</label>
-                <input type="text" id="shelfNum" v-model="shelfNum" />
-                <!-- <p>段目</p> -->
-              </div>
-            </div>
-            <div class="form-box">
-              <label for="tag">キーワード</label>
-              <input
-                type="text"
-                placeholder="(例) 明るい"
-                class="col-sm-9 form-control"
-                id="tag"
-                v-model="tag"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="colmun-2">
-            <button type="submit">登録</button>
-          </div>
-          <!-- <h1>{{ $store.state.songs[0].all_song[0] }}</h1> -->
+      <div class="inner" v-if="$route.name == '楽譜リスト'">
+        <div class="button-box">
+          <Use-list-button
+            v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
+          />
+          <Return-button
+            v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
+          />
         </div>
-      </form>
+
+        <h3>{{ song_info[song_index.number].title }}</h3>
+        <div class="details-container">
+          <ul class="details-box" clm-1>
+            <li class="details-item">
+              <span class="details-title">作曲者</span>
+              {{ song_info[song_index.number].composer }}
+            </li>
+            <li class="details-item">
+              <span class="details-title">編曲者</span>
+              {{ song_info[song_index.number].arranger }}
+            </li>
+            <li class="details-item">
+              <span class="details-title">出版社</span>
+              {{ song_info[song_index.number].publisher }}
+            </li>
+            <li class="details-item">
+              <span class="details-title">ジャンル</span>
+              {{ song_info[song_index.number].genre }}
+            </li>
+            <li class="details-item">
+              <span class="details-title">アーティスト</span>
+              {{ song_info[song_index.number].artist }}
+            </li>
+            <li class="details-item">
+              <span class="details-title">棚番号</span>
+              {{ song_info[song_index.number].shelf }}ー
+              {{ song_info[song_index.number].shelfNum }}
+            </li>
+          </ul>
+
+          <ul class="details-box clm-2">
+            <li class="details-title">右側</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="inner" v-else-if="$route.name == 'リスト編集'">
+        <button type="submit" class="details-title add-button">登録</button>
+        <h3>曲の編集</h3>
+        <form v-on:submit.prevent="submit">
+          <div class="details-container">
+            <div class="details-box clm-1">
+              <div class="form-box">
+                <label for="title">曲名</label>
+                <input
+                  type="text"
+                  placeholder="曲名"
+                  class="col-sm-9 form-control"
+                  id="title"
+                  v-model="title"
+                  required
+                />
+              </div>
+
+              <div class="form-box">
+                <label for="composer">作曲者</label>
+                <input
+                  type="text"
+                  placeholder="作曲者"
+                  class="col-sm-9 form-control"
+                  id="composer"
+                  v-model="composer"
+                />
+              </div>
+
+              <div class="form-box">
+                <label for="arranger">編曲者</label>
+                <input
+                  type="text"
+                  placeholder="編曲者"
+                  class="col-sm-9 form-control"
+                  id="arranger"
+                  v-model="arranger"
+                />
+              </div>
+
+              <div class="form-box">
+                <label for="publisher">出版社</label>
+                <input
+                  type="text"
+                  placeholder="出版社"
+                  class="col-sm-9 form-control"
+                  id="publisher"
+                  v-model="publisher"
+                />
+              </div>
+
+              <div class="form-box">
+                <label for="genre">ジャンル</label>
+                <input
+                  type="text"
+                  placeholder="ジャンル"
+                  class="col-sm-9 form-control"
+                  id="genre"
+                  v-model="genre"
+                  required
+                />
+              </div>
+
+              <div class="form-box">
+                <label for="artist">アーティスト</label>
+                <input
+                  type="text"
+                  placeholder="アーティスト"
+                  class="col-sm-9 form-control"
+                  id="artist"
+                  v-model="artist"
+                />
+              </div>
+
+              <div class="rack-box">
+                <div class="form-box">
+                  <label for="rack">棚番号</label>
+                  <input type="text" id="shelf" v-model="shelf" />
+                  <!-- <p>の</p> -->
+                </div>
+
+                <div class="form-box">
+                  <label for="rack">－</label>
+                  <input type="text" id="shelfNum" v-model="shelfNum" />
+                  <!-- <p>段目</p> -->
+                </div>
+              </div>
+              <div class="form-box">
+                <label for="tag">キーワード</label>
+                <input
+                  type="text"
+                  placeholder="(例) 明るい"
+                  class="col-sm-9 form-control"
+                  id="tag"
+                  v-model="tag"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="details-box clm-2">
+              <p>右側</p>
+            </div>
+            <!-- <h1>{{ $store.state.songs[0].all_song[0] }}</h1> -->
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </template>
-
 <style scoped>
-.form-container {
-  margin-top: 50px;
+.Accordion-Item {
+  position: absolute;
+  transition: all 1000ms 0s ease;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  z-index: 2;
+}
+.bg-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: gray;
+  opacity: 0.8;
+  /* transition: all 1000ms 0s ease; */
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+  background-color: #f6f6f6;
+  position: absolute;
+  top: 50px;
+  transition: all 1000ms 0s ease;
+}
+
+.button-box {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+h3 {
+  font-size: 25px;
+  color: #101748;
+  font-weight: 600;
+  margin: 10px 30px;
+}
+
+ul {
+  padding: 0;
+}
+
+.details-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 25px;
+  /* display: grid;
+  grid-template-columns: 1fr; */
+}
+
+.details-box {
+  /* height: 50px; */
   padding: 0 30px;
+  margin: 0;
+  display: grid;
+  text-align: right;
+}
+
+.details-item {
+  height: 40px;
+  color: #101748;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 17px;
+  border-bottom: solid 1px #d0d3e2;
+}
+
+.details-title {
+  font-size: 12px;
+  float: left;
+  color: #8f92a5;
 }
 
 .form-box {
@@ -166,17 +242,19 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
-.test {
-  width: 100px;
-  height: 100px;
-  border: solid 1px black;
+
+form {
+  width: 100%;
+  height: 100%;
 }
+
 label {
   display: inline-block;
-  color: #101748;
-  font-size: 13px;
+  color: #8f92a5;
+  font-size: 12px;
   font-weight: 600;
   margin-bottom: 0;
+  text-align: left;
 }
 
 input[type="text"] {
@@ -200,74 +278,77 @@ input::placeholder {
   grid-template-columns: 1fr 1fr;
 }
 
-.colmun-2 {
-  margin: 20px;
+.add-button {
+  width: 80px;
+  height: 40px;
+  border-radius: 3px;
+  stroke: none;
+  background: #101748;
+  color: #fff;
+  font-size: 14px;
+
+  position: static;
 }
 
 @media screen and (min-width: 1024px) {
-  .form-box {
-    margin-top: 30px;
+  .details-box {
+    height: 50px;
   }
 
-  label {
-    font-size: 15px;
-    font-weight: 600;
-    padding-bottom: 10px;
+  .details-item {
+    height: 42px;
+    margin-top: 25px;
   }
 
-  .column-1,
-  .colmun-2 {
-    margin: 0 30px;
+  .details-title {
+    font-size: 14px;
   }
 
-  .form-container {
-    margin-top: 0px;
+  h3 {
+    font-size: 30px;
+  }
+
+  .details-container {
+    margin-top: 23px;
     display: grid;
-    grid-template-areas: "right left";
+    grid-template-areas: "left right ";
     grid-template-columns: 1fr 1fr;
   }
 
-  .column-1 {
+  .add-button {
+    width: 80px;
+    height: 40px;
+    border-radius: 3px;
+    stroke: none;
+    background: #101748;
+    color: #fff;
+    font-size: 14px;
+
+    position: static;
+  }
+
+  .clm-1 {
+    grid-area: left;
+  }
+
+  .clm-2 {
     grid-area: right;
   }
 
-  .colmun-2 {
-    grid-area: left;
+  .bg-box {
+    width: calc(100% - 60px);
+    height: 100%;
+    top: 0;
   }
-}
-h3 {
-  color: #101748;
-  font-weight: 600;
-  margin: 0 30px;
-}
 
-ul {
-  padding: 0;
-}
-
-.details-box {
-  padding: 0 30px;
-}
-
-.details-item {
-  color: #101748;
-  font-size: 15px;
-  font-weight: 600;
-  text-align: right;
-  margin-top: 25px;
-  /* background-color: #fff; */
-  border-bottom: solid 1px #d0d3e2;
-}
-
-.details-titel {
-  font-size: 12px;
-  float: left;
-  color: #8f92a5;
-}
-.button {
-  width: 100px;
-  height: 100px;
-  background-color: black;
+  .inner {
+    width: 75%;
+    margin: 0 10.5%;
+    box-shadow: 3px -3px 30px rgba(119, 119, 119, 0.342) inset;
+  }
+  .form-box {
+    margin-top: 30px;
+  }
 }
 </style>
 

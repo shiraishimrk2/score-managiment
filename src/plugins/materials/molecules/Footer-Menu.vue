@@ -33,7 +33,7 @@
 <style scoped>
 #footer {
   width: 100%;
-  height: 8%;
+  height: 7%;
   background-color: #f6f6f6;
   position: fixed;
   z-index: 0;
@@ -69,7 +69,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  align-self: center;
+  /* align-self: center; */
 }
 
 .nav-add-button {
@@ -80,26 +80,23 @@
 
 svg {
   max-width: 35px;
-  padding: 10px;
+  padding: 7px;
 }
 @media screen and (min-width: 1024px) {
   #footer {
     top: 60px;
     height: calc(100% - 60px);
-    width: 60px;
+    width: 58px;
     border-top: solid 2px #e8e8e8;
     border-right: solid 2px #e8e8e8;
     padding: 0px;
+    justify-content: center;
   }
 
   .nav-list {
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
-  }
-
-  .nav-list__childtop {
-    margin-top: 30px;
   }
 
   .nav-list__child {
@@ -116,7 +113,7 @@ svg {
 
   .button__link {
     display: block;
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   .nav-add-button {
@@ -130,7 +127,6 @@ svg {
   }
 }
 </style>
-
 
 <script>
 import AddIcon from "../atoms/Add-icon.vue";
