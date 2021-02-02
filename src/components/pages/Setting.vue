@@ -6,16 +6,17 @@
       ></router-link>
     </ul>
     <Use-list />
+    <Score-Filter />
   </div>
 </template>
 <script>
 export default {
-  // data() {
-  //   return {
-  //     items: [{ id: 1 }, { id: 2 }],
-  //   };
-  // },
-};
+  data(){
+    return {
+      song_infos: '',
+    }
+  },
+}
 </script>
 <style scoped>
 canvas {
