@@ -98,6 +98,18 @@
             v-model="add_data.tag"
           />
         </div>
+        <div>
+          <label for="remarks"></label>
+          <textarea
+            name="備考欄"
+            cols="50"
+            rows="5"
+            placeholder="備考欄"
+            class="col-sm-9 form-control"
+            id="remarks"
+            v-model="add_data.remarks"
+          />
+        </div>
       </div>
 
       <div class="colmun-2">
@@ -120,6 +132,7 @@ const add_data = {
   shelf: "",
   shelfNum: "",
   tag: "",
+  remarks: "",
 };
 
 export default {

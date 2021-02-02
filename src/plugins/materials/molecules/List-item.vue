@@ -13,7 +13,7 @@
         </li>
 
         <li class="song item2">
-          {{ tamesi[index].artist }}
+          <img src="../assets/movie.png" v-show="'remarks' in tamesi[index]" />
         </li>
 
         <li class="song item3">
