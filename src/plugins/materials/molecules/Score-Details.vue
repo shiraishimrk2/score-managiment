@@ -7,7 +7,7 @@
         <div class="button-box">
           <Use-list-button
             v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
-            :song_index='song_index'
+            :song_index="song_index"
           />
           <Return-button
             v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
@@ -41,6 +41,14 @@
               <span class="details-title">棚番号</span>
               {{ song_info[song_index.number].shelf }}ー
               {{ song_info[song_index.number].shelfNum }}
+            </li>
+            <li class="details-item">
+              <span class="details-title">タグ</span>
+              {{ song_info[song_index.number].tag }}
+            </li>
+            <li class="details-item">
+              <span class="details-title">備考欄</span>
+              {{ song_info[song_index.number].remarks }}
             </li>
           </ul>
 
@@ -145,6 +153,17 @@
                   class="col-sm-9 form-control"
                   id="tag"
                   v-model="tag"
+                  required
+                />
+              </div>
+              <div class="form-box">
+                <label for="tag">備考欄</label>
+                <input
+                  type="text"
+                  placeholder="備考"
+                  class="col-sm-9 form-control"
+                  id="tag"
+                  v-model="remarks"
                   required
                 />
               </div>
@@ -439,6 +458,14 @@ export default {
     tag: {
       get() {
         return this.song_info[this.song_index.number].tag;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    remarks: {
+      get() {
+        return this.song_info[this.song_index.number].remarks;
       },
       set(value) {
         this.$emit("change", value);
