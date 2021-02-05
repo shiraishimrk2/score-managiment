@@ -88,11 +88,13 @@ label {
   transition: 0.3s;
   z-index: 1;
   text-align: center;
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 
 .accbox-input:checked + .form-inner {
   opacity: 1;
+  pointer-events: all;
+  /* transition: all 1000ms 0s ease; */
 }
 
 @media screen and (min-width: 1024px) {
@@ -111,13 +113,14 @@ label {
   .inner__title {
     text-align: left;
     padding: 0;
-    padding-left: 120px;
+    padding-left: 110px;
     margin: 20px 0;
     /* font-size: 20px; */
   }
 
   .form-inner {
     border-top: none;
+    pointer-events: all;
   }
 
   .box-inner {

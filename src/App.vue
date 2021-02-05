@@ -27,7 +27,7 @@ body {
   margin: 0;
 }
 main {
-  height: calc(100% - 55px);
+  /* height: calc(100% - 55px); */
   overflow: hidden;
   /* margin: 0 30px ; */
 }
@@ -61,7 +61,7 @@ li {
     grid-template-areas:
       "hed hed hed"
       "fot wap wap";
-    grid-template-rows: 55px 1fr;
+    grid-template-rows: 60px 1fr;
     grid-template-columns: 60px 1fr;
   }
 
