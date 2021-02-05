@@ -56,11 +56,10 @@
       </div>
 
       <div class="inner" v-else>
-        <h3>曲の編集</h3>
         <form v-on:submit.prevent="submit">
           <button type="submit" class="add-button">変更の登録</button>
           <h3 class="add-title">
-            {{ song_info[song_index.number].title }}の編集
+            「{{ song_info[song_index.number].title }}」の編集
           </h3>
           <div class="details-container">
             <div class="details-box clm-1">
