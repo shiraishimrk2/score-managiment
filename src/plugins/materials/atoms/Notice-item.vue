@@ -17,7 +17,7 @@
 <script>
 export default {
   computed: {
-    notie: function () {
+    notice: function () {
       return this.$store.state.notice;
     },
     istamesi: function () {
@@ -28,6 +28,11 @@ export default {
     },
     istamesi3: function () {
       return "edit" in this.notice[this.index] == false;
+    },
+  },
+  props: {
+    index: {
+      type: Number,
     },
   },
 };
