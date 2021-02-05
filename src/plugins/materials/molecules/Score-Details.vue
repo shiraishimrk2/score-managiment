@@ -70,7 +70,7 @@
                   placeholder="曲名"
                   class="col-sm-9 form-control"
                   id="title"
-                  v-model="title"
+                  v-model="edit_data.title"
                 />
               </div>
 
@@ -81,7 +81,7 @@
                   placeholder="作曲者"
                   class="col-sm-9 form-control"
                   id="composer"
-                  v-model="composer"
+                  v-model="edit_data.composer"
                 />
               </div>
 
@@ -92,7 +92,7 @@
                   placeholder="編曲者"
                   class="col-sm-9 form-control"
                   id="arranger"
-                  v-model="arranger"
+                  v-model="edit_data.arranger"
                 />
               </div>
 
@@ -103,7 +103,7 @@
                   placeholder="出版社"
                   class="col-sm-9 form-control"
                   id="publisher"
-                  v-model="publisher"
+                  v-model="edit_data.publisher"
                 />
               </div>
 
@@ -114,7 +114,7 @@
                   placeholder="ジャンル"
                   class="col-sm-9 form-control"
                   id="genre"
-                  v-model="genre"
+                  v-model="edit_data.genre"
                 />
               </div>
 
@@ -125,7 +125,7 @@
                   placeholder="アーティスト"
                   class="col-sm-9 form-control"
                   id="artist"
-                  v-model="artist"
+                  v-model="edit_data.artist"
                 />
               </div>
 
@@ -142,7 +142,7 @@
                     class="rack"
                     type="text"
                     id="shelfNum"
-                    v-model="shelfNum"
+                    v-model="edit_data.shelfNum"
                   />
                   <!-- <p>段目</p> -->
                 </div>
@@ -154,7 +154,7 @@
                   placeholder="(例) 明るい"
                   class="col-sm-9 form-control"
                   id="tag"
-                  v-model="tag"
+                  v-model="edit_data.tag"
                 />
               </div>
               <div class="form-box">
@@ -164,7 +164,7 @@
                   placeholder="備考"
                   class="col-sm-9 form-control"
                   id="tag"
-                  v-model="remarks"
+                  v-model="edit_data.remarks"
                 />
               </div>
             </div>
