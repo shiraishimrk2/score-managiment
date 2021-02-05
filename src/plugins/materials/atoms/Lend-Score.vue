@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div v-for="(lendScores, index) in lendScore" v-bind:key="lendScores.number">
+    <div v-for="(lendScores, index) in lendScore" :key="lendScores.aa">
       <h3>{{ lendScores.title }}</h3>
-      <Return-button :index="index" />
+      <div @click="tamesi(index)">
+        <Return-button />
+      </div>
     </div>
   </div>
 </template>
@@ -11,7 +13,13 @@ import conversion from "../../../assets/conversion.js";
 export default {
   computed: {
     lendScore() {
-      return this.$store.state.lends;
+      return this.$store.getters.lends;
+    },
+  },
+  methods: {
+    tamesi: function (index) {
+      console.log("ta");
+      conversion.return_click(index, this.lendScore);
     },
   },
 };
