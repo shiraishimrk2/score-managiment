@@ -19,7 +19,6 @@
 export default {
   data() {
     return {
-      song_infos: "",
       lend: true,
       edit: false,
     };
