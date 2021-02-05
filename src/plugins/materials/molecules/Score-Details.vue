@@ -72,7 +72,6 @@
                   class="col-sm-9 form-control"
                   id="title"
                   v-model="title"
-                  required
                 />
               </div>
 
@@ -117,7 +116,6 @@
                   class="col-sm-9 form-control"
                   id="genre"
                   v-model="genre"
-                  required
                 />
               </div>
 
@@ -158,7 +156,6 @@
                   class="col-sm-9 form-control"
                   id="tag"
                   v-model="tag"
-                  required
                 />
               </div>
               <div class="form-box">
@@ -169,7 +166,6 @@
                   class="col-sm-9 form-control"
                   id="tag"
                   v-model="remarks"
-                  required
                 />
               </div>
             </div>

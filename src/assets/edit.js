@@ -1,6 +1,4 @@
 const fs = require('fs');
-
-
 //serve状態だとpathはsrc/assets/song.json
 //build状態だとpathはassets
 function form(edit_data, song_index) {
@@ -13,14 +11,14 @@ function form(edit_data, song_index) {
         const obj = JSON.parse(data);
         // console.log(obj)
         //   console.log(obj[0].all_song[song_index.number])
+        console.log(edit_data)
+        console.log(obj[0].all_song[song_index.number])
         Object.assign(obj[0].all_song[song_index.number], edit_data)
         // obj[0].all_song.push(edit_data);
-
         const newobj = {
           title: edit_data.title,
           edit: edit_data.title
         }
-
         obj[2].notice_score.push(newobj)
         if (obj[2].notice_score.length >= 11) {
           obj[2].notice_score.shift()

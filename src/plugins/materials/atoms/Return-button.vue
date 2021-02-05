@@ -1,25 +1,8 @@
 <template>
-  <button @cilck="return_click()">返却する</button>
+  <button>返却する</button>
 </template>
 <script>
-import conversion from "../../../assets/conversion.js";
-export default {
-  computed: {
-    lendScore: function () {
-      return this.$store.getters.lends;
-    },
-  },
-  methods: {
-    return_click() {
-      conversion.return_click(this.index, this.lendScore);
-    },
-  },
-  props: {
-    index: {
-      type: Number,
-    },
-  },
-};
+export default {};
 </script>
 <style scoped>
 button {
