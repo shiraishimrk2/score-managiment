@@ -7,7 +7,7 @@
         :key="genres.id"
         @click="genre_click(index)"
       >
-        <Clowd-box />
+        <Genre-box />
         <p class="genre-title">{{ genre[index] }}</p>
       </li>
     </ul>
@@ -41,14 +41,13 @@ export default {
 </script>
 <style scoped>
 .genre-box {
-  padding: 0 30px;
+  padding: 0 20px;
   scroll-snap-type: x mandatory;
   white-space: nowrap;
   overflow: auto;
   width: 100%;
-  height: 180px;
+  height: 120px;
   position: relative;
-  z-index: 0;
 }
 
 .genre-box::-webkit-scrollbar {
@@ -58,24 +57,23 @@ export default {
 .genre-inner {
   scroll-snap-align: center;
   display: inline-block;
-  width: 130px;
-  height: 150px;
+  width: 150px;
+  height: 100px;
   white-space: normal;
   background-color: #fff;
-  margin-right: 35px;
+  margin-right: 20px;
   border-radius: 8px;
   position: relative;
-  top: 20px;
-  z-index: 0;
+  top: 12px;
 }
 
 .genre-title {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 13px;
   color: rgb(255, 255, 255);
   position: absolute;
-  top: 35%;
-  right: 10%;
+  top: 30%;
+  right: 5%;
 }
 
 li > a {
@@ -86,8 +84,9 @@ li > a {
 
 @media screen and (min-width: 1024px) {
   .genre-box {
+    height: 150px;
     padding: 0 50px;
-    margin: 35px 0 0 0;
+    margin: 50px 0 0 0;
   }
 
   .genre-box::-webkit-scrollbar {
@@ -95,11 +94,16 @@ li > a {
   }
 
   .genre-inner {
-    width: 230px;
-    height: 150px;
-    margin-right: 70px;
+    width: 195px;
+    height: 120px;
+    margin-right: 55px;
     position: relative;
-    top: 10px;
+    top: 0px;
+  }
+
+  .genre-title {
+    font-size: 15px;
+    top: 35%;
   }
 }
 </style>

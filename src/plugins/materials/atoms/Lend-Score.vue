@@ -1,26 +1,23 @@
 <template>
-<div>
-    <div v-for="lendScores in lendScore" v-bind:key="lendScores.id">
+  <div>
+    <div v-for="(lendScores, index) in lendScore" v-bind:key="lendScores.id">
       <h3>{{ lendScores.title }}</h3>
+      <Return-button :index="index" />
     </div>
-</div>
+  </div>
 </template>
 <script>
-    export default {
-        computed: {
-            lendScore() {
-              console.log(this.$store.state.lends)
-
-                return this.$store.state.lends;
-            },
-        },
-        props: {
-          song_info: {
-            type: Array,
-          },
-          song_index: {
-            type: Object,
-          },
-        }
-    }
+import conversion from "../../../assets/conversion.js";
+export default {
+  computed: {
+    lendScore() {
+      return this.$store.state.lends;
+    },
+  },
+  methods: {
+    return_click(index) {
+      conversion.return_click(index, this.lendScore);
+    },
+  },
+};
 </script>

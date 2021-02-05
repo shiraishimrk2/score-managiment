@@ -9,9 +9,6 @@
             v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
             :song_index="song_index"
           />
-          <Return-button
-            v-if="$route.name == '楽譜リスト' || $route.name == '楽曲リスト'"
-          />
         </div>
 
         <h3>{{ song_info[song_index.number].title }}</h3>
@@ -58,10 +55,13 @@
         </div>
       </div>
 
-      <div class="inner" v-else-if="$route.name == 'リスト編集'">
-        <button type="submit" class="details-title add-button">登録</button>
+      <div class="inner" v-else>
         <h3>曲の編集</h3>
         <form v-on:submit.prevent="submit">
+          <button type="submit" class="add-button">変更の登録</button>
+          <h3 class="add-title">
+            {{ song_info[song_index.number].title }}の編集
+          </h3>
           <div class="details-container">
             <div class="details-box clm-1">
               <div class="form-box">
@@ -135,13 +135,18 @@
               <div class="rack-box">
                 <div class="form-box">
                   <label for="rack">棚番号</label>
-                  <input type="text" id="shelf" v-model="shelf" />
+                  <input class="rack" type="text" id="shelf" v-model="shelf" />
                   <!-- <p>の</p> -->
                 </div>
 
                 <div class="form-box">
                   <label for="rack">－</label>
-                  <input type="text" id="shelfNum" v-model="shelfNum" />
+                  <input
+                    class="rack"
+                    type="text"
+                    id="shelfNum"
+                    v-model="shelfNum"
+                  />
                   <!-- <p>段目</p> -->
                 </div>
               </div>
@@ -179,6 +184,7 @@
     </div>
   </div>
 </template>
+
 <style scoped>
 .Accordion-Item {
   position: absolute;
@@ -286,6 +292,7 @@ input[type="text"] {
   text-align: right;
   background: none;
   color: #101748;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -298,16 +305,31 @@ input::placeholder {
   grid-template-columns: 1fr 1fr;
 }
 
+.rack {
+  text-align: center;
+}
+
 .add-button {
-  width: 80px;
-  height: 40px;
+  width: 100px;
+  height: 30px;
+  margin-top: 30px;
   border-radius: 3px;
+  margin-left: 30px;
   stroke: none;
+  border: none;
   background: #101748;
   color: #fff;
   font-size: 14px;
+}
 
-  position: static;
+.add-title {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.clm-1 {
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -336,8 +358,8 @@ input::placeholder {
   }
 
   .add-button {
-    width: 80px;
-    height: 40px;
+    width: 125px;
+    height: 30px;
     border-radius: 3px;
     stroke: none;
     background: #101748;
@@ -345,6 +367,11 @@ input::placeholder {
     font-size: 14px;
 
     position: static;
+  }
+
+  .add-title {
+    display: inline-block;
+    margin-top: 30px;
   }
 
   .clm-1 {
@@ -367,7 +394,11 @@ input::placeholder {
     box-shadow: 3px -3px 30px rgba(119, 119, 119, 0.342) inset;
   }
   .form-box {
-    margin-top: 30px;
+    margin-top: 20px;
+  }
+
+  input {
+    height: 20px;
   }
 }
 </style>

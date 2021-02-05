@@ -71,13 +71,13 @@
         </div>
 
         <div class="rack-box">
-          <div class="form-box">
+          <div class="form-box rack">
             <label for="rack">棚番号*</label>
             <input type="text" id="shelf" v-model="add_data.shelf" required />
             <!-- <p>の</p> -->
           </div>
 
-          <div class="form-box">
+          <div class="form-box rack">
             <label for="rack">－</label>
             <input
               type="text"
@@ -88,6 +88,7 @@
             <!-- <p>段目</p> -->
           </div>
         </div>
+
         <div class="form-box">
           <label for="tag">キーワード</label>
           <input
@@ -98,6 +99,7 @@
             v-model="add_data.tag"
           />
         </div>
+
         <div>
           <label for="remarks"></label>
           <textarea
@@ -105,7 +107,7 @@
             cols="50"
             rows="5"
             placeholder="備考欄"
-            class="col-sm-9 form-control"
+            class="col-sm-9 form-control remarks"
             id="remarks"
             v-model="add_data.remarks"
           />
@@ -179,7 +181,7 @@ label {
 
 input[type="text"] {
   width: 100%;
-  height: 30px;
+  height: 20px;
   padding-bottom: 10px;
   border: none;
   outline: none;
@@ -195,8 +197,13 @@ input::placeholder {
 
 .rack-box {
   display: grid;
+  text-align: center;
   grid-template-columns: 1fr 1fr;
 }
+
+/* .rack {
+  text-align: center;
+} */
 
 .colmun-2 {
   margin: 20px;
@@ -211,15 +218,31 @@ input::placeholder {
   color: #101748;
   font-size: 14px;
   /* font-weight: 600; */
-
   position: absolute;
   top: 3px;
   right: 20px;
 }
 
+.remarks {
+  border: none;
+  stroke: none;
+  width: 100%;
+  resize: vertical;
+  border-bottom: solid 1px #d0d3e2;
+  background-color: #f6f6f6;
+}
+
+textarea {
+  color: #101748;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 1;
+  font-family: "メイリオ";
+}
+
 @media screen and (min-width: 1024px) {
   .form-box {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   label {
@@ -240,6 +263,10 @@ input::placeholder {
     grid-template-columns: 1fr 1fr;
   }
 
+  input[type="text"] {
+    height: 28px;
+  }
+
   .column-1 {
     grid-area: left;
   }
@@ -254,7 +281,6 @@ input::placeholder {
     background: #101748;
     color: #fff;
     font-size: 14px;
-
     position: static;
   }
 }

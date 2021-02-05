@@ -13,7 +13,11 @@
         </li>
 
         <li class="song item2">
-          <img src="../assets/movie.png" v-show="'remarks' in tamesi[index]" />
+          <img
+            class="movie-img"
+            src="../assets/movie.png"
+            v-show="'remarks' in tamesi[index]"
+          />
         </li>
 
         <li class="song item3">
@@ -40,8 +44,8 @@
 <style scoped>
 .song-container {
   width: 100%;
-  height: 100%;
-  max-height: 380px;
+  height: 450px;
+  /* max-height: 500px; */
   display: block;
   overflow-y: scroll;
 }
@@ -56,7 +60,7 @@
   margin: 0;
   padding: 0;
   background-color: #f6f6f6;
-  border-bottom: solid 1px#eff0f4;
+  border-bottom: solid 1.5px#eff0f4;
   /* display: inline; */
   display: grid;
   grid-template-areas:
@@ -91,7 +95,7 @@ ul > .item4 {
 
 .item1,
 .item2 {
-  margin-top: 18px;
+  margin-top: 13px;
   color: #101748;
 }
 
@@ -111,6 +115,10 @@ ul > .item4 {
 .item4 {
   text-align: right;
   margin-right: 30px;
+}
+
+.movie-img {
+  width: 25px;
 }
 
 .details-box {
@@ -140,15 +148,19 @@ ul > .item4 {
     margin-left: 50px;
   }
 
-  .item4 {
+  .item2 {
     margin-right: 50px;
+  }
+
+  .movie-img {
+    width: 30px;
   }
 
   .song-box {
     height: 50px;
     margin-right: 60px;
     text-overflow: ellipsis;
-    grid-template-areas: "one three two four ";
+    grid-template-areas: "one three four two ";
     grid-template-columns: 3fr 0.5fr 1.5fr 1.5fr;
   }
 

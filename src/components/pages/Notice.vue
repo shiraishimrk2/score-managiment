@@ -1,5 +1,5 @@
 <template>
   <div>
-    <box></box>
+    <Notice-List />
   </div>
 </template>

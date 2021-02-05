@@ -6,7 +6,7 @@ import Vuex from 'vuex'
 
 // const path = require('path')
 const fs = require('fs')
-const jsonData = JSON.parse(fs.readFileSync('assets/song.json','utf-8', function readFileCallBack(err){
+const jsonData = JSON.parse(fs.readFileSync('assets/song.json', 'utf-8', function readFileCallBack(err) {
   if (err) {
     console.log(err)
   }
@@ -19,17 +19,18 @@ export default new Vuex.Store({
     message: 'Hello Vuex',
     songs: jsonData[0].all_song,
     genre: jsonData[1].all_genre,
+    notice: jsonData[2].notice_score,
     // song:tame[0].all_song,
     // data: process.env.jsonData,
     // jdata:jsonData[0].all_song,
     result: [],
-    lends:[],
+    lends: [],
     Search_Word: '',
-    tamesi:[]
+    tamesi: []
   },
   getters: {
     songs: function (state) {
-    
+
       return state.songs.filter(song => {
         // console.log(song.title)
         console.log(song.title.includes(state.Search_Word))
@@ -41,52 +42,40 @@ export default new Vuex.Store({
           song.genre.includes(state.Search_Word)
       })
     },
+    lends: function (state) {
+      return state.songs.filter(song => {
+        return song.click.includes('true')
+      })
+    }
     // genres:function(state,)
   },
   mutations: {
     search: function (state) {
       const length = state.songs.length;
       const regex = RegExp(/^[ぁ-んァ-ン一-龥]/);
-      for (var i = 0; i < length; i++){
+      for (var i = 0; i < length; i++) {
         var table = state.songs[i].title
         // console.log(regex.test(table))
         if (regex.test(table) == true) {
           state.result.push(table)
         }
-      } 
+      }
       console.log(state.result)
     },
     song_search: function (state, keyword,) {
-      state.Search_Word=keyword
+      state.Search_Word = keyword
     },
     genre_click: function (state, index) {
       if (index == 0) {
-        state.Search_Word=''
+        state.Search_Word = ''
       }
       else {
-      state.Search_Word=state.genre[index]  
+        state.Search_Word = state.genre[index]
       }
-      
+
     },
     search_reset: function (state) {
-      state.Search_Word=''
-    },
-    lendScore(state, song_index){
-      state.songs[song_index.number].click = "true"
-      console.log(state.songs[song_index.number])
-
-      if("click" in state.songs[song_index.number]==true){
-        state.lends.push(state.songs[song_index.number])
-      }
-      console.log(state.lends)
-      // console.log(state.songs[song_index])
-      // // console.log(state.songs)
-      // console.log(state.songs.includes('click'))
-      // var lendResult = state.songs.filter((v) => v.click)
-      // console.log(lendResult)
-      // state.lends.push(lendResult[0])
-      // console.log(state.lends)
-        // if( item.click == true )return false;
+      state.Search_Word = ''
     },
 
   },

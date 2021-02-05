@@ -4,7 +4,7 @@
       <h3 class="title-inner" v-if="$route.name == '楽譜リスト'">
         {{ genre[genre_index.number] }}
       </h3>
-      <h3 class="title-inner" v-if="$route.name == 'リスト編集'">ALL LIST</h3>
+      <h3 class="title-inner" v-else>ALL LIST</h3>
       <div class="icon-box">
         <Moviesort-icon class="icon-inner" />
       </div>
@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  computed: {
+  computed: { 
     genre: function () {
       return this.$store.state.genre;
     },
