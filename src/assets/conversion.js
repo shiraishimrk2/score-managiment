@@ -1,6 +1,18 @@
 const fs = require('fs');
 //serve状態だとpathはsrc/assets/song.json
-//build状態だとpathはassets
+//build状態だとpathはassetswindow.onload = function () {
+   var today = new Date();
+//     console.log(today);
+ 
+//     console.log("年=" + today.getFullYear());
+//     console.log("月=" + (today.getMonth()+1));
+//     console.log("日=" + today.getDate());
+//     console.log("時=" + today.getHours());
+//     console.log("分=" + today.getMinutes());
+// console.log("秒=" + today.getSeconds());
+const year = today.getFullYear()
+const month = today.getMonth() + 1
+    const date=today.getDate()
 function form(add_data) {
   try {
     fs.readFile('assets/song.json', 'utf8', function readFileCallback(err, data) {
@@ -18,17 +30,18 @@ function form(add_data) {
         pushData(obj[1].all_genre, add_data.genre)
         obj[0].all_song.sort(function (a, b) {
           if (a.title > b.title) {
-            return 1
-          } else {
             return -1
+          } else {
+            return 1
           }
         })
         const newobj = {
-          title: add_data.title
+          title: add_data.title,
+          date:year+"."+month+"."+date
         }
-        obj[2].notice_score.push(newobj)
+        obj[2].notice_score.unshift(newobj)
         if (obj[2].notice_score.length >= 11) {
-          obj[2].notice_score.shift()
+          obj[2].notice_score.pop()
         }
         // console.log(obj[1].all_genre.indexOf(add_data.genre))
         // obj[1].all_genre.push(add_data.genre);
@@ -63,11 +76,12 @@ function lend_click(song_index, song) {
         result.click = "true"
         const newobj = {
           title: result.title,
-          click: result.click
+          click: result.click,
+          date:year+"."+month+"."+date
         }
-        obj[2].notice_score.push(newobj)
+        obj[2].notice_score.unshift(newobj)
         if (obj[2].notice_score.length >= 11) {
-          obj[2].notice_score.shift()
+          obj[2].notice_score.pop()
         }
         const json = JSON.stringify(obj)
         console.log("書き換え成功")
@@ -94,11 +108,12 @@ function return_click(index, lendScore) {
         result.click = "false"
         const newobj = {
           title: result.title,
-          click: result.click
+          click: result.click,
+          date:year+"."+month+"."+date
         }
-        obj[2].notice_score.push(newobj)
+        obj[2].notice_score.unshift(newobj)
         if (obj[2].notice_score.length >= 11) {
-          obj[2].notice_score.shift()
+          obj[2].notice_score.pop()
         }
         const json = JSON.stringify(obj)
         console.log("書き換え成功")

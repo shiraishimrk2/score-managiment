@@ -70,7 +70,7 @@
                   placeholder="曲名"
                   class="col-sm-9 form-control"
                   id="title"
-                  v-model="edit_data.title"
+                  v-model.lazy="song_[index].title"
                 />
               </div>
 
@@ -81,7 +81,7 @@
                   placeholder="作曲者"
                   class="col-sm-9 form-control"
                   id="composer"
-                  v-model="edit_data.composer"
+                  v-model="song_[index].composer"
                 />
               </div>
 
@@ -92,7 +92,7 @@
                   placeholder="編曲者"
                   class="col-sm-9 form-control"
                   id="arranger"
-                  v-model="edit_data.arranger"
+                  v-model="song_[index].arranger"
                 />
               </div>
 
@@ -103,7 +103,7 @@
                   placeholder="出版社"
                   class="col-sm-9 form-control"
                   id="publisher"
-                  v-model="edit_data.publisher"
+                  v-model="song_[index].publisher"
                 />
               </div>
 
@@ -114,7 +114,7 @@
                   placeholder="ジャンル"
                   class="col-sm-9 form-control"
                   id="genre"
-                  v-model="edit_data.genre"
+                  v-model="song_[index].genre"
                 />
               </div>
 
@@ -125,14 +125,19 @@
                   placeholder="アーティスト"
                   class="col-sm-9 form-control"
                   id="artist"
-                  v-model="edit_data.artist"
+                  v-model="song_[index].artist"
                 />
               </div>
 
               <div class="rack-box">
                 <div class="form-box">
                   <label for="rack">棚番号</label>
-                  <input class="rack" type="text" id="shelf" v-model="shelf" />
+                  <input
+                    class="rack"
+                    type="text"
+                    id="shelf"
+                    v-model="song_[index].shelf"
+                  />
                   <!-- <p>の</p> -->
                 </div>
 
@@ -142,7 +147,7 @@
                     class="rack"
                     type="text"
                     id="shelfNum"
-                    v-model="edit_data.shelfNum"
+                    v-model="song_[index].shelfNum"
                   />
                   <!-- <p>段目</p> -->
                 </div>
@@ -154,7 +159,7 @@
                   placeholder="(例) 明るい"
                   class="col-sm-9 form-control"
                   id="tag"
-                  v-model="edit_data.tag"
+                  v-model="song_[index].tag"
                 />
               </div>
               <div class="form-box">
@@ -164,7 +169,7 @@
                   placeholder="備考"
                   class="col-sm-9 form-control"
                   id="tag"
-                  v-model="edit_data.remarks"
+                  v-model="song_[index].remarks"
                 />
               </div>
             </div>
@@ -417,84 +422,21 @@ export default {
     song: function () {
       return this.$store.state.songs;
     },
-    title: {
+
+    song_: {
       get() {
-        return this.song_info[this.song_index.number].title;
+        return this.song_info;
       },
       set(value) {
-        this.$emit("change", value);
+        this.$emit("cahnge", value);
       },
     },
-    artist: {
+    index: {
       get() {
-        return this.song_info[this.song_index.number].artist;
+        return this.song_index.number;
       },
       set(value) {
-        this.$emit("change", value);
-      },
-    },
-    composer: {
-      get() {
-        return this.song_info[this.song_index.number].composer;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    arranger: {
-      get() {
-        return this.song_info[this.song_index.number].arranger;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    publisher: {
-      get() {
-        return this.song_info[this.song_index.number].publisher;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    genre: {
-      get() {
-        return this.song_info[this.song_index.number].genre;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    shelf: {
-      get() {
-        return this.song_info[this.song_index.number].shelf;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    shelfNum: {
-      get() {
-        return this.song_info[this.song_index.number].shelfNum;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    tag: {
-      get() {
-        return this.song_info[this.song_index.number].tag;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    remarks: {
-      get() {
-        return this.song_info[this.song_index.number].remarks;
-      },
-      set(value) {
-        this.$emit("change", value);
+        this.$emit("cahnge", value);
       },
     },
   },
@@ -518,6 +460,7 @@ export default {
   methods: {
     tamesi() {
       this.$emit("close");
+      console.log(this.song_index.number);
       // this.isOpened = !this.isOpened;
       // this.isClosed = !this.isClosed;
       // console.log("ok");
@@ -529,7 +472,18 @@ export default {
       // console.log(this.$store.state.result);
     },
     submit() {
-      edit.form(this.edit_data, this.song_index);
+      const edit_data = {
+        title: this.song_[this.index].title,
+        artist: this.song_[this.index].artist,
+        composer: this.song_[this.index].composer,
+        arranger: this.song_[this.index].arranger,
+        publisher: this.song_[this.index].publisher,
+        genre: this.song_[this.index].genre,
+        shelf: this.song_[this.index].shelf,
+        shelfNum: this.song_[this.index].shelfNum,
+        tag: this.song_[this.index].tag,
+      };
+      edit.form(edit_data, this.song_index);
       console.log("成功");
       console.log(this.edit_data);
     },

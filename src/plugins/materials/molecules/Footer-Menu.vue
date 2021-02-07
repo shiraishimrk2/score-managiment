@@ -8,7 +8,7 @@
           </router-link>
         </li>
 
-        <li class="nav-list__child" @click="search_reset()">
+        <li class="nav-list__child">
           <router-link to="/score" class="button__link">
             <List-icon />
           </router-link>
