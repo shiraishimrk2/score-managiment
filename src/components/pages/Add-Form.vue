@@ -161,10 +161,11 @@ export default {
 
 .form-box {
   margin-top: 20px;
-  border-bottom: solid 1px #d0d3e2;
+
   background: #f6f6f6;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-gap: 2%;
+  grid-template-columns: 1.3fr 3fr;
 }
 .test {
   width: 100px;
@@ -172,11 +173,13 @@ export default {
   border: solid 1px black;
 }
 label {
+  margin-top: 3px;
   display: inline-block;
   color: #101748;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 600;
   margin-bottom: 0;
+  /* border-bottom: solid 1px #d0d3e2; */
 }
 
 input[type="text"] {
@@ -185,19 +188,25 @@ input[type="text"] {
   padding-bottom: 10px;
   border: none;
   outline: none;
-  text-align: right;
   background: none;
   color: #101748;
   font-weight: 600;
+  border-bottom: solid 1px #d0d3e2;
 }
 
 input::placeholder {
   color: #d0d3e2;
 }
 
+input:focus {
+  outline: 1px solid #ffa690;
+  outline-offset: -1px;
+}
+
 .rack-box {
   display: grid;
   text-align: center;
+  grid-gap: 0;
   grid-template-columns: 1fr 1fr;
 }
 

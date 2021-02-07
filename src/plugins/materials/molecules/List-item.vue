@@ -70,6 +70,11 @@
   /* grid-template-rows: 1fr; */
 }
 
+.song-box:hover {
+  background-color: #e6e6e6;
+  opacity: 0.8;
+}
+
 .song {
   display: inline-block;
   font-size: 14px;
@@ -165,7 +170,13 @@ ul > .item4 {
   }
 
   .song-container {
-    max-height: 500px;
+    max-height: 450px;
+  }
+  @media screen and (min-width: 1900px) {
+    .song-container {
+      height: 630px;
+      max-height: 630px;
+    }
   }
 }
 </style>

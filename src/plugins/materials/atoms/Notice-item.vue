@@ -1,6 +1,6 @@
 <template>
-  <ul>
-    <li>
+  <ul class="notice-box">
+    <li class="notice-item">
       {{ notice[index].title
       }}{{
         istamesi3
@@ -12,7 +12,7 @@
           : "に編集されました"
       }}
     </li>
-    <li>{{ notice[index].date }}</li>
+    <li class="notice-date">{{ notice[index].date }}</li>
   </ul>
 </template>
 <script>
@@ -38,3 +38,47 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+.notice-box {
+  padding: 10px 0;
+  display: grid;
+  grid-template-rows: 1fr 0.5fr;
+  border-bottom: 2px solid #eff0f4;
+}
+
+.notice-item {
+  height: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 13px;
+
+  color: #101748;
+}
+
+.notice-date {
+  padding-left: 30px;
+  font-size: 13px;
+  color: #8f92a5;
+}
+
+@media screen and (min-width: 1024px) {
+  .notice-box {
+    padding: 15px 0;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 0.1fr 1fr;
+    grid-template-areas: "date item";
+  }
+
+  .notice-item {
+    padding-left: 50px;
+    grid-area: item;
+  }
+
+  .notice-date {
+    padding-left: 50px;
+    grid-area: date;
+  }
+}
+</style>

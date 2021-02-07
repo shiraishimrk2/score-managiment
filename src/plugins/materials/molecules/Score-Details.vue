@@ -11,41 +11,68 @@
           />
         </div>
 
+        <div class="close-button" @click="tamesi()">
+          <p class="close-icon">✖</p>
+        </div>
+
         <h3>{{ song_info[song_index.number].title }}</h3>
         <div class="details-container">
           <ul class="details-box" clm-1>
             <li class="details-item">
-              <span class="details-title">作曲者</span>
-              {{ song_info[song_index.number].composer }}
+              <p class="details-title">作曲者</p>
+              <p class="details-result">
+                {{ song_info[song_index.number].composer }}
+              </p>
             </li>
+
             <li class="details-item">
-              <span class="details-title">編曲者</span>
-              {{ song_info[song_index.number].arranger }}
+              <p class="details-title">編曲者</p>
+              <p class="details-result">
+                {{ song_info[song_index.number].arranger }}
+              </p>
             </li>
+
             <li class="details-item">
-              <span class="details-title">出版社</span>
-              {{ song_info[song_index.number].publisher }}
+              <p class="details-title">出版社</p>
+              <p class="details-result">
+                {{ song_info[song_index.number].publisher }}
+              </p>
             </li>
+
             <li class="details-item">
-              <span class="details-title">ジャンル</span>
-              {{ song_info[song_index.number].genre }}
+              <p class="details-title">ジャンル</p>
+              <p class="details-result">
+                {{ song_info[song_index.number].genre }}
+              </p>
             </li>
+
             <li class="details-item">
-              <span class="details-title">アーティスト</span>
-              {{ song_info[song_index.number].artist }}
+              <p class="details-title">アーティスト</p>
+              <p class="details-result">
+                {{ song_info[song_index.number].artist }}
+              </p>
             </li>
+
             <li class="details-item">
-              <span class="details-title">棚番号</span>
-              {{ song_info[song_index.number].shelf }}ー
-              {{ song_info[song_index.number].shelfNum }}
+              <p class="details-title">棚番号</p>
+              <p class="details-result">
+                {{ song_info[song_index.number].shelf }}ー
+                {{ song_info[song_index.number].shelfNum }}
+              </p>
             </li>
+
             <li class="details-item">
-              <span class="details-title">タグ</span>
-              {{ song_info[song_index.number].tag }}
+              <p class="details-title">タグ</p>
+              <p class="details-result">
+                {{ song_info[song_index.number].tag }}
+              </p>
             </li>
+
             <li class="details-item">
-              <span class="details-title">備考欄</span>
-              {{ song_info[song_index.number].remarks }}
+              <p class="details-title">備考欄</p>
+              <p class="details-result">
+                {{ song_info[song_index.number].remarks }}
+              </p>
             </li>
           </ul>
 
@@ -58,13 +85,18 @@
       <div class="inner" v-else>
         <form v-on:submit.prevent="submit">
           <button type="submit" class="add-button">変更の登録</button>
+          <div class="close-button" @click="tamesi()">
+            <p class="close-icon">✖</p>
+          </div>
+
           <h3 class="add-title">
             「{{ song_info[song_index.number].title }}」の編集
           </h3>
+
           <div class="details-container">
             <div class="details-box clm-1">
               <div class="form-box">
-                <label for="title">曲名</label>
+                <label class="details-title" for="title">曲名</label>
                 <input
                   type="text"
                   placeholder="曲名"
@@ -75,7 +107,7 @@
               </div>
 
               <div class="form-box">
-                <label for="composer">作曲者</label>
+                <label class="details-title" for="composer">作曲者</label>
                 <input
                   type="text"
                   placeholder="作曲者"
@@ -86,7 +118,7 @@
               </div>
 
               <div class="form-box">
-                <label for="arranger">編曲者</label>
+                <label class="details-title" for="arranger">編曲者</label>
                 <input
                   type="text"
                   placeholder="編曲者"
@@ -97,7 +129,7 @@
               </div>
 
               <div class="form-box">
-                <label for="publisher">出版社</label>
+                <label class="details-title" for="publisher">出版社</label>
                 <input
                   type="text"
                   placeholder="出版社"
@@ -108,7 +140,7 @@
               </div>
 
               <div class="form-box">
-                <label for="genre">ジャンル</label>
+                <label class="details-title" for="genre">ジャンル</label>
                 <input
                   type="text"
                   placeholder="ジャンル"
@@ -119,7 +151,7 @@
               </div>
 
               <div class="form-box">
-                <label for="artist">アーティスト</label>
+                <label class="details-title" for="artist">アーティスト</label>
                 <input
                   type="text"
                   placeholder="アーティスト"
@@ -131,7 +163,7 @@
 
               <div class="rack-box">
                 <div class="form-box">
-                  <label for="rack">棚番号</label>
+                  <label class="details-title" for="rack">棚番号</label>
                   <input
                     class="rack"
                     type="text"
@@ -142,7 +174,7 @@
                 </div>
 
                 <div class="form-box">
-                  <label for="rack">－</label>
+                  <label class="details-title" for="rack">－</label>
                   <input
                     class="rack"
                     type="text"
@@ -153,7 +185,7 @@
                 </div>
               </div>
               <div class="form-box">
-                <label for="tag">キーワード</label>
+                <label class="details-title" for="tag">キーワード</label>
                 <input
                   type="text"
                   placeholder="(例) 明るい"
@@ -163,7 +195,7 @@
                 />
               </div>
               <div class="form-box">
-                <label for="tag">備考欄</label>
+                <label class="details-title" for="tag">備考欄</label>
                 <input
                   type="text"
                   placeholder="備考"
@@ -219,6 +251,32 @@
   margin-left: 30px;
 }
 
+.close-button {
+  width: 30px;
+  height: 30px;
+  border: solid 2px #646886;
+  background-color: #f6f6f6;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  text-align: center;
+}
+
+.close-button:hover {
+  opacity: 0.3;
+}
+
+.close-icon {
+  margin: 0;
+  color: #646886;
+  padding-left: 1px;
+  font-size: 23px;
+  width: 30px;
+  height: 30px;
+}
+
 h3 {
   font-size: 25px;
   color: #101748;
@@ -243,29 +301,37 @@ ul {
   padding: 0 30px;
   margin: 0;
   display: grid;
-  text-align: right;
+  /* text-align: right; */
 }
 
 .details-item {
-  height: 40px;
+  height: 50px;
+  margin-top: 10px;
   color: #101748;
   font-size: 15px;
   font-weight: 600;
-  margin-top: 17px;
-  border-bottom: solid 1px #d0d3e2;
+  display: grid;
+  grid-gap: 4%;
+  grid-template-columns: 1fr 3fr;
 }
 
 .details-title {
-  font-size: 12px;
+  margin-top: 13px;
+  font-size: 10px;
   float: left;
   color: #8f92a5;
+  /* border-bottom: solid 1px #d0d3e2; */
+}
+
+.details-result {
+  margin: 10px 0;
+  border-bottom: solid 1px #d0d3e2;
 }
 
 .form-box {
-  margin-top: 20px;
-  border-bottom: solid 1px #d0d3e2;
-  background: #f6f6f6;
+  height: 50px;
   display: grid;
+  grid-gap: 4%;
   grid-template-columns: 1fr 3fr;
 }
 
@@ -275,25 +341,26 @@ form {
 }
 
 label {
+  margin-top: 20px;
   display: inline-block;
   color: #8f92a5;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   margin-bottom: 0;
-  text-align: left;
 }
 
 input[type="text"] {
   width: 100%;
-  height: 30px;
-  padding-bottom: 10px;
+  /* height: 30px; */
+  margin-top: 10px;
   border: none;
   outline: none;
-  text-align: right;
+  /* text-align: right; */
   background: none;
   color: #101748;
   font-size: 14px;
   font-weight: 600;
+  border-bottom: solid 1px #d0d3e2;
 }
 
 input::placeholder {
@@ -325,7 +392,7 @@ input::placeholder {
 .add-title {
   margin: 0;
   margin-top: 10px;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .clm-1 {
@@ -343,7 +410,7 @@ input::placeholder {
   }
 
   .details-title {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   h3 {
@@ -351,7 +418,7 @@ input::placeholder {
   }
 
   .details-container {
-    margin-top: 23px;
+    /* margin-top: 23px; */
     display: grid;
     grid-template-areas: "left right ";
     grid-template-columns: 1fr 1fr;
@@ -395,6 +462,11 @@ input::placeholder {
   }
   .form-box {
     margin-top: 20px;
+  }
+
+  label {
+    margin-top: 0;
+    font-size: 13px;
   }
 
   input {
