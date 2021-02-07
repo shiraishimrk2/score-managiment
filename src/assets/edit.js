@@ -1,6 +1,12 @@
 const fs = require('fs');
 //serve状態だとpathはsrc/assets/song.json
 //build状態だとpathはassets
+   var today = new Date();
+//     console.log(today);
+
+const year = today.getFullYear()
+const month = today.getMonth() + 1
+    const date=today.getDate()
 function form(edit_data, song_index) {
   try {
     fs.readFile('assets/song.json', 'utf8', function readFileCallback(err, data) {
@@ -17,11 +23,12 @@ function form(edit_data, song_index) {
         // obj[0].all_song.push(edit_data);
         const newobj = {
           title: edit_data.title,
-          edit: edit_data.title
+          edit: edit_data.title,
+          date:year+"."+month+"."+date
         }
-        obj[2].notice_score.push(newobj)
+        obj[2].notice_score.unshift(newobj)
         if (obj[2].notice_score.length >= 11) {
-          obj[2].notice_score.shift()
+          obj[2].notice_score.pop()
         }
         const json = JSON.stringify(obj)
         fs.writeFile('assets/song.json', json, function (err) {

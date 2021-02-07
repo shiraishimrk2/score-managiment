@@ -27,6 +27,10 @@ export default new Vuex.Store({
   },
   getters: {
     songs: function (state) {
+
+      state.Search_Word.trim()
+      if (state.Search_Word === "") return state.songs
+      
       return state.songs.filter(song => {
         // console.log(song.title)
         console.log(song.title.includes(state.Search_Word))
@@ -35,7 +39,8 @@ export default new Vuex.Store({
           song.publisher.includes(state.Search_Word) ||
           song.composer.includes(state.Search_Word) ||
           song.arranger.includes(state.Search_Word) ||
-          song.genre.includes(state.Search_Word)
+          song.genre.includes(state.Search_Word) ||
+        song.tag.includes(state.Search_Word)
       })
     },
     

@@ -2,6 +2,7 @@
   <div>
     <div v-for="(lendScores, index) in lendScore" :key="lendScores.aa">
       <h3>{{ lendScores.title }}</h3>
+      <p>{{ lendScores.shelf }}-{{ lendScores.shelfNum }}</p>
       <div @click="tamesi(index)">
         <Return-button />
       </div>
@@ -18,7 +19,6 @@ export default {
   },
   methods: {
     tamesi: function (index) {
-      console.log("ta");
       conversion.return_click(index, this.lendScore);
     },
   },

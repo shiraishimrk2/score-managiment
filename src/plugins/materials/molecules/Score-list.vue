@@ -2,7 +2,7 @@
   <section class="list-title">
     <div class="title-box">
       <h3 class="title-inner" v-if="$route.name == '楽譜リスト'">
-        {{ genre[genre_index.number] }}
+        {{ word ? "ALL LIST" : Search_Word }}
       </h3>
       <h3 class="title-inner" v-else>ALL LIST</h3>
       <div class="icon-box">
@@ -14,9 +14,16 @@
 </template>
 <script>
 export default {
-  computed: { 
+  computed: {
     genre: function () {
       return this.$store.state.genre;
+    },
+    Search_Word: function () {
+      return this.$store.state.Search_Word;
+    },
+    word: function () {
+      const word = this.$store.state.Search_Word;
+      return word == "";
     },
   },
   props: {
