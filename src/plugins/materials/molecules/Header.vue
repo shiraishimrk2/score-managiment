@@ -129,7 +129,7 @@ label {
 
   .accbox {
     top: 16px;
-    left: 950px;
+    left: 63%;
   }
 
   .form-inner {

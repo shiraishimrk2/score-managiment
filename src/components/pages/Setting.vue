@@ -1,8 +1,15 @@
 <template>
   <div>
-    <ul>
-      <li @click="lend_click()"><Genre-box />編集</li>
-      <li @click="edit_click()"><Genre-box />貸し出し</li>
+    <ul class="genre-box">
+      <li class="genre-inner" @click="edit_click()">
+        <Genre-box />
+        <p class="genre-title">利用中曲リスト</p>
+      </li>
+
+      <li class="genre-inner" @click="lend_click()">
+        <Genre-box />
+        <p class="genre-title">楽曲の編集</p>
+      </li>
     </ul>
 
     <div v-if="lend">
@@ -51,5 +58,62 @@ ul {
 ul > li {
   display: inline-block;
   margin-right: 50px;
+}
+
+.genre-box {
+  padding: 0 20px;
+  scroll-snap-type: x mandatory;
+  white-space: nowrap;
+  overflow: auto;
+  width: 100%;
+  height: 120px;
+  position: relative;
+}
+
+.genre-inner {
+  scroll-snap-align: center;
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  white-space: normal;
+  background-color: #fff;
+  margin-right: 23px;
+  border-radius: 8px;
+  position: relative;
+  top: 13px;
+}
+
+.genre-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 25%;
+  left: 5%;
+}
+
+@media screen and (min-width: 1024px) {
+  .genre-box {
+    height: 151px;
+    padding: 0 50px;
+    margin: 50px 0 0 0;
+  }
+
+  .genre-box::-webkit-scrollbar {
+    display: initial;
+  }
+
+  .genre-inner {
+    width: 195px;
+    height: 120px;
+    margin-right: 55px;
+    position: relative;
+    top: 0px;
+  }
+
+  .genre-title {
+    font-size: 15px;
+    top: 35%;
+  }
 }
 </style>

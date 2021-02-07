@@ -64,16 +64,16 @@ export default {
   margin-right: 20px;
   border-radius: 8px;
   position: relative;
-  top: 12px;
+  top: 13px;
 }
 
 .genre-title {
   font-weight: 600;
-  font-size: 13px;
+  font-size: 14px;
   color: rgb(255, 255, 255);
   position: absolute;
-  top: 30%;
-  right: 5%;
+  top: 25%;
+  left: 5%;
 }
 
 li > a {
@@ -84,7 +84,7 @@ li > a {
 
 @media screen and (min-width: 1024px) {
   .genre-box {
-    height: 150px;
+    height: 151px;
     padding: 0 50px;
     margin: 50px 0 0 0;
   }

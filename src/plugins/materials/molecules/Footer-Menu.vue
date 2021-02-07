@@ -2,19 +2,19 @@
   <div>
     <nav id="footer">
       <ul class="nav-list">
-        <li class="nav-list__child nav-list__childtop" @click="search_reset()">
+        <li class="nav-list__child child-setting" @click="search_reset()">
           <router-link to="/setting" class="button__link">
             <Setting-icon />
           </router-link>
         </li>
 
-        <li class="nav-list__child">
+        <li class="nav-list__child child-list">
           <router-link to="/score" class="button__link">
             <List-icon />
           </router-link>
         </li>
 
-        <li class="nav-list__child" @click="search_reset()">
+        <li class="nav-list__child child-notice" @click="search_reset()">
           <router-link to="/notice" class="button__link">
             <Notice-icon />
           </router-link>
@@ -102,8 +102,9 @@ svg {
   .nav-list__child {
     border-top: none;
     width: 100%;
-    height: 10%;
+    height: 60px;
     flex-grow: 0;
+    margin-top: 10px;
   }
 
   .nav-list__child:nth-of-type(2) {
@@ -111,12 +112,25 @@ svg {
     border: none;
   }
 
+  .child-setting {
+    order: 1;
+  }
+
+  .child-list {
+    order: 0;
+  }
+
+  .child-notice {
+    order: 2;
+  }
+
   .button__link {
     display: block;
-    margin-top: 10px;
+    /* margin-top: 10px; */
   }
 
   .nav-add-button {
+    order: 3;
     margin: 0;
     margin-top: auto;
     flex-basis: 5%;
