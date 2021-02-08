@@ -7,7 +7,7 @@
       <h2 class="inner__title">{{ $route.name }}</h2>
     </div>
     <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
-    <div v-if="$route.name == '楽譜リスト'">
+    <div v-if="$route.name == '楽譜リスト' || $route.name == '管理'">
       <div class="accbox">
         <label for="check"><Search-icon /></label>
       </div>

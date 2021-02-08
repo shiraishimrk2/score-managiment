@@ -5,7 +5,7 @@
         {{ word ? "ALL LIST" : Search_Word }}
       </h3>
       <h3 class="title-inner" v-else>ALL LIST</h3>
-      <div class="icon-box">
+      <div @click="movie_click()" class="icon-box">
         <Moviesort-icon class="icon-inner" />
       </div>
     </div>
@@ -14,6 +14,11 @@
 </template>
 <script>
 export default {
+  methods: {
+    movie_click: function () {
+      this.$store.commit("movie_click");
+    },
+  },
   computed: {
     genre: function () {
       return this.$store.state.genre;
