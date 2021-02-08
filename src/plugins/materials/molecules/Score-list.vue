@@ -41,7 +41,7 @@ export default {
 }
 
 .title-box {
-  margin: 0px 30px;
+  padding: 0px 30px;
   height: 40px;
   border-bottom: solid 2px #eff0f4;
   display: grid;
@@ -61,18 +61,24 @@ export default {
   display: inline-block;
   margin-right: auto;
   width: 100%;
+  height: 100%;
   text-align: right;
+  opacity: 0.3;
 }
 
 .icon-inner {
   /* float: right; */
+  /* background-color: aquamarine; */
+  width: 40px;
+  height: 24px;
   display: inline;
   padding-left: 10px;
 }
 
 @media screen and (min-width: 1024px) {
   .title-box {
-    margin: 0 50px;
+    padding: 0 50px;
+    margin: 0;
   }
 }
 </style>

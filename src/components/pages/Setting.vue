@@ -1,12 +1,12 @@
 <template>
   <div>
     <ul class="genre-box">
-      <li class="genre-inner" @click="edit_click()">
+      <li class="genre-inner use-box" @click="edit_click()">
         <Genre-box />
         <p class="genre-title">利用中曲リスト</p>
       </li>
 
-      <li class="genre-inner" @click="lend_click()">
+      <li class="genre-inner edit-box" @click="lend_click()">
         <Genre-box />
         <p class="genre-title">楽曲の編集</p>
       </li>
@@ -47,10 +47,6 @@ export default {
 };
 </script>
 <style scoped>
-canvas {
-  width: 100%;
-  height: 20%;
-}
 ul {
   white-space: nowrap;
   padding: 0;
@@ -61,26 +57,27 @@ ul > li {
 }
 
 .genre-box {
-  padding: 0 20px;
-  scroll-snap-type: x mandatory;
-  white-space: nowrap;
-  overflow: auto;
-  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 150px;
   height: 120px;
   position: relative;
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: 1fr 1fr;
 }
 
 .genre-inner {
-  scroll-snap-align: center;
   display: inline-block;
   width: 150px;
   height: 100px;
-  white-space: normal;
-  background-color: #fff;
-  margin-right: 23px;
-  border-radius: 8px;
   position: relative;
   top: 13px;
+
+  background-color: #fff;
+  border-radius: 8px;
+
+  margin-right: 20px;
 }
 
 .genre-title {
@@ -91,6 +88,14 @@ ul > li {
   top: 25%;
   left: 5%;
 }
+/* 
+.use-box {
+  padding-left: 20px;
+}
+
+.edit-box {
+  padding-right: 20px;
+} */
 
 @media screen and (min-width: 1024px) {
   .genre-box {
