@@ -26,10 +26,10 @@ async function createWindow() {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION
     }
   })
-  // const fs =require('fs')
-  // fs.watchFile('assets/song.json',()=>{ // 監視対象が変更されたら
-  //   win.reload(); // mainWindow(rendererプロセス)をreloadする
-  // });
+  const fs =require('fs')
+  fs.watchFile('assets/song.json',()=>{ // 監視対象が変更されたら
+    win.reload(); // mainWindow(rendererプロセス)をreloadする
+  });
   
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode

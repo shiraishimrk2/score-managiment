@@ -10,8 +10,8 @@ const fs = require('fs');
 //     console.log("時=" + today.getHours());
 //     console.log("分=" + today.getMinutes());
 // console.log("秒=" + today.getSeconds());
-const year = today.getFullYear()
-const month = today.getMonth() + 1
+    const year = today.getFullYear()
+    const month = today.getMonth() + 1
     const date=today.getDate()
 function form(add_data) {
   try {
@@ -28,13 +28,7 @@ function form(add_data) {
         add_data.id = obj[0].all_song.length
         obj[0].all_song.push(add_data)
         pushData(obj[1].all_genre, add_data.genre)
-        obj[0].all_song.sort(function (a, b) {
-          if (a.title > b.title) {
-            return -1
-          } else {
-            return 1
-          }
-        })
+        
         const newobj = {
           title: add_data.title,
           date:year+"."+month+"."+date

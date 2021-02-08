@@ -29,7 +29,7 @@ export default new Vuex.Store({
     songs: function (state) {
 
       state.Search_Word.trim()
-      if (state.Search_Word === "") return state.songs
+      // if (state.Search_Word === "") return state.songs
       
       return state.songs.filter(song => {
         // console.log(song.title)
@@ -40,7 +40,8 @@ export default new Vuex.Store({
           song.composer.includes(state.Search_Word) ||
           song.arranger.includes(state.Search_Word) ||
           song.genre.includes(state.Search_Word) ||
-        song.tag.includes(state.Search_Word)
+          song.tag.includes(state.Search_Word) ||
+        song.movie.includes(state.Search_Word)
       })
     },
     
@@ -85,6 +86,13 @@ export default new Vuex.Store({
     search_reset: function (state) {
       state.Search_Word=''
     },
+    movie_click: function (state) {
+      // return this.getters.songs.filter(song => {
+      //   console.log(song.movie)
+      //   return song.movie.includes("true") 
+      // })
+      state.Search_Word="movie"
+    }
   },
   actions: {
   },
