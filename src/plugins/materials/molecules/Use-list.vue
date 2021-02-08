@@ -10,16 +10,17 @@
 .use-title {
   border-bottom: 2px solid #eff0f4;
   color: #d0d3e2;
-  margin-left: 30px;
-  margin-right: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-top: 35px;
   margin-bottom: 0;
 }
 
 @media screen and (min-width: 1024px) {
   .use-title {
-    margin-left: 50px;
-    margin-right: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
   }
 }
 </style>

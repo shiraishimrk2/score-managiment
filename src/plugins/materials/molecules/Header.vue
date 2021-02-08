@@ -5,15 +5,13 @@
         <Back-button class="back__icon" v-if="$route.name !== '楽譜リスト'" />
       </div>
       <h2 class="inner__title">{{ $route.name }}</h2>
-      <!-- <Entry-button v-if="$route.name == '楽曲追加'" /> -->
     </div>
     <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
-    <div class="accbox-container" v-if="$route.name == '楽譜リスト'">
+    <div v-if="$route.name == '楽譜リスト'">
       <div class="accbox">
         <label for="check"><Search-icon /></label>
       </div>
       <input type="checkbox" id="check" class="accbox-input" />
-
       <Search-form-inner />
     </div>
   </div>
@@ -102,6 +100,7 @@ label {
     position: relative;
     height: 60px;
     display: grid;
+    grid-gap: 6%;
     grid-template-columns: 1.5fr 0.8fr;
   }
 

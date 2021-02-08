@@ -71,13 +71,13 @@
         </div>
 
         <div class="rack-box">
-          <div class="form-box rack">
+          <div class="form-box rack__item">
             <label for="rack">棚番号*</label>
             <input type="text" id="shelf" v-model="add_data.shelf" required />
             <!-- <p>の</p> -->
           </div>
 
-          <div class="form-box rack">
+          <div class="form-box rack__item2">
             <label for="rack">－</label>
             <input
               type="text"
@@ -100,13 +100,13 @@
           />
         </div>
 
-        <div>
-          <label for="remarks"></label>
+        <div class="form-box">
+          <label for="remarks">備考欄</label>
           <textarea
             name="備考欄"
             cols="50"
             rows="5"
-            placeholder="備考欄"
+            placeholder="(例) スコア無し"
             class="col-sm-9 form-control remarks"
             id="remarks"
             v-model="add_data.remarks"
@@ -167,11 +167,7 @@ export default {
   grid-gap: 2%;
   grid-template-columns: 1.3fr 3fr;
 }
-.test {
-  width: 100px;
-  height: 100px;
-  border: solid 1px black;
-}
+
 label {
   margin-top: 3px;
   display: inline-block;
@@ -205,14 +201,20 @@ input:focus {
 
 .rack-box {
   display: grid;
-  text-align: center;
+  /* text-align: center; */
   grid-gap: 0;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 
-/* .rack {
-  text-align: center;
-} */
+.rack__item {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+}
+
+.rack__item2 {
+  display: grid;
+  grid-template-columns: 0.3fr 2.5fr;
+}
 
 .colmun-2 {
   margin: 20px;
@@ -242,6 +244,7 @@ input:focus {
 }
 
 textarea {
+  height: 60px;
   color: #101748;
   font-size: 13px;
   font-weight: 600;
@@ -249,9 +252,14 @@ textarea {
   font-family: "メイリオ";
 }
 
+textarea::placeholder {
+  color: #d0d3e2;
+}
+
 @media screen and (min-width: 1024px) {
   .form-box {
     margin-top: 20px;
+    grid-template-columns: 1fr 4fr;
   }
 
   label {
@@ -274,6 +282,23 @@ textarea {
 
   input[type="text"] {
     height: 28px;
+  }
+
+  .rack-box {
+    display: grid;
+    /* text-align: center; */
+    grid-gap: 0;
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  .rack__item {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+  }
+
+  .rack__item2 {
+    display: grid;
+    grid-template-columns: 0fr 1.5fr;
   }
 
   .column-1 {

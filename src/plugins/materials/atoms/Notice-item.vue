@@ -1,8 +1,10 @@
 <template>
   <ul class="notice-box">
     <li class="notice-item">
-      {{ notice[index].title
-      }}{{
+      <span class="item__title">
+        {{ notice[index].title }}
+      </span>
+      {{
         istamesi3
           ? istamesi
             ? istamesi2
@@ -63,6 +65,9 @@ export default {
   color: #8f92a5;
 }
 
+.item__title {
+  font-weight: 600;
+}
 @media screen and (min-width: 1024px) {
   .notice-box {
     padding: 15px 0;

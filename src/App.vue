@@ -25,7 +25,6 @@ body {
   height: 100%;
   background-color: #f6f6f6;
   margin: 0;
-
 }
 main {
   /* height: calc(100% - 55px); */
@@ -48,6 +47,9 @@ a {
 }
 li {
   list-style-type: none;
+}
+input {
+  letter-spacing: 0.15em;
 }
 
 #app {

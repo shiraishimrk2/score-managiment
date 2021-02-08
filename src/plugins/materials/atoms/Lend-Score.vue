@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lend-container">
     <div
       class="lend-box"
       v-for="(lendScores, index) in lendScore"
@@ -31,6 +31,18 @@ export default {
 
 
 <style scoped>
+.lend-container {
+  width: 100%;
+  height: 450px;
+  /* max-height: 500px; */
+  display: block;
+  overflow-y: scroll;
+}
+
+.lend-container::-webkit-scrollbar {
+  display: none;
+}
+
 .lend-box {
   margin-top: 15px;
   padding-bottom: 15px;

@@ -17,7 +17,7 @@
 
         <h3>{{ song_info[song_index.number].title }}</h3>
         <div class="details-container">
-          <ul class="details-box" clm-1>
+          <ul class="details-box clm-1">
             <li class="details-item">
               <p class="details-title">作曲者</p>
               <p class="details-result">
@@ -56,7 +56,7 @@
             <li class="details-item">
               <p class="details-title">棚番号</p>
               <p class="details-result">
-                {{ song_info[song_index.number].shelf }}ー
+                {{ song_info[song_index.number].shelf }} -
                 {{ song_info[song_index.number].shelfNum }}
               </p>
             </li>
@@ -96,76 +96,76 @@
           <div class="details-container">
             <div class="details-box clm-1">
               <div class="form-box">
-                <label class="details-title" for="title">曲名</label>
+                <label class="form-title" for="title">曲名</label>
                 <input
                   type="text"
                   placeholder="曲名"
-                  class="col-sm-9 form-control"
+                  class="col-sm-9 form-control edit-title"
                   id="title"
                   v-model.lazy="song_[index].title"
                 />
               </div>
 
               <div class="form-box">
-                <label class="details-title" for="composer">作曲者</label>
+                <label class="form-title" for="composer">作曲者</label>
                 <input
                   type="text"
                   placeholder="作曲者"
-                  class="col-sm-9 form-control"
+                  class="col-sm-9 form-control edit-title"
                   id="composer"
                   v-model="song_[index].composer"
                 />
               </div>
 
               <div class="form-box">
-                <label class="details-title" for="arranger">編曲者</label>
+                <label class="form-title" for="arranger">編曲者</label>
                 <input
                   type="text"
                   placeholder="編曲者"
-                  class="col-sm-9 form-control"
+                  class="col-sm-9 form-control edit-title"
                   id="arranger"
                   v-model="song_[index].arranger"
                 />
               </div>
 
               <div class="form-box">
-                <label class="details-title" for="publisher">出版社</label>
+                <label class="form-title" for="publisher">出版社</label>
                 <input
                   type="text"
                   placeholder="出版社"
-                  class="col-sm-9 form-control"
+                  class="col-sm-9 form-control edit-title"
                   id="publisher"
                   v-model="song_[index].publisher"
                 />
               </div>
 
               <div class="form-box">
-                <label class="details-title" for="genre">ジャンル</label>
+                <label class="form-title" for="genre">ジャンル</label>
                 <input
                   type="text"
                   placeholder="ジャンル"
-                  class="col-sm-9 form-control"
+                  class="col-sm-9 form-control edit-title"
                   id="genre"
                   v-model="song_[index].genre"
                 />
               </div>
 
               <div class="form-box">
-                <label class="details-title" for="artist">アーティスト</label>
+                <label class="form-title" for="artist">アーティスト</label>
                 <input
                   type="text"
                   placeholder="アーティスト"
-                  class="col-sm-9 form-control"
+                  class="col-sm-9 form-control edit-title"
                   id="artist"
                   v-model="song_[index].artist"
                 />
               </div>
 
               <div class="rack-box">
-                <div class="form-box">
-                  <label class="details-title" for="rack">棚番号</label>
+                <div class="form-box rack__item">
+                  <label class="form-title" for="rack">棚番号</label>
                   <input
-                    class="rack"
+                    class="rack edit-title"
                     type="text"
                     id="shelf"
                     v-model="song_[index].shelf"
@@ -173,10 +173,10 @@
                   <!-- <p>の</p> -->
                 </div>
 
-                <div class="form-box">
-                  <label class="details-title" for="rack">－</label>
+                <div class="form-box rack__item2">
+                  <label class="form-title" for="rack">－</label>
                   <input
-                    class="rack"
+                    class="rack edit-title"
                     type="text"
                     id="shelfNum"
                     v-model="song_[index].shelfNum"
@@ -185,21 +185,21 @@
                 </div>
               </div>
               <div class="form-box">
-                <label class="details-title" for="tag">キーワード</label>
+                <label class="form-title" for="tag">キーワード</label>
                 <input
                   type="text"
                   placeholder="(例) 明るい"
-                  class="col-sm-9 form-control"
+                  class="col-sm-9 form-control edit-title"
                   id="tag"
                   v-model="song_[index].tag"
                 />
               </div>
               <div class="form-box">
-                <label class="details-title" for="tag">備考欄</label>
+                <label class="form-title" for="tag">備考欄</label>
                 <input
                   type="text"
                   placeholder="備考"
-                  class="col-sm-9 form-control"
+                  class="col-sm-9 form-control edit-title"
                   id="tag"
                   v-model="song_[index].remarks"
                 />
@@ -247,14 +247,26 @@
 }
 
 .button-box {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 30px;
 }
 
-.close-button {
-  width: 30px;
+.add-button {
+  width: 100px;
   height: 30px;
-  border: solid 2px #646886;
+  margin-top: 30px;
+  border-radius: 3px;
+  margin-left: 30px;
+  stroke: none;
+  border: none;
+  background: #101748;
+  color: #fff;
+  font-size: 14px;
+}
+
+.close-button {
+  width: 20px;
+  height: 20px;
   background-color: #f6f6f6;
   border-radius: 50%;
   display: inline-block;
@@ -272,7 +284,7 @@
   margin: 0;
   color: #646886;
   padding-left: 1px;
-  font-size: 23px;
+  font-size: 20px;
   width: 30px;
   height: 30px;
 }
@@ -316,20 +328,25 @@ ul {
 }
 
 .details-title {
-  margin-top: 13px;
+  margin-top: 20px;
   font-size: 10px;
   float: left;
   color: #8f92a5;
-  /* border-bottom: solid 1px #d0d3e2; */
 }
 
 .details-result {
   margin: 10px 0;
-  border-bottom: solid 1px #d0d3e2;
+  border-bottom: 2px solid #eff0f4;
+}
+
+.add-title {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .form-box {
-  height: 50px;
+  height: 60px;
   display: grid;
   grid-gap: 4%;
   grid-template-columns: 1fr 3fr;
@@ -340,7 +357,7 @@ form {
   height: 100%;
 }
 
-label {
+.form-title {
   margin-top: 20px;
   display: inline-block;
   color: #8f92a5;
@@ -349,50 +366,38 @@ label {
   margin-bottom: 0;
 }
 
-input[type="text"] {
+.edit-title[type="text"] {
   width: 100%;
-  /* height: 30px; */
+  /* height: 50px; */
   margin-top: 10px;
+  margin-bottom: 10px;
   border: none;
   outline: none;
   /* text-align: right; */
   background: none;
   color: #101748;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  border-bottom: solid 1px #d0d3e2;
+  border-bottom: 2px solid #eff0f4;
 }
 
-input::placeholder {
+.edit-title::placeholder {
   color: #d0d3e2;
 }
 
 .rack-box {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.8fr 1fr;
 }
 
-.rack {
-  text-align: center;
+.rack__item {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
 }
 
-.add-button {
-  width: 100px;
-  height: 30px;
-  margin-top: 30px;
-  border-radius: 3px;
-  margin-left: 30px;
-  stroke: none;
-  border: none;
-  background: #101748;
-  color: #fff;
-  font-size: 14px;
-}
-
-.add-title {
-  margin: 0;
-  margin-top: 10px;
-  margin-left: 20px;
+.rack__item2 {
+  display: grid;
+  grid-template-columns: 0.3fr 2.5fr;
 }
 
 .clm-1 {
@@ -400,28 +405,16 @@ input::placeholder {
 }
 
 @media screen and (min-width: 1024px) {
-  .details-box {
-    height: 50px;
+  .bg-box {
+    width: calc(100% - 60px);
+    height: 100%;
+    top: 0;
   }
 
-  .details-item {
-    height: 42px;
-    margin-top: 25px;
-  }
-
-  .details-title {
-    font-size: 13px;
-  }
-
-  h3 {
-    font-size: 30px;
-  }
-
-  .details-container {
-    /* margin-top: 23px; */
-    display: grid;
-    grid-template-areas: "left right ";
-    grid-template-columns: 1fr 1fr;
+  .inner {
+    width: 75%;
+    margin: 0 10.5%;
+    box-shadow: 3px -3px 30px rgba(119, 119, 119, 0.342) inset;
   }
 
   .add-button {
@@ -434,6 +427,41 @@ input::placeholder {
     font-size: 14px;
 
     position: static;
+  }
+  .close-button {
+    border: solid 2px #646886;
+    width: 30px;
+    height: 30px;
+  }
+
+  .close-icon {
+    font-size: 23px;
+    padding-left: 1px;
+  }
+
+  .details-container {
+    /* margin-top: 23px; */
+    display: grid;
+    grid-template-areas: "left right ";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .details-box {
+    height: 50px;
+  }
+
+  .details-item {
+    height: 42px;
+    margin-top: 25px;
+  }
+
+  .details-title {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  h3 {
+    font-size: 30px;
   }
 
   .add-title {
@@ -449,19 +477,8 @@ input::placeholder {
     grid-area: right;
   }
 
-  .bg-box {
-    width: calc(100% - 60px);
-    height: 100%;
-    top: 0;
-  }
-
-  .inner {
-    width: 75%;
-    margin: 0 10.5%;
-    box-shadow: 3px -3px 30px rgba(119, 119, 119, 0.342) inset;
-  }
   .form-box {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
   label {
@@ -469,7 +486,7 @@ input::placeholder {
     font-size: 13px;
   }
 
-  input {
+  .edit-title {
     height: 20px;
   }
 }
