@@ -25,6 +25,7 @@ function form(add_data) {
         // console.log(existsSameValue(obj[1].all_genre))
         // console.log(obj)
         add_data.click = "false"
+        add_data.movie="false"
         add_data.id = obj[0].all_song.length
         obj[0].all_song.push(add_data)
         pushData(obj[1].all_genre, add_data.genre)
