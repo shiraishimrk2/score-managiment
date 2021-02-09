@@ -5,28 +5,28 @@
       <ul
         class="song-box"
         @click="toggle(index)"
-        v-for="(songs, index) in tamesi"
+        v-for="(songs, index) in song_get"
         :key="songs.id"
       >
         <li class="song item1">
-          {{ tamesi[index].title }}
+          {{ song_get[index].title }}
         </li>
 
         <li class="song item2">
           <img
             class="movie-img"
             src="../assets/movie.png"
-            v-show="'youtube' in tamesi[index]"
+            v-show="'youtube' in song_get[index]"
           />
         </li>
 
         <li class="song item3">
-          {{ tamesi[index].shelf }} -
-          {{ tamesi[index].shelfNum }}
+          {{ song_get[index].shelf }} -
+          {{ song_get[index].shelfNum }}
         </li>
 
         <li class="song item4">
-          {{ tamesi[index].publisher }}
+          {{ song_get[index].publisher }}
         </li>
       </ul>
     </div>
@@ -34,7 +34,7 @@
       <Score-Details
         @close="toziru()"
         :class="{ animation: isClosed }"
-        :song_info="tamesi"
+        :song_info="song_get"
         :song_index="song_index"
       />
     </div>
@@ -187,7 +187,7 @@ export default {
     song: function () {
       return this.$store.state.songs;
     },
-    tamesi: function () {
+    song_get: function () {
       // console.log(this.$store.getters.songs);
       return this.$store.getters.songs;
     },
@@ -202,59 +202,11 @@ export default {
   },
   methods: {
     async toggle(index) {
-      // console.log(ta);
-      // this.isOpened = !this.isOpened;
       this.isClosed = !this.isClosed;
-      // this.isCenter = !this.isCenter;
-      // console.log(index);
-      // const song_number = song_info[index].title;
-      // console.log(song_number);
 
       song_index.number = index;
-
-      // console.log(this.song_index.number);
-      // console.log(song_index.number);
-      // this.song_number = song_number;
-      // fetchのURL内のidを変数にして、add_formでURLを入力、送信し、ALL LISTからScore-Detailsを開いたらfetchのidにURLを代入したい
-      // YoutubeURL = 'add_formで入力したURLを変数にしたもの' 822jjVMdj58
-      // YoutubeKey = 'Youtube Data API v3で取得したAPIkey' AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE
-      // &part=snippet,contentDetails,statistics,status
-      // const id = encodeURIComponent("822jjVMdj58");
-      // const key = encodeURIComponent("AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE");
-
-      // const params = "822jjVMdj58";
-      // const query = new URLSearchParams( params );
-      // const youtube = this.song[index].youtube;
-      // const url = new URL('https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE');
-      // const tamesi=url.searchParams;
-      // tamesi.toString();
-      // tamesi.set("id", youtube);
-      // console.log(tamesi.toString());
-
-      // url.href
-
-      // fetch(url)
-      // .then(response => {
-      //   return response.json();
-      // })
-      // .then(data => {
-      //   console.log(data);
-      // })
-
-      // const response = await fetch(url+query+'&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE&part=snippet,contentDetails,statistics,status')
-
-      // const data = await response.json()
-      // console.log(data);
-      //  fetch('https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${key}&part=snippet,contentDetails,statistics,status')
-      //  .then(response => {
-      //    return response.json();
-      //  })
-      //  .then(data => {
-      //    console.log(data)
-      //  })
     },
     toziru() {
-      // this.isOpened = !this.isOpened;
       this.isCenter = !this.isCenter;
       this.isClosed = !this.isClosed;
     },
