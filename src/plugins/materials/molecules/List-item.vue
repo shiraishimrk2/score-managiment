@@ -201,7 +201,7 @@ export default {
     };
   },
   methods: {
-    toggle(index) {
+    async toggle(index) {
       // console.log(ta);
       // this.isOpened = !this.isOpened;
       this.isClosed = !this.isClosed;
@@ -215,6 +215,45 @@ export default {
       // console.log(this.song_index.number);
       // console.log(song_index.number);
       // this.song_number = song_number;
+      // fetchのURL内のidを変数にして、add_formでURLを入力、送信し、ALL LISTからScore-Detailsを開いたらfetchのidにURLを代入したい
+      // YoutubeURL = 'add_formで入力したURLを変数にしたもの' 822jjVMdj58
+      // YoutubeKey = 'Youtube Data API v3で取得したAPIkey' AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE
+      // &part=snippet,contentDetails,statistics,status
+      // const id = encodeURIComponent("822jjVMdj58");
+      // const key = encodeURIComponent("AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE");
+
+      // const params = "822jjVMdj58";
+      // const query = new URLSearchParams( params );
+      // const youtube = this.song[index].youtube;
+      // const url = new URL('https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE');
+      // const tamesi=url.searchParams;
+      // tamesi.toString();
+      // tamesi.set("id", youtube);
+      // console.log(tamesi.toString());
+
+      // url.href
+
+      // fetch(url)
+      // .then(response => {
+      //   return response.json();
+      // })
+      // .then(data => {
+      //   console.log(data);
+      // })
+
+
+      // const response = await fetch(url+query+'&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE&part=snippet,contentDetails,statistics,status')
+
+      // const data = await response.json()
+      // console.log(data);
+      //  fetch('https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${key}&part=snippet,contentDetails,statistics,status')
+      //  .then(response => {
+      //    return response.json();
+      //  })
+      //  .then(data => {
+      //    console.log(data)
+      //  })
+
     },
     toziru() {
       // this.isOpened = !this.isOpened;

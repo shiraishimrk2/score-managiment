@@ -74,10 +74,17 @@
                 {{ song_info[song_index.number].remarks }}
               </p>
             </li>
-          </ul>
 
-          <ul class="details-box clm-2">
-            <li class="details-title">右側</li>
+            <li class="details-item">
+              <p class="details-title">YoutubeURL</p>
+              <p class="details-result">
+                {{ song_info[song_index.number].youtube }}
+              </p>
+            </li>
+            <div>
+              <input v-model="api">
+              <p>{{ youtube }}</p>
+            </div>
           </ul>
         </div>
       </div>
@@ -204,10 +211,16 @@
                   v-model="song_[index].remarks"
                 />
               </div>
-            </div>
-
-            <div class="details-box clm-2">
-              <p>右側</p>
+              <div class="form-box">
+                <label class="form-title" for="youtube">YoutubeURL</label>
+                <input
+                  type="text"
+                  placeholder="https://www.youtube.com/watch?v=***********"
+                  class="col-sm-9 form-control edit-title"
+                  id="youtube"
+                  v-model="song_[index].youtube"
+                />
+              </div>
             </div>
             <!-- <h1>{{ $store.state.songs[0].all_song[0] }}</h1> -->
           </div>
@@ -528,6 +541,33 @@ export default {
         this.$emit("cahnge", value);
       },
     },
+     api:{
+       get() {
+        console.log(this.song_info)
+        console.log(this.song_index)
+        const youtube = this.song_info[this.song_index.number].youtube
+        console.log(this.song_info[this.song_index.number].youtube)
+        const url = new URL('https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE');
+        const tamesi=url.searchParams;
+        tamesi.toString();
+        tamesi.set("id", youtube);
+        console.log(tamesi.toString());
+        url.href
+
+      //  fetch(url)
+      //  .then(response => {
+      //    return response.json();
+      //  })
+      //  .then(data => {
+      //   console.log(data);
+      // })
+
+         return this.url
+        },
+        set(youtube) {
+          this.youtube = youtube;
+        }
+     }
   },
   data: function () {
     return {
@@ -540,8 +580,10 @@ export default {
         genre: this.song_info[this.song_index.number].genre,
         shelf: this.song_info[this.song_index.number].shelf,
         shelfNum: this.song_info[this.song_index.number].shelfNum,
+        youtube: this.song_info[this.song_index.number].youtube,
         tag: this.song_info[this.song_index.number].tag,
       },
+      youtube: "",
       // isOpened: true,
       // isClosed: false,
     };
