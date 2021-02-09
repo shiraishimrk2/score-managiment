@@ -77,8 +77,10 @@
 
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
-              <img class="details-result" :src="aa[0]" />
-              <p>{{ aa[1] }}</p>
+              <a :href="youtube_info.url">
+                <img class="details-result" :src="youtube_info.img"
+              /></a>
+              <p>{{ youtube_info.title }}</p>
               <p class="details-result">
                 {{ tais }}
               </p>
@@ -537,22 +539,12 @@ export default {
   // },
   data: function () {
     return {
-      edit_data: {
-        title: this.song_info[this.song_index.number].title,
-        artist: this.song_info[this.song_index.number].artist,
-        composer: this.song_info[this.song_index.number].composer,
-        arranger: this.song_info[this.song_index.number].arranger,
-        publisher: this.song_info[this.song_index.number].publisher,
-        genre: this.song_info[this.song_index.number].genre,
-        shelf: this.song_info[this.song_index.number].shelf,
-        shelfNum: this.song_info[this.song_index.number].shelfNum,
-        youtube: this.song_info[this.song_index.number].youtube,
-        tag: this.song_info[this.song_index.number].tag,
-      },
       youtube: "",
-      aa: [],
-      // isOpened: true,
-      // isClosed: false,
+      youtube_info: {
+        img: "",
+        title: "",
+        url: "",
+      },
     };
   },
   methods: {
@@ -561,37 +553,32 @@ export default {
       const url = new URL(
         "https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
       );
-      const tamesi = url.searchParams;
-      tamesi.toString();
-      tamesi.set("id", youtube);
-      console.log(tamesi.toString());
+      const url_search = url.searchParams;
+      url_search.toString();
+      url_search.set("id", youtube);
+      console.log(url_search.toString());
       url.href;
 
+      this.youtube_info.url = url;
       fetch(url)
         .then((response) => {
           return response.json();
         })
         .then((json) => {
           console.log(json);
-          this.aa.push(json.items[0].snippet.thumbnails.default.url);
-          this.aa.push(json.items[0].snippet.title);
+          this.youtube_info.img = json.items[0].snippet.thumbnails.medium.url;
+          this.youtube_info.title = json.items[0].snippet.title;
           console.log(json);
-          console.log(this.aa);
         })
         .catch((error) => console.log(error));
     },
     tamesi() {
       this.$emit("close");
       console.log(this.song_index.number);
-      // this.isOpened = !this.isOpened;
-      // this.isClosed = !this.isClosed;
-      // console.log("ok");
     },
     search() {
       console.log(this.song_info[this.song_index.number].title);
       console.log(this.song_index.number);
-      // this.$store.commit("search");
-      // console.log(this.$store.state.result);
     },
     submit() {
       const edit_data = {
@@ -617,12 +604,6 @@ export default {
     song_index: {
       type: Object,
     },
-    // class: {
-    //   type: String,
-    // },
-    // toggle: {
-    //   type: Function,
-    // },
   },
 };
 </script>

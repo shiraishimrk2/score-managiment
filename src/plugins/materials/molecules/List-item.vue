@@ -16,7 +16,7 @@
           <img
             class="movie-img"
             src="../assets/movie.png"
-            v-show="'remarks' in tamesi[index]"
+            v-show="'youtube' in tamesi[index]"
           />
         </li>
 
@@ -241,7 +241,6 @@ export default {
       //   console.log(data);
       // })
 
-
       // const response = await fetch(url+query+'&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE&part=snippet,contentDetails,statistics,status')
 
       // const data = await response.json()
@@ -253,7 +252,6 @@ export default {
       //  .then(data => {
       //    console.log(data)
       //  })
-
     },
     toziru() {
       // this.isOpened = !this.isOpened;
