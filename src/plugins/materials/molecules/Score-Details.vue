@@ -1,7 +1,7 @@
 <template>
   <div class="Accordion-Item">
     <div class="details">
-      <div class="bg-box" @click="tamesi()"></div>
+      <div class="bg-box" @click="close()"></div>
 
       <div class="inner" v-if="$route.name == '楽譜リスト'">
         <div class="button-box">
@@ -11,7 +11,7 @@
           />
         </div>
 
-        <div class="close-button" @click="tamesi()">
+        <div class="close-button" @click="close()">
           <p class="close-icon">✖</p>
         </div>
 
@@ -77,14 +77,15 @@
 
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
+
+              <p>{{ youtube_info.title }}</p>
               <img
                 @click="youtube_click(youtube_info.url)"
                 class="details-result"
                 :src="youtube_info.img"
               />
-              <p>{{ youtube_info.title }}</p>
               <p class="details-result">
-                {{ tais }}
+                {{ api }}
               </p>
             </li>
           </ul>
@@ -94,7 +95,7 @@
       <div class="inner" v-else>
         <form v-on:submit.prevent="submit">
           <button type="submit" class="add-button">変更の登録</button>
-          <div class="close-button" @click="tamesi()">
+          <div class="close-button" @click="close()">
             <p class="close-icon">✖</p>
           </div>
 
@@ -515,8 +516,8 @@ export default {
     song: function () {
       return this.$store.state.songs;
     },
-    tais: function () {
-      return this.wakaran();
+    api: function () {
+      return this.youtube_api();
     },
 
     song_: {
@@ -537,7 +538,7 @@ export default {
     },
   },
   // created: function () {
-  //   this.wakaran();
+  //   this.youtube_api();
   // },
   data: function () {
     return {
@@ -550,7 +551,7 @@ export default {
     };
   },
   methods: {
-    wakaran() {
+    youtube_api() {
       const youtube = this.song_info[this.song_index.number].youtube;
       const url = new URL(
         "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
@@ -586,7 +587,7 @@ export default {
       const { shell } = require("electron");
       shell.openExternal(url);
     },
-    tamesi() {
+    close() {
       this.$emit("close");
       console.log(this.song_index.number);
     },
