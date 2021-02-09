@@ -78,13 +78,9 @@
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
               <p class="details-result">
-                {{ song_info[song_index.number].youtube }}
+                {{ api }}
               </p>
             </li>
-            <div>
-              <input v-model="api">
-              <p>{{ youtube }}</p>
-            </div>
           </ul>
         </div>
       </div>
@@ -541,33 +537,35 @@ export default {
         this.$emit("cahnge", value);
       },
     },
-     api:{
-       get() {
-        console.log(this.song_info)
-        console.log(this.song_index)
-        const youtube = this.song_info[this.song_index.number].youtube
-        console.log(this.song_info[this.song_index.number].youtube)
-        const url = new URL('https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE');
-        const tamesi=url.searchParams;
+    api: {
+      get() {
+        console.log(this.song_info);
+        console.log(this.song_index);
+        const youtube = this.song_info[this.song_index.number].youtube;
+        console.log(this.song_info[this.song_index.number].youtube);
+        const url = new URL(
+          "https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
+        );
+        const tamesi = url.searchParams;
         tamesi.toString();
         tamesi.set("id", youtube);
         console.log(tamesi.toString());
-        url.href
+        url.href;
 
-      //  fetch(url)
-      //  .then(response => {
-      //    return response.json();
-      //  })
-      //  .then(data => {
-      //   console.log(data);
-      // })
-
-         return this.url
-        },
-        set(youtube) {
-          this.youtube = youtube;
-        }
-     }
+        //  fetch(url)
+        //  .then(response => {
+        //    return response.json();
+        //  })
+        //  .then(data => {
+        //   console.log(data);
+        // })
+        this.wakaran(url);
+        return url;
+      },
+      set(youtube) {
+        this.youtube = youtube;
+      },
+    },
   },
   data: function () {
     return {
@@ -617,6 +615,16 @@ export default {
       edit.form(edit_data, this.song_index);
       console.log("成功");
       console.log(this.edit_data);
+    },
+
+    wakaran(url) {
+      fetch(url)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+        });
     },
   },
   props: {
