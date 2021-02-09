@@ -77,9 +77,11 @@
 
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
-              <a :href="youtube_info.url">
-                <img class="details-result" :src="youtube_info.img"
-              /></a>
+              <img
+                @click="youtube_click(youtube_info.url)"
+                class="details-result"
+                :src="youtube_info.img"
+              />
               <p>{{ youtube_info.title }}</p>
               <p class="details-result">
                 {{ tais }}
@@ -543,7 +545,7 @@ export default {
       youtube_info: {
         img: "",
         title: "",
-        url: "",
+        url: "https://youtu.be/",
       },
     };
   },
@@ -551,7 +553,7 @@ export default {
     wakaran() {
       const youtube = this.song_info[this.song_index.number].youtube;
       const url = new URL(
-        "https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
+        "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
       );
       const url_search = url.searchParams;
       url_search.toString();
@@ -559,7 +561,15 @@ export default {
       console.log(url_search.toString());
       url.href;
 
-      this.youtube_info.url = url;
+      // const link = new URL("https://youtu.be/");
+      // const link_search = link.serachParams;
+      // link_search.toString();
+      // link_search.set("id", youtube);
+      var d = new URL(youtube, "https://youtu.be/");
+      this.youtube_info.url = d;
+      console.log((this.youtube_info.url = d));
+      console.log(youtube);
+      console.log((this.youtube_info.url = this.youtube_info.url + youtube));
       fetch(url)
         .then((response) => {
           return response.json();
@@ -571,6 +581,10 @@ export default {
           console.log(json);
         })
         .catch((error) => console.log(error));
+    },
+    youtube_click(url) {
+      const { shell } = require("electron");
+      shell.openExternal(url);
     },
     tamesi() {
       this.$emit("close");
