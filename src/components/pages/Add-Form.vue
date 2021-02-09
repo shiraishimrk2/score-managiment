@@ -112,6 +112,17 @@
             v-model="add_data.remarks"
           />
         </div>
+
+        <div class="form-box">
+          <label for="youtube">YoutubeURL</label>
+          <input
+            type="text"
+            placeholder="https://www.youtube.com/watch?v=***********"
+            class="col-sm-9 form-control"
+            id="youtube"
+            v-model="add_data.youtube"
+          />
+        </div>
       </div>
 
       <div class="colmun-2">
@@ -135,6 +146,7 @@ const add_data = {
   shelfNum: "",
   tag: "",
   remarks: "",
+  youtuve: "",
 };
 
 export default {
