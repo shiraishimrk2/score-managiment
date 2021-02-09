@@ -77,8 +77,10 @@
 
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
+              <img class="details-result" :src="aa[0]" />
+              <p>{{ aa[1] }}</p>
               <p class="details-result">
-                {{ api }}
+                {{ tais }}
               </p>
             </li>
           </ul>
@@ -504,21 +506,13 @@ form {
 <script>
 import edit from "../../../assets/edit.js";
 
-// const edit_data = {
-//   title: "",
-//   artist: "",
-//   composer: "",
-//   arranger: "",
-//   publisher: "",
-//   genre: "",
-//   shelf: "",
-//   shelfNum: "",
-//   tag: "",
-// };
 export default {
   computed: {
     song: function () {
       return this.$store.state.songs;
+    },
+    tais: function () {
+      return this.wakaran();
     },
 
     song_: {
@@ -537,36 +531,10 @@ export default {
         this.$emit("cahnge", value);
       },
     },
-    api: {
-      get() {
-        console.log(this.song_info);
-        console.log(this.song_index);
-        const youtube = this.song_info[this.song_index.number].youtube;
-        console.log(this.song_info[this.song_index.number].youtube);
-        const url = new URL(
-          "https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
-        );
-        const tamesi = url.searchParams;
-        tamesi.toString();
-        tamesi.set("id", youtube);
-        console.log(tamesi.toString());
-        url.href;
-
-        //  fetch(url)
-        //  .then(response => {
-        //    return response.json();
-        //  })
-        //  .then(data => {
-        //   console.log(data);
-        // })
-        this.wakaran(url);
-        return url;
-      },
-      set(youtube) {
-        this.youtube = youtube;
-      },
-    },
   },
+  // created: function () {
+  //   this.wakaran();
+  // },
   data: function () {
     return {
       edit_data: {
@@ -582,11 +550,36 @@ export default {
         tag: this.song_info[this.song_index.number].tag,
       },
       youtube: "",
+      aa: [],
       // isOpened: true,
       // isClosed: false,
     };
   },
   methods: {
+    wakaran() {
+      const youtube = this.song_info[this.song_index.number].youtube;
+      const url = new URL(
+        "https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
+      );
+      const tamesi = url.searchParams;
+      tamesi.toString();
+      tamesi.set("id", youtube);
+      console.log(tamesi.toString());
+      url.href;
+
+      fetch(url)
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          console.log(json);
+          this.aa.push(json.items[0].snippet.thumbnails.default.url);
+          this.aa.push(json.items[0].snippet.title);
+          console.log(json);
+          console.log(this.aa);
+        })
+        .catch((error) => console.log(error));
+    },
     tamesi() {
       this.$emit("close");
       console.log(this.song_index.number);
@@ -615,16 +608,6 @@ export default {
       edit.form(edit_data, this.song_index);
       console.log("成功");
       console.log(this.edit_data);
-    },
-
-    wakaran(url) {
-      fetch(url)
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-        });
     },
   },
   props: {
