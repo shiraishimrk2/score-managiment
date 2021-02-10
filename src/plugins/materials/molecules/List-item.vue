@@ -4,7 +4,10 @@
       <!-- <p>{{ song[1].title }}</p> -->
       <ul
         class="song-box"
-        @click="toggle(index)"
+        @click="
+          toggle(index);
+          youtube_click();
+        "
         v-for="(songs, index) in song_get"
         :key="songs.id"
       >
@@ -36,6 +39,7 @@
         :class="{ animation: isClosed }"
         :song_info="song_get"
         :song_index="song_index"
+        :youtube_inf="youtube_info"
       />
     </div>
   </div>
@@ -198,6 +202,12 @@ export default {
       isClosed: false, //クリックしたら開く
       // isCenter: false, //これは閉じるときのもの(必要ないかもしれない)
       song_index: song_index,
+      youtube: "",
+      youtube_info: {
+        img: "",
+        title: "",
+        url: "https://youtu.be/",
+      },
     };
   },
   methods: {
@@ -205,6 +215,38 @@ export default {
       this.isClosed = !this.isClosed;
 
       song_index.number = index;
+    },
+    youtube_click() {
+      const youtube = this.song_get[song_index.number].youtube;
+      const url = new URL(
+        "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
+      );
+      const url_search = url.searchParams;
+      url_search.toString();
+      url_search.set("id", youtube);
+      console.log(url_search.toString());
+      url.href;
+
+      // const link = new URL("https://youtu.be/");
+      // const link_search = link.serachParams;
+      // link_search.toString();
+      // link_search.set("id", youtube);
+      var d = new URL(youtube, "https://youtu.be/");
+      this.youtube_info.url = d;
+      console.log((this.youtube_info.url = d));
+      console.log(youtube);
+      console.log((this.youtube_info.url = this.youtube_info.url + youtube));
+      fetch(url)
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          console.log(json);
+          this.youtube_info.img = json.items[0].snippet.thumbnails.medium.url;
+          this.youtube_info.title = json.items[0].snippet.title;
+          console.log(json);
+        })
+        .catch((error) => console.log(error));
     },
     toziru() {
       this.isCenter = !this.isCenter;
