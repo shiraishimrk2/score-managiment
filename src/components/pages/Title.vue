@@ -16,6 +16,7 @@ html {
   position: relative;
   width: 100%;
   height: 100%;
+  cursor: default;
 }
 
 .title-container {

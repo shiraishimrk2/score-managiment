@@ -74,10 +74,10 @@
                 {{ song_info[song_index.number].remarks }}
               </p>
             </li>
-
+          </ul>
+          <ul class="details-box clm-2">
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
-
               <p>{{ youtube_info.title }}</p>
               <img
                 @click="youtube_click(youtube_info.url)"
@@ -214,6 +214,9 @@
                   v-model="song_[index].remarks"
                 />
               </div>
+            </div>
+
+            <div class="details-box clm-2">
               <div class="form-box">
                 <label class="form-title" for="youtube">YoutubeURL</label>
                 <input
@@ -303,6 +306,7 @@
   font-size: 20px;
   width: 30px;
   height: 30px;
+  cursor: default;
 }
 
 h3 {
@@ -495,6 +499,7 @@ form {
 
   .form-box {
     margin-top: 15px;
+    height: 47px;
   }
 
   label {

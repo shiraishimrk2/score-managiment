@@ -85,12 +85,23 @@ li > a {
 @media screen and (min-width: 1024px) {
   .genre-box {
     height: 151px;
-    padding: 0 50px;
-    margin: 50px 0 0 0;
+    padding: 0;
+    margin-left: 50px;
+    margin-top: 50px;
+    overflow-x: hidden;
+  }
+
+  .genre-box:hover {
+    overflow-x: auto;
   }
 
   .genre-box::-webkit-scrollbar {
-    display: initial;
+    display: block;
+    background-color: #f7f3f3;
+  }
+
+  .genre-box::-webkit-scrollbar-thumb {
+    background-color: #e2e2e5;
   }
 
   .genre-inner {

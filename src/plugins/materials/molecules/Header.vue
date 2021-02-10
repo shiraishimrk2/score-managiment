@@ -135,6 +135,12 @@ label {
     height: 60px;
     opacity: 1;
   }
+    @media screen and (min-width: 1900px) {
+    .accbox {
+      left: 65%;
+    }
+  }
+
 }
 </style>
 
