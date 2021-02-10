@@ -201,7 +201,7 @@ export default {
     };
   },
   methods: {
-    async toggle(index) {
+    toggle(index) {
       this.isClosed = !this.isClosed;
 
       song_index.number = index;
