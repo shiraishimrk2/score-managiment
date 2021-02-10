@@ -78,15 +78,12 @@
           <ul class="details-box clm-2">
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
-              <p>{{ youtube_info.title }}</p>
+              <p>{{ youtube_inf.title }}</p>
               <img
-                @click="youtube_click(youtube_info.url)"
+                @click="youtube_click(youtube_inf.url)"
                 class="details-result"
-                :src="youtube_info.img"
+                :src="youtube_inf.img"
               />
-              <p class="details-result">
-                {{ api }}
-              </p>
             </li>
           </ul>
         </div>
@@ -547,47 +544,47 @@ export default {
   // },
   data: function () {
     return {
-      youtube: "",
-      youtube_info: {
-        img: "",
-        title: "",
-        url: "https://youtu.be/",
-      },
+      // youtube: "",
+      // youtube_info: {
+      //   img: "",
+      //   title: "",
+      //   url: "https://youtu.be/",
+      // },
     };
   },
   methods: {
-    youtube_api() {
-      const youtube = this.song_info[this.song_index.number].youtube;
-      const url = new URL(
-        "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
-      );
-      const url_search = url.searchParams;
-      url_search.toString();
-      url_search.set("id", youtube);
-      console.log(url_search.toString());
-      url.href;
+    // youtube_api() {
+    // const youtube = this.song_info[this.song_index.number].youtube;
+    // const url = new URL(
+    //   "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
+    // );
+    // const url_search = url.searchParams;
+    // url_search.toString();
+    // url_search.set("id", youtube);
+    // console.log(url_search.toString());
+    // url.href;
 
-      // const link = new URL("https://youtu.be/");
-      // const link_search = link.serachParams;
-      // link_search.toString();
-      // link_search.set("id", youtube);
-      var d = new URL(youtube, "https://youtu.be/");
-      this.youtube_info.url = d;
-      console.log((this.youtube_info.url = d));
-      console.log(youtube);
-      console.log((this.youtube_info.url = this.youtube_info.url + youtube));
-      fetch(url)
-        .then((response) => {
-          return response.json();
-        })
-        .then((json) => {
-          console.log(json);
-          this.youtube_info.img = json.items[0].snippet.thumbnails.medium.url;
-          this.youtube_info.title = json.items[0].snippet.title;
-          console.log(json);
-        })
-        .catch((error) => console.log(error));
-    },
+    // // const link = new URL("https://youtu.be/");
+    // // const link_search = link.serachParams;
+    // // link_search.toString();
+    // // link_search.set("id", youtube);
+    // var d = new URL(youtube, "https://youtu.be/");
+    // this.youtube_info.url = d;
+    // console.log((this.youtube_info.url = d));
+    // console.log(youtube);
+    // console.log((this.youtube_info.url = this.youtube_info.url + youtube));
+    // fetch(url)
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((json) => {
+    //     console.log(json);
+    //     this.youtube_info.img = json.items[0].snippet.thumbnails.medium.url;
+    //     this.youtube_info.title = json.items[0].snippet.title;
+    //     console.log(json);
+    //   })
+    //   .catch((error) => console.log(error));
+    // },
     youtube_click(url) {
       const { shell } = require("electron");
       shell.openExternal(url);
@@ -622,6 +619,9 @@ export default {
       type: Array,
     },
     song_index: {
+      type: Object,
+    },
+    youtube_inf: {
       type: Object,
     },
   },
