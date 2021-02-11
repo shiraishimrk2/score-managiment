@@ -146,7 +146,7 @@ const add_data = {
   shelfNum: "",
   tag: "",
   remarks: "",
-  youtuve: "",
+  youtube: "",
 };
 
 export default {

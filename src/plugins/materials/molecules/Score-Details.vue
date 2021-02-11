@@ -75,7 +75,7 @@
               </p>
             </li>
           </ul>
-          <ul class="details-box clm-2">
+          <ul class="details-box clm-2" v-if="aiu">
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
               <p>{{ youtube_inf.title }}</p>
@@ -538,19 +538,15 @@ export default {
         this.$emit("cahnge", value);
       },
     },
+    aiu: function () {
+      return "youtube" in this.song_[this.index];
+    },
   },
   // created: function () {
   //   this.youtube_api();
   // },
   data: function () {
-    return {
-      // youtube: "",
-      // youtube_info: {
-      //   img: "",
-      //   title: "",
-      //   url: "https://youtu.be/",
-      // },
-    };
+    return {};
   },
   methods: {
     // youtube_api() {

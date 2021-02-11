@@ -14,8 +14,7 @@
                 "genre": "あ",
                 "click": "false",
                 "movie": "false",
-                "id": 0,
-                "youtube": ""
+                "id": 0
             },
             {
                 "title": "怪物vaaa",
@@ -30,8 +29,7 @@
                 "genre": "あ",
                 "id": 1,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "怪物v-1",
@@ -45,8 +43,7 @@
                 "tag": "あかか",
                 "id": 2,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "aa",
@@ -61,8 +58,7 @@
                 "genre": "aa",
                 "id": 3,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "j",
@@ -77,8 +73,7 @@
                 "remarks": "j",
                 "id": 4,
                 "click": "false",
-                "movie": "movie",
-                "youtube": ""
+                "movie": "movie"
             },
             {
                 "title": "jｊ",
@@ -93,8 +88,7 @@
                 "genre": "k",
                 "id": 5,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "aa",
@@ -109,8 +103,7 @@
                 "remarks": "ll",
                 "id": 6,
                 "click": "false",
-                "movie": "movie",
-                "youtube": ""
+                "movie": "movie"
             },
             {
                 "title": "aa",
@@ -125,8 +118,7 @@
                 "genre": "aa",
                 "id": 7,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "aa",
@@ -141,8 +133,7 @@
                 "genre": "aa",
                 "id": 8,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "k",
@@ -156,8 +147,7 @@
                 "tag": "k",
                 "id": 9,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "k",
@@ -171,8 +161,7 @@
                 "tag": "k",
                 "id": 10,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "k",
@@ -186,8 +175,7 @@
                 "tag": "k",
                 "id": 11,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "p",
@@ -202,8 +190,7 @@
                 "genre": "p",
                 "id": 12,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "s",
@@ -218,8 +205,7 @@
                 "genre": "s",
                 "id": 13,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "あ",
@@ -234,8 +220,7 @@
                 "genre": "あ",
                 "id": 14,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "あああ",
@@ -250,8 +235,7 @@
                 "genre": "あ",
                 "id": 15,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "あああ",
@@ -266,8 +250,7 @@
                 "genre": "ああ",
                 "id": 16,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "こんにちは",
@@ -282,8 +265,7 @@
                 "remarks": "A.sax無し",
                 "id": 17,
                 "click": "false",
-                "movie": "movie",
-                "youtube": ""
+                "movie": "movie"
             },
             {
                 "title": "こんにちは",
@@ -298,8 +280,7 @@
                 "remarks": "A.sax無し",
                 "id": 18,
                 "click": "false",
-                "movie": "movie",
-                "youtube": ""
+                "movie": "movie"
             },
             {
                 "title": "しらん",
@@ -313,8 +294,7 @@
                 "genre": "しらん",
                 "id": 19,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "アンコール",
@@ -330,8 +310,7 @@
                 ],
                 "id": 20,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "メビウス",
@@ -346,8 +325,7 @@
                 "genre": "J-POP",
                 "id": 21,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "メビウス",
@@ -361,8 +339,7 @@
                 "tag": "h",
                 "id": 22,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "レ・ミゼラブル",
@@ -377,8 +354,7 @@
                 "remarks": "",
                 "id": 23,
                 "click": "false",
-                "movie": "movie",
-                "youtube": ""
+                "movie": "movie"
             },
             {
                 "title": "レ・ミゼラブル",
@@ -393,8 +369,7 @@
                 "remarks": "",
                 "id": 24,
                 "click": "false",
-                "movie": "movie",
-                "youtube": ""
+                "movie": "movie"
             },
             {
                 "title": "夜",
@@ -408,8 +383,7 @@
                 "tag": "h",
                 "id": 25,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "夜に駆ける",
@@ -425,8 +399,7 @@
                 ],
                 "id": 26,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "夜に駆ける",
@@ -440,8 +413,7 @@
                 "genre": "jpop",
                 "id": 27,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "夜に駆ける",
@@ -455,8 +427,7 @@
                 "genre": "あ",
                 "id": 28,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "夜に駆ける",
@@ -472,8 +443,7 @@
                 ],
                 "id": 29,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "怪物",
@@ -504,8 +474,7 @@
                 "genre": "しらん",
                 "id": 31,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "白日",
@@ -519,8 +488,7 @@
                 "shelfNum": "あ",
                 "id": 32,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "群青",
@@ -536,8 +504,7 @@
                 ],
                 "id": 33,
                 "click": "false",
-                "movie": "false",
-                "youtube": ""
+                "movie": "false"
             },
             {
                 "title": "エビカニクス",
