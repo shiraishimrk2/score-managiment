@@ -76,13 +76,13 @@
             </li>
           </ul>
           <ul class="details-box clm-2">
-            <li class="details-item">
-              <p class="details-title">YoutubeURL</p>
+            <li>
+              <p class="youtube-title">Youtube ID</p>
               <div v-if="aiu">
-                <p>{{ youtube_inf.title }}</p>
+                <p class="youtube-result">{{ youtube_inf.title }}</p>
                 <img
+                  class="youtube-item"
                   @click="youtube_click(youtube_inf.url)"
-                  class="details-result"
                   :src="youtube_inf.img"
                 />
               </div>
@@ -217,7 +217,7 @@
 
             <div class="details-box clm-2">
               <div class="form-box">
-                <label class="form-title" for="youtube">YoutubeURL</label>
+                <label class="form-title" for="youtube">Youtube ID</label>
                 <input
                   type="text"
                   placeholder="https://www.youtube.com/watch?v=***********"
@@ -353,9 +353,26 @@ ul {
   color: #8f92a5;
 }
 
+.youtube-title {
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8f92a5;
+}
+
 .details-result {
   margin: 10px 0;
   border-bottom: 2px solid #eff0f4;
+}
+
+.youtube-result {
+  font-size: 15px;
+  font-weight: 600;
+  color: #101748;
+}
+
+.youtube-item:hover {
+  opacity: 0.6;
 }
 
 .add-title {
