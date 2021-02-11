@@ -4,10 +4,7 @@
       <!-- <p>{{ song[1].title }}</p> -->
       <ul
         class="song-box"
-        @click="
-          toggle(index);
-          youtube_click();
-        "
+        @click="toggle(index)"
         v-for="(songs, index) in song_get"
         :key="songs.id"
       >
@@ -215,8 +212,6 @@ export default {
       this.isClosed = !this.isClosed;
 
       song_index.number = index;
-    },
-    youtube_click() {
       const youtube = this.song_get[song_index.number].youtube;
       const url = new URL(
         "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
@@ -231,9 +226,9 @@ export default {
       // const link_search = link.serachParams;
       // link_search.toString();
       // link_search.set("id", youtube);
-      var d = new URL(youtube, "https://youtu.be/");
-      this.youtube_info.url = d;
-      console.log((this.youtube_info.url = d));
+      const link = new URL(youtube, this.youtube_info.url);
+      this.youtube_info.url = link;
+      console.log((this.youtube_info.url = link));
       console.log(youtube);
       console.log((this.youtube_info.url = this.youtube_info.url + youtube));
       fetch(url)
@@ -248,6 +243,7 @@ export default {
         })
         .catch((error) => console.log(error));
     },
+    youtube_click() {},
     toziru() {
       this.isCenter = !this.isCenter;
       this.isClosed = !this.isClosed;
