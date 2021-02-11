@@ -7,7 +7,7 @@
     >
       <p class="lend-title">{{ lendScores.title }}</p>
       <p class="lend-rack">{{ lendScores.shelf }}-{{ lendScores.shelfNum }}</p>
-      <div class="lend-button" @click="tamesi(index)">
+      <div class="lend-button" @click="lend(index)">
         <Return-button />
       </div>
     </div>
@@ -22,7 +22,7 @@ export default {
     },
   },
   methods: {
-    tamesi: function (index) {
+    lend: function (index) {
       conversion.return_click(index, this.lendScore);
     },
   },

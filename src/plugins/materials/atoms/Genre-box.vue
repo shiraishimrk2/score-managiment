@@ -5,10 +5,6 @@
   </div>
 </template>
 
-
-<script>
-</script>
-
 <style scoped>
 .genre {
   width: 150px;
@@ -27,16 +23,8 @@
 
 @media screen and (min-width: 1024px) {
   .genre {
-    /* display: none; */
     width: 195px;
     height: 130px;
   }
-
-  /* 
-  .l-genre {
-    width: 195px;
-    height: 120px;
-    display: block;
-  } */
 }
 </style>

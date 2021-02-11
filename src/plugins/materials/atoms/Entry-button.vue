@@ -1,9 +1,6 @@
 <template>
   <div v-cloak>
     <button class="icon-button" @click="toggleAccordion()">登録</button>
-    <!-- <Search-form-inner class="Accordion-Item" v-if="isOpened" /> -->
-
-    <!-- <Score-Details class="Accordion-Item" :class="{ tamesi: isClosed }" /> -->
   </div>
 </template>
 <script>
@@ -16,7 +13,6 @@ export default {
   methods: {
     toggleAccordion() {
       this.isClosed = !this.isClosed;
-      // console.log("1");
     },
   },
 };
@@ -28,8 +24,6 @@ export default {
   background: #f6f6f6;
   transition: all 300ms 0s ease;
   position: relative;
-  /* top: -200px; */
-  /* z-index: -10; */
 }
 .icon-button {
   width: 50px;
@@ -38,7 +32,6 @@ export default {
   top: 0;
   right: 0;
   border: 0;
-  /* outline: none; */
   background-color: #f6f6f6;
 }
 .tamesi {
