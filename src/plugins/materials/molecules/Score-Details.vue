@@ -75,15 +75,17 @@
               </p>
             </li>
           </ul>
-          <ul class="details-box clm-2" v-if="aiu">
+          <ul class="details-box clm-2">
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
-              <p>{{ youtube_inf.title }}</p>
-              <img
-                @click="youtube_click(youtube_inf.url)"
-                class="details-result"
-                :src="youtube_inf.img"
-              />
+              <div v-if="aiu">
+                <p>{{ youtube_inf.title }}</p>
+                <img
+                  @click="youtube_click(youtube_inf.url)"
+                  class="details-result"
+                  :src="youtube_inf.img"
+                />
+              </div>
             </li>
           </ul>
         </div>
@@ -542,45 +544,10 @@ export default {
       return "youtube" in this.song_[this.index];
     },
   },
-  // created: function () {
-  //   this.youtube_api();
-  // },
   data: function () {
     return {};
   },
   methods: {
-    // youtube_api() {
-    // const youtube = this.song_info[this.song_index.number].youtube;
-    // const url = new URL(
-    //   "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
-    // );
-    // const url_search = url.searchParams;
-    // url_search.toString();
-    // url_search.set("id", youtube);
-    // console.log(url_search.toString());
-    // url.href;
-
-    // // const link = new URL("https://youtu.be/");
-    // // const link_search = link.serachParams;
-    // // link_search.toString();
-    // // link_search.set("id", youtube);
-    // var d = new URL(youtube, "https://youtu.be/");
-    // this.youtube_info.url = d;
-    // console.log((this.youtube_info.url = d));
-    // console.log(youtube);
-    // console.log((this.youtube_info.url = this.youtube_info.url + youtube));
-    // fetch(url)
-    //   .then((response) => {
-    //     return response.json();
-    //   })
-    //   .then((json) => {
-    //     console.log(json);
-    //     this.youtube_info.img = json.items[0].snippet.thumbnails.medium.url;
-    //     this.youtube_info.title = json.items[0].snippet.title;
-    //     console.log(json);
-    //   })
-    //   .catch((error) => console.log(error));
-    // },
     youtube_click(url) {
       const { shell } = require("electron");
       shell.openExternal(url);
@@ -604,6 +571,7 @@ export default {
         shelf: this.song_[this.index].shelf,
         shelfNum: this.song_[this.index].shelfNum,
         tag: this.song_[this.index].tag,
+        youtube: this.song_[this.index].youtube,
       };
       edit.form(edit_data, this.song_index);
       console.log("成功");
