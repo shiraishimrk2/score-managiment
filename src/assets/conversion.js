@@ -1,15 +1,6 @@
 const fs = require('fs');
-//serve状態だとpathはsrc/assets/song.json
-//build状態だとpathはassetswindow.onload = function () {
    var today = new Date();
-//     console.log(today);
- 
-//     console.log("年=" + today.getFullYear());
-//     console.log("月=" + (today.getMonth()+1));
-//     console.log("日=" + today.getDate());
-//     console.log("時=" + today.getHours());
-//     console.log("分=" + today.getMinutes());
-// console.log("秒=" + today.getSeconds());
+
     const year = today.getFullYear()
     const month = today.getMonth() + 1
     const date=today.getDate()
@@ -27,6 +18,9 @@ function form(add_data) {
         add_data.click = "false"
         add_data.movie="false"
         add_data.id = obj[0].all_song.length
+        if (add_data.youtube == "") {
+          delete add_data.youtube
+        }
         obj[0].all_song.push(add_data)
         pushData(obj[1].all_genre, add_data.genre)
         
