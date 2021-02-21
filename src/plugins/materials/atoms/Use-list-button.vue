@@ -1,22 +1,22 @@
 <template>
-  <button :disabled="click" @click="lendScore()" :class="click ? gray : blue">
-    {{ click ? "利用中" : "利用する" }}
+  <button :disabled="lend" @click="lendScore()" :class="lend ? gray : blue">
+    {{ lend ? "利用中" : "利用する" }}
   </button>
 </template>
 <script>
 import conversion from "../../../assets/conversion.js";
 export default {
-  data: function () {
+  data: function() {
     return {
       blue: "blue",
       gray: "gray",
     };
   },
   computed: {
-    song: function () {
+    song: function() {
       return this.$store.getters.songs;
     },
-    click: function () {
+    lend: function() {
       return this.song[this.song_index.number].click == "true";
     },
   },

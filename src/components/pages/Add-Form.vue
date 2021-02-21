@@ -1,5 +1,5 @@
 <template>
-  <form v-on:submit.prevent="submit">
+  <form @submit.prevent.once="submit">
     <div class="form-container">
       <div class="column-1">
         <div class="form-box">
@@ -150,13 +150,14 @@ const add_data = {
 };
 
 export default {
-  data: function () {
+  data: function() {
     return {
       add_data: add_data,
     };
   },
   methods: {
     submit() {
+      this.processing = true;
       conversion.form(add_data);
       console.log("成功");
       console.log(add_data);

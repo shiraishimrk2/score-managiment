@@ -12,7 +12,6 @@
                 "shelfNum": "1",
                 "tag": "",
                 "click": "true",
-                "movie": "false",
                 "id": 0
             },
             {
@@ -26,7 +25,6 @@
                 "shelfNum": "1",
                 "tag": "",
                 "click": "true",
-                "movie": "false",
                 "id": 1
             },
             {
@@ -40,7 +38,6 @@
                 "shelfNum": "1",
                 "tag": "",
                 "click": "false",
-                "movie": "false",
                 "id": 2
             },
             {
@@ -54,7 +51,6 @@
                 "shelfNum": "1",
                 "tag": "",
                 "click": "false",
-                "movie": "false",
                 "id": 3
             },
             {
@@ -68,7 +64,6 @@
                 "shelfNum": "2",
                 "tag": "",
                 "click": "false",
-                "movie": "false",
                 "id": 4,
                 "youtube": "PGVJf7zO4Z8"
             },
@@ -83,7 +78,6 @@
                 "shelfNum": "2",
                 "tag": "",
                 "click": "false",
-                "movie": "false",
                 "id": 5
             },
             {
@@ -97,7 +91,6 @@
                 "shelfNum": "2",
                 "tag": "",
                 "click": "false",
-                "movie": "false",
                 "id": 6
             },
             {
@@ -111,7 +104,6 @@
                 "shelfNum": "1",
                 "tag": "",
                 "click": "true",
-                "movie": "false",
                 "id": 7
             },
             {
@@ -125,7 +117,6 @@
                 "shelfNum": "2",
                 "tag": "",
                 "click": "false",
-                "movie": "false",
                 "id": 8
             },
             {
@@ -139,9 +130,258 @@
                 "shelfNum": "1",
                 "tag": "",
                 "click": "false",
-                "movie": "false",
                 "id": 9,
                 "youtube": "UNI7gOJYX0k"
+            },
+            {
+                "title": "j",
+                "artist": "j",
+                "composer": "j",
+                "arranger": "j",
+                "publisher": "j",
+                "genre": "j",
+                "shelf": "jj",
+                "shelfNum": "j",
+                "tag": "j",
+                "remarks": "j",
+                "youtube": "j",
+                "click": "false",
+                "id": 10
+            },
+            {
+                "title": "j",
+                "artist": "j",
+                "composer": "j",
+                "arranger": "j",
+                "publisher": "j",
+                "genre": "j",
+                "shelf": "jj",
+                "shelfNum": "j",
+                "tag": "j",
+                "remarks": "j",
+                "youtube": "j",
+                "click": "false",
+                "id": 11
+            },
+            {
+                "title": "k",
+                "artist": "kk",
+                "composer": "",
+                "arranger": "kk",
+                "publisher": "k",
+                "genre": "k",
+                "shelf": "k",
+                "shelfNum": "kk",
+                "tag": "k",
+                "remarks": "k",
+                "youtube": "k",
+                "click": "false",
+                "id": 12
+            },
+            {
+                "title": "k",
+                "artist": "kk",
+                "composer": "k",
+                "arranger": "k",
+                "publisher": "kk",
+                "genre": "k",
+                "shelf": "k",
+                "shelfNum": "k",
+                "tag": "kk",
+                "remarks": "k",
+                "youtube": "k",
+                "click": "false",
+                "id": 13
+            },
+            {
+                "title": "l",
+                "artist": "l",
+                "composer": "l",
+                "arranger": "ll",
+                "publisher": "l",
+                "genre": "l",
+                "shelf": "ll",
+                "shelfNum": "l",
+                "tag": "l",
+                "remarks": "l",
+                "youtube": "l",
+                "click": "false",
+                "id": 14
+            },
+            {
+                "title": "k",
+                "artist": "kk",
+                "composer": "k",
+                "arranger": "k",
+                "publisher": "kk",
+                "genre": "k",
+                "shelf": "k",
+                "shelfNum": "k",
+                "tag": "k",
+                "remarks": "kk",
+                "click": "false",
+                "id": 15
+            },
+            {
+                "title": "k",
+                "artist": "kk",
+                "composer": "kk",
+                "arranger": "k",
+                "publisher": "k",
+                "genre": "k",
+                "shelf": "k",
+                "shelfNum": "k",
+                "tag": "k",
+                "remarks": "kk",
+                "click": "false",
+                "id": 16
+            },
+            {
+                "title": "k",
+                "artist": "l",
+                "composer": "k",
+                "arranger": "l",
+                "publisher": "ll",
+                "genre": "l",
+                "shelf": "ll",
+                "shelfNum": "l",
+                "tag": "l",
+                "remarks": "l",
+                "youtube": "l",
+                "click": "false",
+                "id": 17
+            },
+            {
+                "title": "k",
+                "artist": "k",
+                "composer": "k",
+                "arranger": "kk",
+                "publisher": "k",
+                "genre": "k",
+                "shelf": "k",
+                "shelfNum": "kk",
+                "tag": "k",
+                "remarks": "k",
+                "youtube": "k",
+                "click": "false",
+                "id": 18
+            },
+            {
+                "title": "k",
+                "artist": "kk",
+                "composer": "k",
+                "arranger": "kk",
+                "publisher": "k",
+                "genre": "k",
+                "shelf": "k",
+                "shelfNum": "k",
+                "tag": "kk",
+                "remarks": "k",
+                "click": "false",
+                "id": 19
+            },
+            {
+                "title": "k",
+                "artist": "kk",
+                "composer": "k",
+                "arranger": "k",
+                "publisher": "k",
+                "genre": "k",
+                "shelf": "k",
+                "shelfNum": "k",
+                "tag": "kk",
+                "remarks": "k",
+                "click": "false",
+                "id": 20
+            },
+            {
+                "title": "aa",
+                "artist": "a",
+                "composer": "a",
+                "arranger": "a",
+                "publisher": "a",
+                "genre": "a",
+                "shelf": "a",
+                "shelfNum": "a",
+                "tag": "a",
+                "remarks": "a",
+                "youtube": "a",
+                "click": "false",
+                "id": 21
+            },
+            {
+                "title": "ii",
+                "artist": "i",
+                "composer": "i",
+                "arranger": "i",
+                "publisher": "ii",
+                "genre": "i",
+                "shelf": "ii",
+                "shelfNum": "i",
+                "tag": "i",
+                "remarks": "i",
+                "youtube": "ii",
+                "click": "false",
+                "id": 22
+            },
+            {
+                "title": "l",
+                "artist": "ll",
+                "composer": "l",
+                "arranger": "l",
+                "publisher": "ll",
+                "genre": "l",
+                "shelf": "l",
+                "shelfNum": "l",
+                "tag": "ll",
+                "remarks": "l",
+                "youtube": "l",
+                "click": "false",
+                "id": 23
+            },
+            {
+                "title": "っっっっっkk",
+                "artist": "k",
+                "composer": "k",
+                "arranger": "k",
+                "publisher": "k",
+                "genre": "kk",
+                "shelf": "k",
+                "shelfNum": "k",
+                "tag": "k",
+                "remarks": "kk",
+                "youtube": "k",
+                "click": "false",
+                "id": 24
+            },
+            {
+                "title": "っっか",
+                "artist": "k",
+                "composer": "k",
+                "arranger": "kk",
+                "publisher": "k",
+                "genre": "k",
+                "shelf": "kk",
+                "shelfNum": "k",
+                "tag": "k",
+                "remarks": "kk",
+                "click": "false",
+                "id": 25
+            },
+            {
+                "title": "っっっっkk",
+                "artist": "k",
+                "composer": "k",
+                "arranger": "k",
+                "publisher": "k",
+                "genre": "kk",
+                "shelf": "k",
+                "shelfNum": "kk",
+                "tag": "k",
+                "remarks": "kk",
+                "youtube": "k",
+                "click": "false",
+                "id": 26
             }
         ]
     },
@@ -154,58 +394,56 @@
             "JAZZ",
             "アニメソング",
             "吹奏楽オリジナル",
-            "コンクール課題曲"
+            "コンクール課題曲",
+            "j",
+            "k",
+            "l",
+            "a",
+            "i",
+            "kk"
         ]
     },
     {
         "notice_score": [
             {
-                "title": "LEAD",
-                "edit": "LEAD",
-                "date": "2021.2.11"
+                "title": "っっっっkk",
+                "date": "2021.2.21"
             },
             {
-                "title": "フレンドライクミー",
-                "edit": "フレンドライクミー",
-                "date": "2021.2.11"
+                "title": "っっか",
+                "date": "2021.2.21"
             },
             {
-                "title": "レ・ミゼラブル",
-                "click": "true",
-                "date": "2021.2.11"
+                "title": "っっっっっkk",
+                "date": "2021.2.21"
             },
             {
-                "title": "Make you happy",
-                "click": "true",
-                "date": "2021.2.11"
+                "title": "l",
+                "date": "2021.2.21"
             },
             {
-                "title": "フレンドライクミー",
-                "edit": "フレンドライクミー",
-                "date": "2021.2.11"
+                "title": "ii",
+                "date": "2021.2.21"
             },
             {
-                "title": "フレンドライクミー",
-                "edit": "フレンドライクミー",
-                "date": "2021.2.11"
+                "title": "aa",
+                "date": "2021.2.21"
             },
             {
-                "title": "フレンドライクミー",
-                "edit": "フレンドライクミー",
-                "date": "2021.2.11"
+                "title": "k",
+                "date": "2021.2.21"
             },
             {
-                "title": "フレンドライクミー",
-                "edit": "フレンドライクミー",
-                "date": "2021.2.11"
+                "title": "k",
+                "date": "2021.2.21"
             },
             {
-                "title": "フレンドライクミー",
-                "date": "2021.2.11"
+                "title": "k",
+                "date": "2021.2.21"
             },
             {
-                "title": "フレンドライクミー",
-                "date": "2021.2.11"
+                "title": "k",
+                "date": "2021.2.21"
             }
         ]
     }
