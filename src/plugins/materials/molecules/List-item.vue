@@ -183,55 +183,64 @@ ul > .item4 {
 </style>
 <script>
 const song_index = { number: 0 };
+const api_url = new URL(
+  "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
+);
+// const player_url = "https://youtu.be/";
+
 export default {
   computed: {
-    song: function () {
+    song: function() {
       return this.$store.state.songs;
     },
-    song_get: function () {
+    song_get: function() {
       // console.log(this.$store.getters.songs);
       return this.$store.getters.songs;
     },
   },
-  data: function () {
+  data: function() {
     return {
-      // isOpened: true, //初期で閉じている状態
       isClosed: false, //クリックしたら開く
-      // isCenter: false, //これは閉じるときのもの(必要ないかもしれない)
+
       song_index: song_index,
       youtube: "",
       youtube_info: {
         img: "",
         title: "",
-        url: "https://youtu.be/",
+        url: "",
       },
     };
   },
   methods: {
     toggle(index) {
       this.isClosed = !this.isClosed;
-
       song_index.number = index;
-      const youtube = this.song_get[song_index.number].youtube;
-      const url = new URL(
-        "https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=AIzaSyCgl9sRiR_XWmeVGJQktWVZSdw6JFaG_YE"
-      );
-      const url_search = url.searchParams;
-      url_search.toString();
-      url_search.set("id", youtube);
-      console.log(url_search.toString());
-      url.href;
+      const player_url = "https://youtu.be/";
 
-      // const link = new URL("https://youtu.be/");
-      // const link_search = link.serachParams;
-      // link_search.toString();
-      // link_search.set("id", youtube);
-      const link = new URL(youtube, this.youtube_info.url);
-      this.youtube_info.url = link;
-      console.log((this.youtube_info.url = link));
-      console.log(youtube);
-      console.log((this.youtube_info.url = this.youtube_info.url + youtube));
-      fetch(url)
+      if ("youtube" in this.song_get[song_index.number]) {
+        const youtube_key = this.song_get[song_index.number].youtube;
+
+        //youtubeの動画閲覧リンクを作成
+        this.youtube_info.url = new URL(youtube_key, player_url);
+        console.log(this.youtube_info.url);
+
+        //youtubeのapiへ
+        const url_search = api_url.searchParams;
+        url_search.toString();
+        url_search.set("id", youtube_key);
+        console.log(url_search.toString());
+        api_url.href;
+
+        //↓youtube_apiが作動しているかどうかの確認
+        // console.log((this.youtube_info.url = link));
+        // console.log(youtube);
+        // console.log((this.youtube_info.url = this.youtube_info.url + youtube));
+
+        this.youtube_api(); //youtube_apiを作動させている
+      }
+    },
+    youtube_api() {
+      fetch(api_url)
         .then((response) => {
           return response.json();
         })
@@ -243,7 +252,6 @@ export default {
         })
         .catch((error) => console.log(error));
     },
-    youtube_click() {},
     toziru() {
       this.isCenter = !this.isCenter;
       this.isClosed = !this.isClosed;

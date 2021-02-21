@@ -1,9 +1,10 @@
 const fs = require('fs');
-   var today = new Date();
+var today = new Date();
 
-    const year = today.getFullYear()
-    const month = today.getMonth() + 1
-    const date=today.getDate()
+const year = today.getFullYear()
+const month = today.getMonth() + 1
+const date = today.getDate()
+
 function form(add_data) {
   try {
     fs.readFile('assets/song.json', 'utf8', function readFileCallback(err, data) {
@@ -16,17 +17,16 @@ function form(add_data) {
         // console.log(existsSameValue(obj[1].all_genre))
         // console.log(obj)
         add_data.click = "false"
-        add_data.movie="false"
         add_data.id = obj[0].all_song.length
         if (add_data.youtube == "") {
           delete add_data.youtube
         }
         obj[0].all_song.push(add_data)
         pushData(obj[1].all_genre, add_data.genre)
-        
+
         const newobj = {
           title: add_data.title,
-          date:year+"."+month+"."+date
+          date: year + "." + month + "." + date
         }
         obj[2].notice_score.unshift(newobj)
         if (obj[2].notice_score.length >= 11) {
@@ -45,12 +45,14 @@ function form(add_data) {
     // console.log(fs)
   }
 }
+
 function pushData(array, value) {
   if (array.indexOf(value) == -1) {
     array.push(value);
   }
   return true;
 }
+
 function lend_click(song_index, song) {
   try {
     fs.readFile("assets/song.json", 'utf8', function readFileCallback(err, data) {
@@ -66,7 +68,7 @@ function lend_click(song_index, song) {
         const newobj = {
           title: result.title,
           click: result.click,
-          date:year+"."+month+"."+date
+          date: year + "." + month + "." + date
         }
         obj[2].notice_score.unshift(newobj)
         if (obj[2].notice_score.length >= 11) {
@@ -83,6 +85,7 @@ function lend_click(song_index, song) {
     console.log(err)
   }
 }
+
 function return_click(index, lendScore) {
   try {
     fs.readFile('assets/song.json', 'utf8', function readFileCallBack(err, data) {
@@ -98,7 +101,7 @@ function return_click(index, lendScore) {
         const newobj = {
           title: result.title,
           click: result.click,
-          date:year+"."+month+"."+date
+          date: year + "." + month + "." + date
         }
         obj[2].notice_score.unshift(newobj)
         if (obj[2].notice_score.length >= 11) {
@@ -115,4 +118,8 @@ function return_click(index, lendScore) {
     console.log(err)
   }
 }
-export default { form, lend_click, return_click };
+export default {
+  form,
+  lend_click,
+  return_click
+};

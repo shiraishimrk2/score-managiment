@@ -78,7 +78,7 @@
           <ul class="details-box clm-2">
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
-              <div v-if="aiu">
+              <div v-if="show_youtube">
                 <p>{{ youtube_inf.title }}</p>
                 <img
                   @click="youtube_click(youtube_inf.url)"
@@ -517,10 +517,10 @@ import edit from "../../../assets/edit.js";
 
 export default {
   computed: {
-    song: function () {
+    song: function() {
       return this.$store.state.songs;
     },
-    api: function () {
+    api: function() {
       return this.youtube_api();
     },
 
@@ -540,17 +540,18 @@ export default {
         this.$emit("cahnge", value);
       },
     },
-    aiu: function () {
+    show_youtube: function() {
       return "youtube" in this.song_[this.index];
     },
   },
-  data: function () {
+  data: function() {
     return {};
   },
   methods: {
     youtube_click(url) {
+      const newUrl = encodeURI(url);
       const { shell } = require("electron");
-      shell.openExternal(url);
+      shell.openExternal(newUrl);
     },
     close() {
       this.$emit("close");
