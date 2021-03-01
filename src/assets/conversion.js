@@ -5,6 +5,10 @@ const year = today.getFullYear()
 const month = today.getMonth() + 1
 const date = today.getDate()
 
+// function checkEmpty(element) {
+//   return element !== undefined && element !== 0 && element !== null && element !== "";
+// }
+
 function form(add_data) {
   try {
     fs.readFile('assets/song.json', 'utf8', function readFileCallback(err, data) {
@@ -18,9 +22,18 @@ function form(add_data) {
         // console.log(obj)
         add_data.click = "false"
         add_data.id = obj[0].all_song.length
-        if (add_data.youtube == "") {
+
+
+        if (add_data.youtube[0] == "") {
           delete add_data.youtube
-        }
+        } else
+          for (var index = 0; index < add_data.youtube.length; index++) {
+            if (add_data.youtube[index] === null || add_data.youtube[index] === undefined || add_data.youtube[index] === "") {
+              add_data.youtube.splice(index, 1); // 削除
+              if (index > 0) index--;
+            }
+          }
+
         obj[0].all_song.push(add_data)
         pushData(obj[1].all_genre, add_data.genre)
 
