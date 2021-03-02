@@ -36,7 +36,7 @@
         :class="{ animation: isClosed }"
         :song_info="song_get"
         :song_index="song_index"
-        :youtube_inf="youtube_info"
+        :youtube_info="youtube_info"
       />
     </div>
   </div>
@@ -204,11 +204,7 @@ export default {
 
       song_index: song_index,
       youtube: "",
-      youtube_info: {
-        img: "",
-        title: "",
-        url: "",
-      },
+      youtube_info: [],
     };
   },
   methods: {
@@ -218,41 +214,59 @@ export default {
       const player_url = "https://youtu.be/";
 
       if ("youtube" in this.song_get[song_index.number]) {
-        const youtube_key = this.song_get[song_index.number].youtube;
+        for (
+          let i = 0;
+          i < this.song_get[song_index.number].youtube.length;
+          i++
+        ) {
+          // console.log(this.song_get[song_index.number].youtube.length);
+          console.log(this.song_get[song_index.number].youtube[i]);
+          const youtube_key = this.song_get[song_index.number].youtube[i];
 
-        //youtubeの動画閲覧リンクを作成
-        this.youtube_info.url = new URL(youtube_key, player_url);
-        console.log(this.youtube_info.url);
+          //youtubeの動画閲覧リンクを作成
+          // this.youtube_info[i].url = new URL(youtube_key, player_url);
 
-        //youtubeのapiへ
-        const url_search = api_url.searchParams;
-        url_search.toString();
-        url_search.set("id", youtube_key);
-        console.log(url_search.toString());
-        api_url.href;
+          var youtube_url = new URL(youtube_key, player_url);
+          console.log(youtube_url);
 
-        //↓youtube_apiが作動しているかどうかの確認
-        // console.log((this.youtube_info.url = link));
-        // console.log(youtube);
-        // console.log((this.youtube_info.url = this.youtube_info.url + youtube));
+          //youtubeのapiへ
+          const url_search = api_url.searchParams;
+          url_search.toString();
+          url_search.set("id", youtube_key);
+          // console.log(url_search.toString());
+          api_url.href;
 
-        this.youtube_api(); //youtube_apiを作動させている
+          //↓youtube_apiが作動しているかどうかの確認
+          // console.log((this.youtube_info.url = link));
+          // console.log(youtube);
+          // console.log((this.youtube_info.url = this.youtube_info.url + youtube));
+
+          this.youtube_api(i, youtube_url); //youtube_apiを作動させている
+          console.log(this.youtube_info);
+        }
       }
     },
-    youtube_api() {
+    youtube_api(i, youtube_url) {
       fetch(api_url)
         .then((response) => {
           return response.json();
         })
         .then((json) => {
           console.log(json);
-          this.youtube_info.img = json.items[0].snippet.thumbnails.medium.url;
-          this.youtube_info.title = json.items[0].snippet.title;
-          console.log(json);
+          let youtube_all = {
+            img: json.items[0].snippet.thumbnails.medium.url,
+            title: json.items[0].snippet.title,
+            url: youtube_url,
+          };
+          this.youtube_info.push(youtube_all);
+          // this.youtube_info[i].img =
+          //   json.items[0].snippet.thumbnails.medium.url;
+          // this.youtube_info[i].title = json.items[0].snippet.title;
         })
         .catch((error) => console.log(error));
     },
     toziru() {
+      this.youtube_info.splice(0);
       this.isCenter = !this.isCenter;
       this.isClosed = !this.isClosed;
     },

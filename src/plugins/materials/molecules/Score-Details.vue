@@ -79,12 +79,17 @@
             <li class="details-item">
               <p class="details-title">YoutubeURL</p>
               <div v-if="show_youtube">
-                <p>{{ youtube_inf.title }}</p>
-                <img
-                  @click="youtube_click(youtube_inf.url)"
-                  class="details-result"
-                  :src="youtube_inf.img"
-                />
+                <div
+                  v-for="(youtubes, index) in youtube_info.length"
+                  :key="youtubes.id"
+                >
+                  <p>{{ youtube_info[index].title }}</p>
+                  <img
+                    @click="youtube_click(youtube_info[index].url)"
+                    class="details-result"
+                    :src="youtube_info[index].img"
+                  />
+                </div>
               </div>
             </li>
           </ul>
@@ -520,16 +525,13 @@ export default {
     song: function() {
       return this.$store.state.songs;
     },
-    api: function() {
-      return this.youtube_api();
-    },
 
     song_: {
       get() {
         return this.song_info;
       },
       set(value) {
-        this.$emit("cahnge", value);
+        this.$emit("change", value);
       },
     },
     index: {
@@ -537,7 +539,15 @@ export default {
         return this.song_index.number;
       },
       set(value) {
-        this.$emit("cahnge", value);
+        this.$emit("change", value);
+      },
+    },
+    youtube_: {
+      get() {
+        return this.youtube_info;
+      },
+      set(value) {
+        this.$emit("change", value);
       },
     },
     show_youtube: function() {
@@ -586,8 +596,8 @@ export default {
     song_index: {
       type: Object,
     },
-    youtube_inf: {
-      type: Object,
+    youtube_info: {
+      type: Array,
     },
   },
 };
