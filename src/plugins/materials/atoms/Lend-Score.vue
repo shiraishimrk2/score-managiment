@@ -14,8 +14,11 @@
           >
         </div>
       </div>
-      <div class="colmun-2">
-        <button type="submit" class="add-button">登録</button>
+      <div class="colmun-2" v-if="return_button">
+        <button type="submit" class="add-button">返却！！！！</button>
+      </div>
+      <div v-else>
+        <h3>貸し出されているものはありません。</h3>
       </div>
     </form>
   </div>
@@ -31,6 +34,9 @@ export default {
   computed: {
     lendScore() {
       return this.$store.getters.lends;
+    },
+    return_button() {
+      return this.lendScore.length > 0;
     },
   },
   methods: {
