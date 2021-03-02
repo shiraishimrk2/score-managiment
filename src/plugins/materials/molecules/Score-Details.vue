@@ -525,7 +525,6 @@ export default {
     song: function() {
       return this.$store.state.songs;
     },
-
     song_: {
       get() {
         return this.song_info;

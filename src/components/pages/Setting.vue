@@ -13,8 +13,8 @@
     </ul>
 
     <div v-if="lend">
-      <Use-list />
-      <Score-Filter />
+      <h3 class="use-title">利用中曲リスト</h3>
+      <Lend-Score />
     </div>
 
     <div v-else-if="edit">
@@ -54,6 +54,15 @@ ul {
 ul > li {
   display: inline-block;
   margin-right: 50px;
+}
+
+.use-title {
+  border-bottom: 2px solid #eff0f4;
+  color: #d0d3e2;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 35px;
+  margin-bottom: 0;
 }
 
 .genre-box {
@@ -98,6 +107,11 @@ ul > li {
 } */
 
 @media screen and (min-width: 1024px) {
+  .use-title {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+  }
   .genre-box {
     height: 151px;
     padding: 0 50px;

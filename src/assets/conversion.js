@@ -99,24 +99,30 @@ function lend_click(song_index, song) {
   }
 }
 
-function return_click(index, lendScore) {
+function return_click(check_index, lendScore) {
   try {
     fs.readFile('assets/song.json', 'utf8', function readFileCallBack(err, data) {
       if (err) {
         console.log(err)
       } else {
         const obj = JSON.parse(data)
-        const lend_id = lendScore[index].id
-        console.log(lend_id)
-        const result = obj[0].all_song.find(item => item.id == lend_id)
-        console.log(result)
-        result.click = "false"
-        const newobj = {
-          title: result.title,
-          click: result.click,
-          date: year + "." + month + "." + date
+
+
+        //複数の返却処理 check_indexによってlend_scoreの選択されたindexを持ってきている
+        for (let i = 0; i < check_index.length; i++) {
+          const lend_id = lendScore[check_index[i]].id
+          console.log(lend_id)
+          const result = obj[0].all_song.find(item => item.id == lend_id)
+          console.log(result)
+          result.click = "false"
+          const newobj = {
+            title: result.title,
+            click: result.click,
+            date: year + "." + month + "." + date
+          }
+          obj[2].notice_score.unshift(newobj)
         }
-        obj[2].notice_score.unshift(newobj)
+
         if (obj[2].notice_score.length >= 11) {
           obj[2].notice_score.pop()
         }
