@@ -76,15 +76,20 @@
             </li>
           </ul>
           <ul class="details-box clm-2">
-            <li>
-              <p class="youtube-title">Youtube ID</p>
-              <div v-if="aiu">
-                <p class="youtube-result">{{ youtube_inf.title }}</p>
-                <img
-                  class="youtube-item"
-                  @click="youtube_click(youtube_inf.url)"
-                  :src="youtube_inf.img"
-                />
+            <li class="details-item">
+              <p class="details-title">YoutubeURL</p>
+              <div v-if="show_youtube">
+                <div
+                  v-for="(youtubes, index) in youtube_info.length"
+                  :key="youtubes.id"
+                >
+                  <p>{{ youtube_info[index].title }}</p>
+                  <img
+                    @click="youtube_click(youtube_info[index].url)"
+                    class="details-result"
+                    :src="youtube_info[index].img"
+                  />
+                </div>
               </div>
             </li>
           </ul>
@@ -534,19 +539,15 @@ import edit from "../../../assets/edit.js";
 
 export default {
   computed: {
-    song: function () {
+    song: function() {
       return this.$store.state.songs;
     },
-    api: function () {
-      return this.youtube_api();
-    },
-
     song_: {
       get() {
         return this.song_info;
       },
       set(value) {
-        this.$emit("cahnge", value);
+        this.$emit("change", value);
       },
     },
     index: {
@@ -554,20 +555,29 @@ export default {
         return this.song_index.number;
       },
       set(value) {
-        this.$emit("cahnge", value);
+        this.$emit("change", value);
       },
     },
-    aiu: function () {
+    youtube_: {
+      get() {
+        return this.youtube_info;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    show_youtube: function() {
       return "youtube" in this.song_[this.index];
     },
   },
-  data: function () {
+  data: function() {
     return {};
   },
   methods: {
     youtube_click(url) {
+      const newUrl = encodeURI(url);
       const { shell } = require("electron");
-      shell.openExternal(url);
+      shell.openExternal(newUrl);
     },
     close() {
       this.$emit("close");
@@ -602,8 +612,8 @@ export default {
     song_index: {
       type: Object,
     },
-    youtube_inf: {
-      type: Object,
+    youtube_info: {
+      type: Array,
     },
   },
 };

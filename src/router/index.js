@@ -10,8 +10,7 @@ import Score_Details from '../plugins/materials/molecules/Score-Details.vue'
 import Genre from '../components/pages/Genre.vue'
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'タイトル',
     component: Title

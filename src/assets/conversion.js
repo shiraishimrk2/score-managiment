@@ -1,9 +1,14 @@
 const fs = require('fs');
-   var today = new Date();
+var today = new Date();
 
-    const year = today.getFullYear()
-    const month = today.getMonth() + 1
-    const date=today.getDate()
+const year = today.getFullYear()
+const month = today.getMonth() + 1
+const date = today.getDate()
+
+// function checkEmpty(element) {
+//   return element !== undefined && element !== 0 && element !== null && element !== "";
+// }
+
 function form(add_data) {
   try {
     fs.readFile('assets/song.json', 'utf8', function readFileCallback(err, data) {
@@ -16,17 +21,25 @@ function form(add_data) {
         // console.log(existsSameValue(obj[1].all_genre))
         // console.log(obj)
         add_data.click = "false"
-        add_data.movie="false"
         add_data.id = obj[0].all_song.length
-        if (add_data.youtube == "") {
+
+
+        if (add_data.youtube[0] == "") {
           delete add_data.youtube
-        }
+        } else
+          for (var index = 0; index < add_data.youtube.length; index++) {
+            if (add_data.youtube[index] === null || add_data.youtube[index] === undefined || add_data.youtube[index] === "") {
+              add_data.youtube.splice(index, 1); // 削除
+              if (index > 0) index--;
+            }
+          }
+
         obj[0].all_song.push(add_data)
         pushData(obj[1].all_genre, add_data.genre)
-        
+
         const newobj = {
           title: add_data.title,
-          date:year+"."+month+"."+date
+          date: year + "." + month + "." + date
         }
         obj[2].notice_score.unshift(newobj)
         if (obj[2].notice_score.length >= 11) {
@@ -45,12 +58,14 @@ function form(add_data) {
     // console.log(fs)
   }
 }
+
 function pushData(array, value) {
   if (array.indexOf(value) == -1) {
     array.push(value);
   }
   return true;
 }
+
 function lend_click(song_index, song) {
   try {
     fs.readFile("assets/song.json", 'utf8', function readFileCallback(err, data) {
@@ -66,7 +81,7 @@ function lend_click(song_index, song) {
         const newobj = {
           title: result.title,
           click: result.click,
-          date:year+"."+month+"."+date
+          date: year + "." + month + "." + date
         }
         obj[2].notice_score.unshift(newobj)
         if (obj[2].notice_score.length >= 11) {
@@ -83,24 +98,31 @@ function lend_click(song_index, song) {
     console.log(err)
   }
 }
-function return_click(index, lendScore) {
+
+function return_click(check_index, lendScore) {
   try {
     fs.readFile('assets/song.json', 'utf8', function readFileCallBack(err, data) {
       if (err) {
         console.log(err)
       } else {
         const obj = JSON.parse(data)
-        const lend_id = lendScore[index].id
-        console.log(lend_id)
-        const result = obj[0].all_song.find(item => item.id == lend_id)
-        console.log(result)
-        result.click = "false"
-        const newobj = {
-          title: result.title,
-          click: result.click,
-          date:year+"."+month+"."+date
+
+
+        //複数の返却処理 check_indexによってlend_scoreの選択されたindexを持ってきている
+        for (let i = 0; i < check_index.length; i++) {
+          const lend_id = lendScore[check_index[i]].id
+          console.log(lend_id)
+          const result = obj[0].all_song.find(item => item.id == lend_id)
+          console.log(result)
+          result.click = "false"
+          const newobj = {
+            title: result.title,
+            click: result.click,
+            date: year + "." + month + "." + date
+          }
+          obj[2].notice_score.unshift(newobj)
         }
-        obj[2].notice_score.unshift(newobj)
+
         if (obj[2].notice_score.length >= 11) {
           obj[2].notice_score.pop()
         }
@@ -115,4 +137,8 @@ function return_click(index, lendScore) {
     console.log(err)
   }
 }
-export default { form, lend_click, return_click };
+export default {
+  form,
+  lend_click,
+  return_click
+};

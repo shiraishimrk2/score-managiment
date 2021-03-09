@@ -1,34 +1,51 @@
 <template>
-  <div class="lend-container">
-    <div
-      class="lend-box"
-      v-for="(lendScores, index) in lendScore"
-      :key="lendScores.aa"
-    >
-      <p class="lend-title">{{ lendScores.title }}</p>
-      <p class="lend-rack">{{ lendScores.shelf }}-{{ lendScores.shelfNum }}</p>
-      <div class="lend-button" @click="lend(index)">
-        <Return-button />
+  <div>
+    <form @submit.prevent="submit(check_index)">
+      <div
+        class="lend-box"
+        v-for="(lendScores, index) in lendScore"
+        :key="lendScores.id"
+      >
+        <div class="form-box">
+          <label
+            ><input v-model="check_index" type="checkbox" :value="index" />{{
+              lendScores.title
+            }}{{ lendScores.shelf }}-{{ lendScores.shelfNum }}</label
+          >
+        </div>
       </div>
-    </div>
+      <div class="colmun-2" v-if="return_button">
+        <button type="submit" class="add-button">返却！！！！</button>
+      </div>
+      <div v-else>
+        <h3>貸し出されているものはありません。</h3>
+      </div>
+    </form>
   </div>
 </template>
 <script>
 import conversion from "../../../assets/conversion.js";
 export default {
+  data: function() {
+    return {
+      check_index: [],
+    };
+  },
   computed: {
     lendScore() {
       return this.$store.getters.lends;
     },
+    return_button() {
+      return this.lendScore.length > 0;
+    },
   },
   methods: {
-    lend: function (index) {
-      conversion.return_click(index, this.lendScore);
+    submit: function(check_index) {
+      conversion.return_click(check_index, this.lendScore);
     },
   },
 };
 </script>
-
 
 <style scoped>
 .lend-container {

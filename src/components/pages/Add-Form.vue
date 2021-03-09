@@ -1,5 +1,5 @@
 <template>
-  <form v-on:submit.prevent="submit">
+  <form @submit.prevent.once="submit">
     <div class="form-container">
       <div class="column-1">
         <div class="form-box">
@@ -113,16 +113,24 @@
           />
         </div>
 
-        <div class="form-box">
+        <div
+          class="form-box"
+          v-for="(youtube_link, index) in add_data.youtube"
+          :key="youtube_link.index"
+        >
           <label for="youtube">YoutubeURL</label>
           <input
             type="text"
             placeholder="https://www.youtube.com/watch?v=***********"
             class="col-sm-9 form-control"
             id="youtube"
-            v-model="add_data.youtube"
+            v-model="add_data.youtube[index]"
           />
         </div>
+        <button type="button" @click="incrace_youtube()">incrace link</button>
+        <button v-show="link_pices" type="button" @click="decrace_youtube()">
+          decrace link
+        </button>
       </div>
 
       <div class="colmun-2">
@@ -146,20 +154,33 @@ const add_data = {
   shelfNum: "",
   tag: "",
   remarks: "",
-  youtube: "",
+  youtube: [""],
 };
 
 export default {
-  data: function () {
+  computed: {
+    link_pices: function() {
+      return this.add_data.youtube.length >= 2;
+    },
+  },
+  data: function() {
     return {
       add_data: add_data,
     };
   },
   methods: {
     submit() {
+      this.processing = true;
       conversion.form(add_data);
       console.log("成功");
       console.log(add_data);
+    },
+    incrace_youtube() {
+      this.add_data.youtube.push("");
+      console.log(this.add_data.youtube);
+    },
+    decrace_youtube() {
+      this.add_data.youtube.pop();
     },
   },
 };
