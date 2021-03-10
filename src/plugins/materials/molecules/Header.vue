@@ -17,6 +17,10 @@
   </div>
 </template>
 <style scoped>
+.form-select {
+  width: 100px;
+  height: 30px;
+}
 .header-box {
   width: 100%;
   height: 45px;
@@ -135,12 +139,11 @@ label {
     height: 60px;
     opacity: 1;
   }
-    @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1900px) {
     .accbox {
       left: 65%;
     }
   }
-
 }
 </style>
 
@@ -153,11 +156,6 @@ export default {
     };
   },
   methods: {
-    toggleAccordion() {
-      this.isOpened = !this.isOpened;
-      this.isAnime = !this.isAnime;
-      // console.log("1");
-    },
     search_reset() {
       this.$store.commit("search_reset");
     },

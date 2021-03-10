@@ -7,4 +7,9 @@
   width: 25px;
   height: 25px;
 }
+@media screen and (min-width: 1024px) {
+  .icon {
+    display: none;
+  }
+}
 </style>

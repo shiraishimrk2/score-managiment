@@ -1,6 +1,13 @@
 <template>
   <form class="form-inner" v-on:submit.prevent="submit">
     <div class="form-box">
+      <label for="select"></label>
+      <select v-model="selected">
+        <option v-for="option in options" :key="option.id" :value="option">
+          {{ option.text }}{{ option.value }}
+        </option>
+      </select>
+
       <label for="keyword"></label>
       <input
         type="text"
@@ -19,18 +26,40 @@
 <script>
 export default {
   computed: {
-    song: function () {
+    song: function() {
       return this.$store.state.songs;
     },
+    selected: {
+      get() {
+        return this.$store.state.Search_tags;
+      },
+      set(value) {
+        this.$store.commit("updateSearch_tags", value);
+      },
+    },
   },
-  data: function () {
+  data: function() {
     return {
       keyword: "",
+      // selected: { text: "検索項目", value: "" },
+      options: [
+        { text: "検索項目", value: "" },
+        { text: "曲名", value: "title" },
+        { text: "作曲者", value: "artist" },
+        { text: "編曲者", value: "arranger" },
+      ],
     };
   },
   methods: {
     submit() {
+      console.log(this.selected.value);
+      // console.log(this.selected.text);
       this.$store.commit("song_search", this.keyword);
+    },
+  },
+  props: {
+    value: {
+      type: Object,
     },
   },
 };
