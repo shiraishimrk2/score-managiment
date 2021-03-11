@@ -17,6 +17,10 @@
   </div>
 </template>
 <style scoped>
+.form-select {
+  width: 100px;
+  height: 30px;
+}
 .header-box {
   width: 100%;
   height: 45px;

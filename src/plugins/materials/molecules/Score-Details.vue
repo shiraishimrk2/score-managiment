@@ -264,7 +264,7 @@ import edit from "../../../assets/edit.js";
 
 export default {
   computed: {
-    song: function () {
+    song: function() {
       return this.$store.state.songs;
     },
     song_: {
@@ -291,15 +291,15 @@ export default {
         this.$emit("change", value);
       },
     },
-    show_youtube: function () {
+    show_youtube: function() {
       return "youtube" in this.song_[this.Songindex];
     },
-    link_pices: function () {
+    link_pices: function() {
       // console.log(this.song_info[this.song_index.number].youtube.lnegth >= 2);
       return this.song_[this.Songindex].youtube >= 2;
     },
   },
-  data: function () {
+  data: function() {
     return {};
   },
   methods: {

@@ -38,7 +38,7 @@
 <script>
 export default {
   computed: {
-    song: function () {
+    song: function() {
       return this.$store.state.songs;
     },
     selected: {
@@ -50,7 +50,7 @@ export default {
       },
     },
   },
-  data: function () {
+  data: function() {
     return {
       keyword: "",
       // selected: { text: "検索項目", value: "" },
