@@ -72,6 +72,7 @@ export default {
   font-size: 14px;
   color: rgb(255, 255, 255);
   position: absolute;
+  cursor: default;
   top: 25%;
   left: 5%;
 }
@@ -84,10 +85,10 @@ li > a {
 
 @media screen and (min-width: 1024px) {
   .genre-box {
-    height: 151px;
+    height: 160px;
     padding: 0;
     margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 30px;
     overflow-x: hidden;
   }
 
@@ -115,6 +116,12 @@ li > a {
   .genre-title {
     font-size: 15px;
     top: 35%;
+  }
+
+  @media screen and (min-width: 1370px) {
+    .genre-box {
+      height: 155px;
+    }
   }
 }
 </style>

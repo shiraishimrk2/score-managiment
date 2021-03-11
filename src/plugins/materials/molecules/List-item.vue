@@ -42,13 +42,20 @@
   </div>
 </template>
 
+
+
 <style scoped>
+.score-list {
+  width: 100%;
+  height: 100%;
+}
+
 .song-container {
   width: 100%;
-  height: 450px;
+  height: 410px;
   /* max-height: 500px; */
   display: block;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .song-container::-webkit-scrollbar {
@@ -62,7 +69,7 @@
   padding: 0;
   background-color: #f6f6f6;
   border-bottom: solid 1.5px#eff0f4;
-  /* display: inline; */
+  cursor: default;
   display: grid;
   grid-template-areas:
     "one two"
@@ -77,6 +84,7 @@
 }
 
 .song {
+  letter-spacing: 0.15em;
   display: inline-block;
   font-size: 14px;
   font-weight: 600;
@@ -137,6 +145,11 @@ ul > .item4 {
 }
 
 @media screen and (min-width: 1024px) {
+  .song-container {
+    width: 100%;
+    height: 350px;
+  }
+
   .item2,
   .item3,
   .item4 {
@@ -169,15 +182,19 @@ ul > .item4 {
     grid-template-areas: "one three four two ";
     grid-template-columns: 3fr 0.5fr 1.5fr 1.5fr;
   }
+}
 
+@media screen and (min-width: 1370px) {
   .song-container {
-    max-height: 450px;
+    width: 100%;
+    height: 450px;
   }
-  @media screen and (min-width: 1900px) {
-    .song-container {
-      height: 630px;
-      max-height: 630px;
-    }
+}
+
+@media screen and (min-width: 1900px) {
+  .song-container {
+    height: 630px;
+    max-height: 630px;
   }
 }
 </style>
@@ -190,15 +207,15 @@ const api_url = new URL(
 
 export default {
   computed: {
-    song: function() {
+    song: function () {
       return this.$store.state.songs;
     },
-    song_get: function() {
+    song_get: function () {
       // console.log(this.$store.getters.songs);
       return this.$store.getters.songs;
     },
   },
-  data: function() {
+  data: function () {
     return {
       isClosed: false, //クリックしたら開く
 

@@ -76,8 +76,8 @@
             </li>
           </ul>
           <ul class="details-box clm-2">
-            <li class="details-item">
-              <p class="details-title">YoutubeURL</p>
+            <li class="youtube-item">
+              <p class="youtube-title">YoutubeURL</p>
               <div v-if="show_youtube">
                 <div
                   v-for="(youtubes, index) in youtube_info.length"
@@ -86,7 +86,7 @@
                   <p>{{ youtube_info[index].title }}</p>
                   <img
                     @click="youtube_click(youtube_info[index].url)"
-                    class="details-result"
+                    class="youtube-result"
                     :src="youtube_info[index].img"
                   />
                 </div>
@@ -116,7 +116,7 @@
                   placeholder="曲名"
                   class="col-sm-9 form-control edit-title"
                   id="title"
-                  v-model.lazy="song_[index].title"
+                  v-model.lazy="song_[Songindex].title"
                 />
               </div>
 
@@ -127,7 +127,7 @@
                   placeholder="作曲者"
                   class="col-sm-9 form-control edit-title"
                   id="composer"
-                  v-model="song_[index].composer"
+                  v-model="song_[Songindex].composer"
                 />
               </div>
 
@@ -138,7 +138,7 @@
                   placeholder="編曲者"
                   class="col-sm-9 form-control edit-title"
                   id="arranger"
-                  v-model="song_[index].arranger"
+                  v-model="song_[Songindex].arranger"
                 />
               </div>
 
@@ -149,7 +149,7 @@
                   placeholder="出版社"
                   class="col-sm-9 form-control edit-title"
                   id="publisher"
-                  v-model="song_[index].publisher"
+                  v-model="song_[Songindex].publisher"
                 />
               </div>
 
@@ -160,7 +160,7 @@
                   placeholder="ジャンル"
                   class="col-sm-9 form-control edit-title"
                   id="genre"
-                  v-model="song_[index].genre"
+                  v-model="song_[Songindex].genre"
                 />
               </div>
 
@@ -171,7 +171,7 @@
                   placeholder="アーティスト"
                   class="col-sm-9 form-control edit-title"
                   id="artist"
-                  v-model="song_[index].artist"
+                  v-model="song_[Songindex].artist"
                 />
               </div>
 
@@ -182,7 +182,7 @@
                     class="rack edit-title"
                     type="text"
                     id="shelf"
-                    v-model="song_[index].shelf"
+                    v-model="song_[Songindex].shelf"
                   />
                   <!-- <p>の</p> -->
                 </div>
@@ -193,7 +193,7 @@
                     class="rack edit-title"
                     type="text"
                     id="shelfNum"
-                    v-model="song_[index].shelfNum"
+                    v-model="song_[Songindex].shelfNum"
                   />
                   <!-- <p>段目</p> -->
                 </div>
@@ -205,7 +205,7 @@
                   placeholder="(例) 明るい"
                   class="col-sm-9 form-control edit-title"
                   id="tag"
-                  v-model="song_[index].tag"
+                  v-model="song_[Songindex].tag"
                 />
               </div>
               <div class="form-box">
@@ -215,30 +215,149 @@
                   placeholder="備考"
                   class="col-sm-9 form-control edit-title"
                   id="tag"
-                  v-model="song_[index].remarks"
+                  v-model="song_[Songindex].remarks"
                 />
               </div>
             </div>
 
             <div class="details-box clm-2">
-              <div class="form-box">
-                <label class="form-title" for="youtube">Youtube ID</label>
+              <div
+                class="form-box"
+                v-for="(tamesi, index) in song_[Songindex].youtube"
+                :key="tamesi.id"
+              >
+                <label class="form-title" for="youtube">YoutubeURL</label>
                 <input
                   type="text"
                   placeholder="https://www.youtube.com/watch?v=***********"
                   class="col-sm-9 form-control edit-title"
                   id="youtube"
-                  v-model="song_[index].youtube"
+                  v-model="song_[Songindex].youtube[index]"
                 />
               </div>
+              <div class="plus-box">
+                <button
+                  class="plus-button"
+                  type="button"
+                  @click="incrace_youtube()"
+                >
+                  +
+                </button>
+                <button
+                  v-show="link_pices"
+                  type="button"
+                  @click="decrace_youtube()"
+                >
+                  decrace link
+                </button>
+              </div>
             </div>
-            <!-- <h1>{{ $store.state.songs[0].all_song[0] }}</h1> -->
           </div>
         </form>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import edit from "../../../assets/edit.js";
+
+export default {
+  computed: {
+    song: function () {
+      return this.$store.state.songs;
+    },
+    song_: {
+      get() {
+        return this.song_info;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    Songindex: {
+      get() {
+        return this.song_index.number;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    youtube_: {
+      get() {
+        return this.youtube_info;
+      },
+      set(value) {
+        this.$emit("change", value);
+      },
+    },
+    show_youtube: function () {
+      return "youtube" in this.song_[this.Songindex];
+    },
+    link_pices: function () {
+      // console.log(this.song_info[this.song_index.number].youtube.lnegth >= 2);
+      return this.song_[this.Songindex].youtube >= 2;
+    },
+  },
+  data: function () {
+    return {};
+  },
+  methods: {
+    youtube_click(url) {
+      const newUrl = encodeURI(url);
+      const { shell } = require("electron");
+      shell.openExternal(newUrl);
+    },
+    close() {
+      this.$emit("close");
+      console.log(this.song_index.number);
+    },
+    search() {
+      console.log(this.song_info[this.song_index.number].title);
+      console.log(this.song_index.number);
+    },
+    incrace_youtube() {
+      this.song_[this.Songindex].youtube.push("");
+      console.log(this.song_[this.Songindex].youtube);
+    },
+    decrace_youtube() {
+      this.song_[this.Songindex].youtube.pop();
+    },
+    submit() {
+      console.log(this.song_[this.Songindex].youtube[0]);
+      console.log(this.song_[this.Songindex].youtube[1]);
+      console.log(edit_data);
+      console.log(this.youtube_info);
+      console.log(this.youtube_);
+      const edit_data = {
+        title: this.song_[this.Songindex].title,
+        artist: this.song_[this.Songindex].artist,
+        composer: this.song_[this.Songindex].composer,
+        arranger: this.song_[this.Songindex].arranger,
+        publisher: this.song_[this.Songindex].publisher,
+        genre: this.song_[this.Songindex].genre,
+        shelf: this.song_[this.Songindex].shelf,
+        shelfNum: this.song_[this.Songindex].shelfNum,
+        tag: this.song_[this.Songindex].tag,
+        youtube: this.song_[this.Songindex].youtube,
+      };
+      edit.form(edit_data, this.song_index);
+      console.log("成功");
+    },
+  },
+  props: {
+    song_info: {
+      type: Array,
+    },
+    song_index: {
+      type: Object,
+    },
+    youtube_info: {
+      type: Array,
+    },
+  },
+};
+</script>
 
 <style scoped>
 .Accordion-Item {
@@ -287,6 +406,10 @@
   font-size: 14px;
 }
 
+.add-button:active {
+  opacity: 0.5;
+}
+
 .close-button {
   width: 20px;
   height: 20px;
@@ -333,11 +456,8 @@ ul {
 }
 
 .details-box {
-  /* height: 50px; */
   padding: 0 30px;
   margin: 0;
-  display: grid;
-  /* text-align: right; */
 }
 
 .details-item {
@@ -349,6 +469,14 @@ ul {
   display: grid;
   grid-gap: 4%;
   grid-template-columns: 1fr 3fr;
+}
+
+.youtube-item {
+  height: 50px;
+  margin-top: 10px;
+  color: #101748;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .details-title {
@@ -376,7 +504,7 @@ ul {
   color: #101748;
 }
 
-.youtube-item:hover {
+.youtube-result:hover {
   opacity: 0.6;
 }
 
@@ -391,6 +519,27 @@ ul {
   display: grid;
   grid-gap: 4%;
   grid-template-columns: 1fr 3fr;
+}
+
+.plus-box {
+  margin: 20px;
+}
+
+.plus-button {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  background: #f6f6f6;
+  border: solid 2px #8f92a5;
+  color: #8f92a5;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 3px;
+  margin: 0 0 0 auto;
+}
+
+.plus-button:hover {
+  opacity: 0.5;
 }
 
 form {
@@ -445,7 +594,16 @@ form {
   margin-top: 10px;
 }
 
+.clm-2 {
+  height: 500px;
+  overflow-y: scroll;
+}
+
 @media screen and (min-width: 1024px) {
+  .details-container {
+    margin-top: 0;
+  }
+
   .bg-box {
     width: calc(100% - 60px);
     height: 100%;
@@ -482,6 +640,7 @@ form {
 
   .details-container {
     /* margin-top: 23px; */
+    width: 100%;
     display: grid;
     grid-template-areas: "left right ";
     grid-template-columns: 1fr 1fr;
@@ -492,17 +651,13 @@ form {
   }
 
   .details-item {
-    height: 42px;
+    height: 30px;
     margin-top: 25px;
   }
 
   .details-title {
     margin-top: 10px;
     font-size: 13px;
-  }
-
-  h3 {
-    font-size: 30px;
   }
 
   .add-title {
@@ -515,12 +670,13 @@ form {
   }
 
   .clm-2 {
+    height: 500px;
     grid-area: right;
   }
 
   .form-box {
     margin-top: 15px;
-    height: 47px;
+    height: 40px;
   }
 
   label {
@@ -531,90 +687,20 @@ form {
   .edit-title {
     height: 20px;
   }
+
+  @media screen and (min-width: 1370px) {
+    .details-item {
+      height: 42px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+
+    .form-box {
+      margin-top: 15px;
+      height: 47px;
+    }
+  }
 }
 </style>
-
-<script>
-import edit from "../../../assets/edit.js";
-
-export default {
-  computed: {
-    song: function() {
-      return this.$store.state.songs;
-    },
-    song_: {
-      get() {
-        return this.song_info;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    index: {
-      get() {
-        return this.song_index.number;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    youtube_: {
-      get() {
-        return this.youtube_info;
-      },
-      set(value) {
-        this.$emit("change", value);
-      },
-    },
-    show_youtube: function() {
-      return "youtube" in this.song_[this.index];
-    },
-  },
-  data: function() {
-    return {};
-  },
-  methods: {
-    youtube_click(url) {
-      const newUrl = encodeURI(url);
-      const { shell } = require("electron");
-      shell.openExternal(newUrl);
-    },
-    close() {
-      this.$emit("close");
-      console.log(this.song_index.number);
-    },
-    search() {
-      console.log(this.song_info[this.song_index.number].title);
-      console.log(this.song_index.number);
-    },
-    submit() {
-      const edit_data = {
-        title: this.song_[this.index].title,
-        artist: this.song_[this.index].artist,
-        composer: this.song_[this.index].composer,
-        arranger: this.song_[this.index].arranger,
-        publisher: this.song_[this.index].publisher,
-        genre: this.song_[this.index].genre,
-        shelf: this.song_[this.index].shelf,
-        shelfNum: this.song_[this.index].shelfNum,
-        tag: this.song_[this.index].tag,
-        youtube: this.song_[this.index].youtube,
-      };
-      edit.form(edit_data, this.song_index);
-      console.log("成功");
-      console.log(this.edit_data);
-    },
-  },
-  props: {
-    song_info: {
-      type: Array,
-    },
-    song_index: {
-      type: Object,
-    },
-    youtube_info: {
-      type: Array,
-    },
-  },
-};
-</script>

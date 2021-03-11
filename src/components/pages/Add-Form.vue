@@ -112,13 +112,15 @@
             v-model="add_data.remarks"
           />
         </div>
+      </div>
 
+      <div class="colmun-2">
         <div
-          class="form-box"
+          class="youtube-box"
           v-for="(youtube_link, index) in add_data.youtube"
           :key="youtube_link.index"
         >
-          <label for="youtube">YoutubeURL</label>
+          <label for="youtube">YoutubeID</label>
           <input
             type="text"
             placeholder="https://www.youtube.com/watch?v=***********"
@@ -126,15 +128,15 @@
             id="youtube"
             v-model="add_data.youtube[index]"
           />
-        </div>
-        <button type="button" @click="incrace_youtube()">incrace link</button>
-        <button v-show="link_pices" type="button" @click="decrace_youtube()">
-          decrace link
-        </button>
-      </div>
+          <button type="button" @click="incrace_youtube()">＋</button>
 
-      <div class="colmun-2">
-        <button type="submit" class="add-button">登録</button>
+          <button v-show="link_pices" type="button" @click="decrace_youtube()">
+            －
+          </button>
+        </div>
+        <div class="button-box">
+          <button type="submit" class="add-button">登録</button>
+        </div>
       </div>
       <!-- <h1>{{ $store.state.songs[0].all_song[0] }}</h1> -->
     </div>
@@ -159,11 +161,11 @@ const add_data = {
 
 export default {
   computed: {
-    link_pices: function() {
+    link_pices: function () {
       return this.add_data.youtube.length >= 2;
     },
   },
-  data: function() {
+  data: function () {
     return {
       add_data: add_data,
     };
@@ -201,6 +203,15 @@ export default {
   grid-template-columns: 1.3fr 3fr;
 }
 
+.youtube-box {
+  margin-top: 20px;
+
+  background: #f6f6f6;
+  display: grid;
+  grid-gap: 2%;
+  grid-template-columns: 1.3fr 3fr 0.5fr 0.5fr;
+}
+
 label {
   margin-top: 3px;
   display: inline-block;
@@ -220,7 +231,7 @@ input[type="text"] {
   background: none;
   color: #101748;
   font-weight: 600;
-  border-bottom: solid 1px #d0d3e2;
+  border-bottom: 2px solid #eff0f4;
 }
 
 input::placeholder {
@@ -249,10 +260,6 @@ input:focus {
   grid-template-columns: 0.3fr 2.5fr;
 }
 
-.colmun-2 {
-  margin: 20px;
-}
-
 .add-button {
   width: 40px;
   height: 40px;
@@ -272,7 +279,7 @@ input:focus {
   stroke: none;
   width: 100%;
   resize: vertical;
-  border-bottom: solid 1px #d0d3e2;
+  border-bottom: 2px solid #eff0f4;
   background-color: #f6f6f6;
 }
 
@@ -289,21 +296,39 @@ textarea::placeholder {
   color: #d0d3e2;
 }
 
+button {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  background: #f6f6f6;
+  border: solid 2px #8f92a5;
+  color: #8f92a5;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+/* 
+button:active {
+  background-color: #f05800;
+} */
 @media screen and (min-width: 1024px) {
   .form-box {
     margin-top: 20px;
     grid-template-columns: 1fr 4fr;
   }
 
+  .youtube-box {
+    grid-template-columns: 1fr 4fr 0.3fr 0.3fr;
+  }
+
   label {
     font-size: 15px;
     font-weight: 600;
     padding-bottom: 10px;
-  }
-
-  .column-1,
-  .colmun-2 {
-    margin: 0 30px;
   }
 
   .form-container {
@@ -336,19 +361,30 @@ textarea::placeholder {
 
   .column-1 {
     grid-area: left;
+    margin-left: 10px;
   }
 
   .colmun-2 {
     grid-area: right;
+    margin-top: 0;
   }
 
   .add-button {
     width: 80px;
+    height: 40px;
     border-radius: 3px;
     background: #101748;
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
     position: static;
+    display: block;
+    margin: 0 0 0 auto;
+  }
+
+  .button-box {
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
 }
 </style>

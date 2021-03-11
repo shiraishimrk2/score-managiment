@@ -101,7 +101,7 @@ label {
     height: 60px;
     display: grid;
     grid-gap: 6%;
-    grid-template-columns: 1.5fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .back__icon {
@@ -135,12 +135,11 @@ label {
     height: 60px;
     opacity: 1;
   }
-    @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1900px) {
     .accbox {
       left: 65%;
     }
   }
-
 }
 </style>
 
@@ -153,11 +152,6 @@ export default {
     };
   },
   methods: {
-    toggleAccordion() {
-      this.isOpened = !this.isOpened;
-      this.isAnime = !this.isAnime;
-      // console.log("1");
-    },
     search_reset() {
       this.$store.commit("search_reset");
     },
