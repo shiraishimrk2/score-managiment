@@ -16,7 +16,7 @@
           <img
             class="movie-img"
             src="../assets/movie.png"
-            v-show="'youtube' in song_get[index]"
+            v-show="song_get[index].movie == 'true'"
           />
         </li>
 
@@ -41,8 +41,6 @@
     </div>
   </div>
 </template>
-
-
 
 <style scoped>
 .score-list {
@@ -207,15 +205,15 @@ const api_url = new URL(
 
 export default {
   computed: {
-    song: function () {
+    song: function() {
       return this.$store.state.songs;
     },
-    song_get: function () {
+    song_get: function() {
       // console.log(this.$store.getters.songs);
       return this.$store.getters.songs;
     },
   },
-  data: function () {
+  data: function() {
     return {
       isClosed: false, //クリックしたら開く
 

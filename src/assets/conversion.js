@@ -24,15 +24,24 @@ function form(add_data) {
         add_data.id = obj[0].all_song.length
 
 
-        if (add_data.youtube[0] == "") {
-          delete add_data.youtube
-        } else
-          for (var index = 0; index < add_data.youtube.length; index++) {
-            if (add_data.youtube[index] === null || add_data.youtube[index] === undefined || add_data.youtube[index] === "") {
-              add_data.youtube.splice(index, 1); // 削除
-              if (index > 0) index--;
-            }
+        // if (add_data.youtube[0] == "") {
+        //   delete add_data.youtube
+        // } else
+        //   for (var index = 0; index < add_data.youtube.length; index++) {
+        //     if (add_data.youtube[index] === null || add_data.youtube[index] === undefined || add_data.youtube[index] === "") {
+        //       add_data.youtube.splice(index, 1); // 削除
+        //       if (index > 0) index--;
+        //     }
+        //   }
+        for (var index = 0; index < add_data.youtube.length; index++) {
+          if (add_data.youtube[index] === null || add_data.youtube[index] === undefined || add_data.youtube[index] === "") {
+            add_data.youtube.splice(index, 1); // 削除
+            if (index > 0) index--;
           }
+        }
+        if (add_data.youtube.length >= 0) {
+          add_data.movie = "true"
+        }
 
         obj[0].all_song.push(add_data)
         pushData(obj[1].all_genre, add_data.genre)
