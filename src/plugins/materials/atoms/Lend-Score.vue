@@ -71,6 +71,11 @@ export default {
   width: 100%;
 }
 
+.lend-box:hover {
+  background-color: #e6e6e6;
+  opacity: 0.8;
+}
+
 .lend-item {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
