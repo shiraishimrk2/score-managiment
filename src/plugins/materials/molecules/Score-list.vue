@@ -9,7 +9,9 @@
         <Moviesort-icon class="icon-inner" />
       </div> -->
     </div>
-    <List-item />
+    <div class="listitem-container">
+      <List-item />
+    </div>
   </section>
 </template>
 <script>
@@ -42,6 +44,7 @@ export default {
 
 <style scoped>
 .list-title {
+  height: 100%;
   padding: 10px 0;
 }
 
@@ -49,8 +52,6 @@ export default {
   padding: 0px 30px;
   height: 40px;
   border-bottom: solid 2px #eff0f4;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .title-inner {
@@ -62,6 +63,12 @@ export default {
   font-weight: 600;
   color: #d0d3e2;
 }
+
+.listitem-container {
+  width: 100%;
+  height: 100%;
+}
+
 .icon-box {
   display: inline-block;
   margin-right: auto;

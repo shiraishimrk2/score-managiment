@@ -1,23 +1,35 @@
 <template>
   <form class="form-inner" v-on:submit.prevent="submit">
     <div class="form-box">
-      <label for="select"></label>
-      <select v-model="selected">
-        <option v-for="option in options" :key="option.id" :value="option">
-          {{ option.text }}{{ option.value }}
-        </option>
-      </select>
+      <div>
+        <label for="select"></label>
+        <div class="select-container">
+          <select class="select-box" v-model="selected">
+            <option
+              type="radio"
+              class="select-item"
+              v-for="option in options"
+              :key="option.id"
+              :value="option"
+            >
+              {{ option.text }}
+              {{ option.value }}
+            </option>
+          </select>
+        </div>
+      </div>
 
-      <label for="keyword"></label>
-      <input
-        type="text"
-        placeholder="検索キーワードを入力"
-        class="col-sm-9 form-control form-input"
-        id="keyword"
-        v-model="keyword"
-      />
+      <div>
+        <label for="keyword"></label>
+        <input
+          type="text"
+          placeholder="検索キーワードを入力"
+          class="col-sm-9 form-control form-input"
+          id="keyword"
+          v-model="keyword"
+        />
+      </div>
     </div>
-
     <div class="colmun-2">
       <button type="submit">検索</button>
     </div>
@@ -57,16 +69,43 @@ export default {
       this.$store.commit("song_search", this.keyword);
     },
   },
-  props: {
-    value: {
-      type: Object,
-    },
-  },
+  // props: {
+  //   value: {
+  //     type: Object,
+  //   },
+  // },
 };
 </script>
 <style scoped>
+.form-box {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+}
+
 .form-inner {
   z-index: 1;
+}
+
+.select-box {
+  width: 100px;
+  height: 40px;
+  border: solid 2px #e9e9e9;
+  color: #101748;
+  background: #f6f6f6;
+  border-radius: 6px;
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.select-item {
+  font-size: 12px;
+  padding: 10px;
+  font-weight: 600;
+  background: #ececec;
+  border: solid 2px #e9e9e9;
+  border-radius: 6px;
 }
 
 .form-input {
@@ -75,10 +114,11 @@ export default {
   text-align: left;
   background: #e9e9e9;
   color: #8f92a5;
-  width: 80%;
+  width: 85%;
   height: 39px;
-  border-radius: 8px;
-  margin: 15px 30px;
+  border-radius: 6px;
+  margin-top: 15px;
+  margin-left: 10px;
   float: left;
 }
 
@@ -103,8 +143,17 @@ input::placeholder {
     z-index: 0;
   }
 
+  .select-box {
+    height: 42px;
+    margin-top: 9px;
+    font-size: 12px;
+  }
+
+  .select-item {
+    font-size: 14px;
+  }
   .form-input {
-    width: 480px;
+    width: 35%;
     height: 42px;
     margin: 9px 0;
   }

@@ -23,6 +23,7 @@ html {
 
 body {
   height: 100%;
+  letter-spacing: 0.15em;
   background-color: #f6f6f6;
   margin: 0;
 }
@@ -33,6 +34,7 @@ main {
 }
 h1 {
   font-size: 1rem;
+  letter-spacing: 0.15em;
 }
 h2 {
   font-size: 1rem;
@@ -41,12 +43,14 @@ h2 {
   font-family: "Meylio UI";
   font-weight: 550;
   margin: 0px;
+  letter-spacing: 0.15em;
 }
 a {
   font-size: 1rem;
 }
 li {
   list-style-type: none;
+  letter-spacing: 0.15em;
 }
 input {
   letter-spacing: 0.15em;

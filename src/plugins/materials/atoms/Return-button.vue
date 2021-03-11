@@ -11,4 +11,8 @@ button {
   background-color: #101748;
   color: white;
 }
+
+button:hover {
+  opacity: 0.5;
+}
 </style>

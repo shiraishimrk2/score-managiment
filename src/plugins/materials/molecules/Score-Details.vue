@@ -76,8 +76,8 @@
             </li>
           </ul>
           <ul class="details-box clm-2">
-            <li class="details-item">
-              <p class="details-title">YoutubeURL</p>
+            <li class="youtube-item">
+              <p class="youtube-title">YoutubeURL</p>
               <div v-if="show_youtube">
                 <div
                   v-for="(youtubes, index) in youtube_info.length"
@@ -86,7 +86,7 @@
                   <p>{{ youtube_info[index].title }}</p>
                   <img
                     @click="youtube_click(youtube_info[index].url)"
-                    class="details-result"
+                    class="youtube-result"
                     :src="youtube_info[index].img"
                   />
                 </div>
@@ -235,16 +235,22 @@
                   v-model="song_[Songindex].youtube[index]"
                 />
               </div>
-              <button type="button" @click="incrace_youtube()">
-                incrace link
-              </button>
-              <button
-                v-show="link_pices"
-                type="button"
-                @click="decrace_youtube()"
-              >
-                decrace link
-              </button>
+              <div class="plus-box">
+                <button
+                  class="plus-button"
+                  type="button"
+                  @click="incrace_youtube()"
+                >
+                  +
+                </button>
+                <button
+                  v-show="link_pices"
+                  type="button"
+                  @click="decrace_youtube()"
+                >
+                  decrace link
+                </button>
+              </div>
             </div>
           </div>
         </form>
@@ -400,6 +406,10 @@ export default {
   font-size: 14px;
 }
 
+.add-button:active {
+  opacity: 0.5;
+}
+
 .close-button {
   width: 20px;
   height: 20px;
@@ -446,11 +456,8 @@ ul {
 }
 
 .details-box {
-  /* height: 50px; */
   padding: 0 30px;
   margin: 0;
-  display: grid;
-  /* text-align: right; */
 }
 
 .details-item {
@@ -464,6 +471,14 @@ ul {
   grid-template-columns: 1fr 3fr;
 }
 
+.youtube-item {
+  height: 50px;
+  margin-top: 10px;
+  color: #101748;
+  font-size: 15px;
+  font-weight: 600;
+}
+
 .details-title {
   margin-top: 20px;
   font-size: 10px;
@@ -471,9 +486,26 @@ ul {
   color: #8f92a5;
 }
 
+.youtube-title {
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8f92a5;
+}
+
 .details-result {
   margin: 10px 0;
   border-bottom: 2px solid #eff0f4;
+}
+
+.youtube-result {
+  font-size: 15px;
+  font-weight: 600;
+  color: #101748;
+}
+
+.youtube-result:hover {
+  opacity: 0.6;
 }
 
 .add-title {
@@ -487,6 +519,27 @@ ul {
   display: grid;
   grid-gap: 4%;
   grid-template-columns: 1fr 3fr;
+}
+
+.plus-box {
+  margin: 20px;
+}
+
+.plus-button {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  background: #f6f6f6;
+  border: solid 2px #8f92a5;
+  color: #8f92a5;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 3px;
+  margin: 0 0 0 auto;
+}
+
+.plus-button:hover {
+  opacity: 0.5;
 }
 
 form {
@@ -541,7 +594,16 @@ form {
   margin-top: 10px;
 }
 
+.clm-2 {
+  height: 500px;
+  overflow-y: scroll;
+}
+
 @media screen and (min-width: 1024px) {
+  .details-container {
+    margin-top: 0;
+  }
+
   .bg-box {
     width: calc(100% - 60px);
     height: 100%;
@@ -578,6 +640,7 @@ form {
 
   .details-container {
     /* margin-top: 23px; */
+    width: 100%;
     display: grid;
     grid-template-areas: "left right ";
     grid-template-columns: 1fr 1fr;
@@ -588,17 +651,13 @@ form {
   }
 
   .details-item {
-    height: 42px;
+    height: 30px;
     margin-top: 25px;
   }
 
   .details-title {
     margin-top: 10px;
     font-size: 13px;
-  }
-
-  h3 {
-    font-size: 30px;
   }
 
   .add-title {
@@ -611,12 +670,13 @@ form {
   }
 
   .clm-2 {
+    height: 500px;
     grid-area: right;
   }
 
   .form-box {
     margin-top: 15px;
-    height: 47px;
+    height: 40px;
   }
 
   label {
@@ -626,6 +686,21 @@ form {
 
   .edit-title {
     height: 20px;
+  }
+
+  @media screen and (min-width: 1370px) {
+    .details-item {
+      height: 42px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+
+    .form-box {
+      margin-top: 15px;
+      height: 47px;
+    }
   }
 }
 </style>
