@@ -40,8 +40,8 @@ ul {
 
 @media screen and (min-width: 1024px) {
   .notice-container {
-    margin-top: 50px;
+    margin-top: 0px;
+    overflow: auto;
   }
-
 }
 </style>

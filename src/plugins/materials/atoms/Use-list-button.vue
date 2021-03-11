@@ -6,17 +6,17 @@
 <script>
 import conversion from "../../../assets/conversion.js";
 export default {
-  data: function() {
+  data: function () {
     return {
       blue: "blue",
       gray: "gray",
     };
   },
   computed: {
-    song: function() {
+    song: function () {
       return this.$store.getters.songs;
     },
-    lend: function() {
+    lend: function () {
       return this.song[this.song_index.number].click == "true";
     },
   },
@@ -50,5 +50,9 @@ button {
 
 .gray {
   background-color: gray;
+}
+
+button:active {
+  opacity: 0.5;
 }
 </style>

@@ -13,7 +13,9 @@
     </ul>
 
     <div v-if="lend">
-      <h3 class="use-title">利用中曲リスト</h3>
+      <div class="title-box">
+        <h3 class="use-title">利用中曲リスト</h3>
+      </div>
       <Lend-Score />
     </div>
 
@@ -56,24 +58,12 @@ ul > li {
   margin-right: 50px;
 }
 
-.use-title {
-  border-bottom: 2px solid #eff0f4;
-  color: #d0d3e2;
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-top: 35px;
-  margin-bottom: 0;
-}
-
 .genre-box {
   padding-left: 20px;
   padding-right: 20px;
   width: 150px;
   height: 120px;
   position: relative;
-  display: grid;
-  grid-gap: 5%;
-  grid-template-columns: 1fr 1fr;
 }
 
 .genre-inner {
@@ -82,10 +72,8 @@ ul > li {
   height: 100px;
   position: relative;
   top: 13px;
-
   background-color: #fff;
   border-radius: 8px;
-
   margin-right: 20px;
 }
 
@@ -97,29 +85,27 @@ ul > li {
   top: 25%;
   left: 5%;
 }
-/* 
-.use-box {
-  padding-left: 20px;
+
+.title-box {
+  margin-top: 25px;
+  padding: 0px 30px;
+  border-bottom: solid 2px #eff0f4;
 }
 
-.edit-box {
-  padding-right: 20px;
-} */
+.use-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  letter-spacing: 0.15em;
+  color: #d0d3e2;
+}
 
 @media screen and (min-width: 1024px) {
-  .use-title {
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 20px;
-  }
   .genre-box {
     height: 151px;
-    padding: 0 50px;
-    margin: 50px 0 0 0;
-  }
-
-  .genre-box::-webkit-scrollbar {
-    display: initial;
+    margin-left: 50px;
+    margin-top: 30px;
+    padding: 0;
   }
 
   .genre-inner {
@@ -133,6 +119,12 @@ ul > li {
   .genre-title {
     font-size: 15px;
     top: 35%;
+    cursor: default;
+  }
+
+  .title-box {
+    margin-top: 0;
+    padding: 0px 50px;
   }
 }
 </style>

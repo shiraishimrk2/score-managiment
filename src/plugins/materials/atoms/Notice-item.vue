@@ -54,7 +54,7 @@ export default {
   height: 25px;
   padding-left: 30px;
   padding-right: 30px;
-  font-size: 13px;
+  font-size: 14px;
 
   color: #101748;
 }
