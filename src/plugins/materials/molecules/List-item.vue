@@ -153,10 +153,6 @@ ul > .item4 {
     height: 350px;
   }
 
-  .not_score {
-    margin-left: 50px;
-  }
-
   .item2,
   .item3,
   .item4 {
@@ -189,6 +185,13 @@ ul > .item4 {
     grid-template-areas: "one three four two ";
     grid-template-columns: 3fr 0.5fr 1.5fr 1.5fr;
   }
+
+  .not_score {
+    font-size: 14px;
+    color: #101748;
+    padding-left: 50px;
+    padding-right: 30px;
+  }
 }
 
 @media screen and (min-width: 1370px) {
@@ -214,14 +217,14 @@ const api_url = new URL(
 
 export default {
   computed: {
-    song: function() {
+    song: function () {
       return this.$store.state.songs;
     },
-    song_get: function() {
+    song_get: function () {
       console.log(this.$store.getters.songs);
       return this.$store.getters.songs;
     },
-    song_show: function() {
+    song_show: function () {
       return this.song_get.length != 0;
       // this.song_get !== undefined ||
       //   this.song_get !== null ||
@@ -229,7 +232,7 @@ export default {
       //   this.song_get !== []
     },
   },
-  data: function() {
+  data: function () {
     return {
       isClosed: false, //クリックしたら開く
 
