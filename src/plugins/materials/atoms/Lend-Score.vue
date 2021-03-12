@@ -163,7 +163,7 @@ input:focus {
 .inner__no-lend {
   font-size: 14px;
   color: #101748;
-  padding-left: 30px;
+  padding-left: 50px;
   padding-right: 30px;
 }
 
