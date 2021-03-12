@@ -1,43 +1,48 @@
 <template>
-  <div class="score-list">
-    <div class="song-container">
-      <!-- <p>{{ song[1].title }}</p> -->
-      <ul
-        class="song-box"
-        @click="toggle(index)"
-        v-for="(songs, index) in song_get"
-        :key="songs.id"
-      >
-        <li class="song item1">
-          {{ song_get[index].title }}
-        </li>
+  <div>
+    <div class="score-list" v-if="song_show">
+      <div class="song-container">
+        <!-- <p>{{ song_get[1].title }}</p> -->
+        <ul
+          class="song-box"
+          @click="toggle(index)"
+          v-for="(songs, index) in song_get"
+          :key="songs.id"
+        >
+          <li class="song item1">
+            {{ song_get[index].title }}
+          </li>
 
-        <li class="song item2">
-          <img
-            class="movie-img"
-            src="../assets/movie.png"
-            v-show="song_get[index].movie == 'true'"
-          />
-        </li>
+          <li class="song item2">
+            <img
+              class="movie-img"
+              src="../assets/movie.png"
+              v-show="song_get[index].movie == 'true'"
+            />
+          </li>
 
-        <li class="song item3">
-          {{ song_get[index].shelf }} -
-          {{ song_get[index].shelfNum }}
-        </li>
+          <li class="song item3">
+            {{ song_get[index].shelf }} -
+            {{ song_get[index].shelfNum }}
+          </li>
 
-        <li class="song item4">
-          {{ song_get[index].publisher }}
-        </li>
-      </ul>
+          <li class="song item4">
+            {{ song_get[index].publisher }}
+          </li>
+        </ul>
+      </div>
+      <div class="details-box">
+        <Score-Details
+          @close="toziru()"
+          :class="{ animation: isClosed }"
+          :song_info="song_get"
+          :song_index="song_index"
+          :youtube_info="youtube_info"
+        />
+      </div>
     </div>
-    <div class="details-box">
-      <Score-Details
-        @close="toziru()"
-        :class="{ animation: isClosed }"
-        :song_info="song_get"
-        :song_index="song_index"
-        :youtube_info="youtube_info"
-      />
+    <div v-else>
+      <h3 class="not_score">該当なし</h3>
     </div>
   </div>
 </template>
@@ -148,6 +153,10 @@ ul > .item4 {
     height: 350px;
   }
 
+  .not_score {
+    margin-left: 50px;
+  }
+
   .item2,
   .item3,
   .item4 {
@@ -209,8 +218,15 @@ export default {
       return this.$store.state.songs;
     },
     song_get: function() {
-      // console.log(this.$store.getters.songs);
+      console.log(this.$store.getters.songs);
       return this.$store.getters.songs;
+    },
+    song_show: function() {
+      return this.song_get.length != 0;
+      // this.song_get !== undefined ||
+      //   this.song_get !== null ||
+      //   this.song_get !== "" ||
+      //   this.song_get !== []
     },
   },
   data: function() {
