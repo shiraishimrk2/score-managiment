@@ -13,7 +13,6 @@
               :value="option"
             >
               {{ option.text }}
-              {{ option.value }}
             </option>
           </select>
         </div>
