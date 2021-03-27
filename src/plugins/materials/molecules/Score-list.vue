@@ -5,9 +5,6 @@
         {{ word ? "ALL LIST" : Search_Word }}
       </h3>
       <h3 class="title-inner" v-else>ALL LIST</h3>
-      <!-- <div @click="movie_click()" class="icon-box">
-        <Moviesort-icon class="icon-inner" />
-      </div> -->
     </div>
     <div class="listitem-container">
       <List-item />

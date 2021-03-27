@@ -143,14 +143,12 @@ svg {
 </style>
 
 <script>
-import AddIcon from "../atoms/Add-icon.vue";
 // import Setting from "./icons/I_setting.vue";
 // import List from "./icons/I_list.vue";
 // import Notice from "./icons/I_notice.vue";
 
 // import SVGElement from "./Icon.vue";
 export default {
-  components: { AddIcon },
   methods: {
     search_reset() {
       this.$store.commit("search_reset");
