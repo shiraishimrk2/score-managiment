@@ -2,17 +2,17 @@
   <div class="header-box">
     <div class="box-inner">
       <div @click="search_reset()">
-        <Back-button class="back__icon" v-if="$route.name !== '楽譜リスト'" />
+        <HeaderBackIcon class="back__icon" v-if="$route.name !== '楽譜リスト'" />
       </div>
       <h2 class="inner__title">{{ $route.name }}</h2>
     </div>
     <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
     <div v-if="$route.name == '楽譜リスト' || $route.name == '管理'">
       <div class="accbox">
-        <label for="check"><Search-icon /></label>
+        <label for="check"><HeaderSearchIcon /></label>
       </div>
       <input type="checkbox" id="check" class="accbox-input" />
-      <Search-form-inner />
+      <HeaderSearchInner />
     </div>
   </div>
 </template>

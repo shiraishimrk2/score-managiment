@@ -27,7 +27,7 @@
       </div>
 
       <div v-else>
-        <h3 class="inner__no-lend">貸し出されているものはありません。</h3>
+        <strong class="inner__no-lend">貸し出されているものはありません。</strong>
       </div>
     </form>
   </div>

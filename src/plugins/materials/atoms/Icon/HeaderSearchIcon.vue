@@ -1,5 +1,5 @@
 <template>
-  <img src="../assets/search.png" class="icon" />
+  <img src="../../assets/search.png" class="icon" />
 </template>
 
 <style scoped>

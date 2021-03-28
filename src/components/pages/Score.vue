@@ -7,11 +7,11 @@
         :key="genres.id"
         @click="genre_click(index)"
       >
-        <Genre-box />
+        <GenreButton />
         <p class="genre-title">{{ genre[index] }}</p>
       </li>
     </ul>
-    <Score-list :genre_index="genre_index" />
+    <ScoreList :genre_index="genre_index" />
   </div>
 </template>
 <script>

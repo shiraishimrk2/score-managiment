@@ -3,7 +3,7 @@
     <div class="title-container">
       <div class="tap-item">
         <div class="title-box">
-          <Title-image class="title-img" />
+          <TitleButton class="title-img" />
           <p class="title-text blinking">Tap Start</p>
         </div>
       </div>

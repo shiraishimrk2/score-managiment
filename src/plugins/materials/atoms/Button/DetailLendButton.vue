@@ -4,7 +4,7 @@
   </button>
 </template>
 <script>
-import conversion from "../../../assets/conversion.js";
+import conversion from "../../../../assets/conversion.js";
 export default {
   data: function () {
     return {

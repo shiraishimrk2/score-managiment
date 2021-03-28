@@ -74,9 +74,6 @@ export default new Vuex.Store({
     countupd: function (state) {
       state.count++
     }
-    // movie_click: function (state) {
-    //   state.Search_Word = "movie"
-    // }
   },
   actions: {},
   modules: {}
