@@ -2,7 +2,7 @@
   <div>
     <ul class="notice-container">
       <li v-for="(item, index) in notice" :key="item.number">
-        <Notice-item :index="index" />
+        <NoticeListItem :index="index" />
       </li>
     </ul>
   </div>

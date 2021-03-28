@@ -2,12 +2,12 @@
   <div>
     <ul class="genre-box">
       <li class="genre-inner use-box" @click="edit_click()">
-        <Genre-box />
+        <GenreButton />
         <p class="genre-title">利用中曲リスト</p>
       </li>
 
       <li class="genre-inner edit-box" @click="lend_click()">
-        <Genre-box />
+        <GenreButton />
         <p class="genre-title">楽曲の編集</p>
       </li>
     </ul>
@@ -16,11 +16,12 @@
       <div class="title-box">
         <h3 class="use-title">利用中曲リスト</h3>
       </div>
-      <Lend-Score />
+      <LendScore />
     </div>
 
     <div v-else-if="edit">
-      <Score-Edit />
+      <!-- <Score-Edit /> -->
+    <ScoreList/>
     </div>
   </div>
 </template>

@@ -4,25 +4,25 @@
       <ul class="nav-list">
         <li class="nav-list__child child-setting" @click="search_reset()">
           <router-link to="/setting" class="button__link">
-            <Setting-icon />
+            <MenuSettingIcon />
           </router-link>
         </li>
 
         <li class="nav-list__child child-list">
           <router-link to="/score" class="button__link">
-            <List-icon />
+            <MenuListIcon />
           </router-link>
         </li>
 
         <li class="nav-list__child child-notice" @click="search_reset()">
           <router-link to="/notice" class="button__link">
-            <Notice-icon />
+            <MenuNoticeIcon />
           </router-link>
         </li>
 
         <li class="nav-add-button" @click="search_reset()">
           <router-link to="/add-form">
-            <Add-icon />
+            <MenuAddIcon />
           </router-link>
         </li>
       </ul>

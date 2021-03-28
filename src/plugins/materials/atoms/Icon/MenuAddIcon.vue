@@ -1,6 +1,6 @@
 <template>
   <div id="add-icon">
-    <img src="../assets/add.png" width="27px" height="27px" id="icon" />
+    <img src="../../assets/add.png" width="27px" height="27px" id="icon" />
   </div>
 </template>
 <style scoped>

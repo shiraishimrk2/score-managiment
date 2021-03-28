@@ -1,7 +1,6 @@
 <template>
   <div>
-    <img src="../assets/genre.png" class="genre g-box" />
-    <img src="../assets/l-genre.png" class="l-genre g-box" />
+    <img src="../../assets/genre-box.png" class="genre g-box" />
   </div>
 </template>
 
@@ -13,9 +12,7 @@
   z-index: 1;
 }
 
-.l-genre {
-  display: none;
-}
+
 
 .g-box:hover {
   opacity: 0.8;

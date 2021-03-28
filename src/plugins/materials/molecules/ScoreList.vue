@@ -7,7 +7,7 @@
       <h3 class="title-inner" v-else>ALL LIST</h3>
     </div>
     <div class="listitem-container">
-      <List-item />
+      <ScoreListItem />
     </div>
   </section>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Score-list />
+    <ScoreList />
   </div>
 </template>
 <script>

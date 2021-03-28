@@ -1,5 +1,5 @@
 <template>
   <div>
-    <Notice-List />
+    <NoticeList />
   </div>
 </template>

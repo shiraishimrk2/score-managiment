@@ -32,7 +32,7 @@
         </ul>
       </div>
       <div class="details-box">
-        <Score-Details
+        <ScoreDetails
           @close="toziru()"
           :class="{ animation: isClosed }"
           :song_info="song_get"

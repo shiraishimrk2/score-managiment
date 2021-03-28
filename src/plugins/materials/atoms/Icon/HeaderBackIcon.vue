@@ -1,6 +1,6 @@
 <template>
   <router-link to="/score">
-    <img src="../assets/back-button.png" class="backbutton" />
+    <img src="../../assets/back-button.png" class="backbutton" />
   </router-link>
 </template>
 

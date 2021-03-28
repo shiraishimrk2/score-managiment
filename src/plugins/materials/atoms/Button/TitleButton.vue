@@ -1,5 +1,5 @@
 <template>
-  <img src="../assets/title.png" class="title-image" />
+  <img src="../../assets/title.png" class="title-image" />
 </template>
 
 <style scoped>
