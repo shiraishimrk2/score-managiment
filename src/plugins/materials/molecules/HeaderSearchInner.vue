@@ -1,13 +1,12 @@
 <template>
-  <form class="form-inner" v-on:submit.prevent="submit">
-    <div class="form-box">
-      <div>
+  <form class="form-container" v-on:submit.prevent="submit">
+    <div class="form-container-section">
+      <div class="section__inner">
         <label for="select"></label>
-        <div class="select-container">
-          <select class="select-box" v-model="selected">
+          <select class="select__inner__item" v-model="selected">
             <option
               type="radio"
-              class="select-item"
+              class="inner__item"
               v-for="option in options"
               :key="option.id"
               :value="option"
@@ -15,21 +14,20 @@
               {{ option.text }}
             </option>
           </select>
-        </div>
       </div>
 
-      <div>
+      <div class="section__inner">
         <label for="keyword"></label>
         <input
           type="text"
           placeholder="検索キーワードを入力"
-          class="col-sm-9 form-control form-input"
+          class="inner__input"
           id="keyword"
           v-model="keyword"
         />
       </div>
     </div>
-    <div class="colmun-2">
+    <div class="form-container-section--2">
       <button type="submit">検索</button>
     </div>
   </form>
@@ -76,16 +74,29 @@ export default {
 };
 </script>
 <style scoped>
-.form-box {
+
+.form-container-section {
   display: grid;
   grid-template-columns: 0.5fr 3fr;
 }
 
-.form-inner {
+.form-container {
   z-index: 1;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  background: #f6f6f6;
+  border-bottom: solid 2px #e8e8e8;
+  border-top: solid 2px #e8e8e8;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 1;
+  text-align: center;
+  pointer-events: none;
 }
 
-.select-box {
+.select__inner__item {
   width: 100px;
   height: 40px;
   border: solid 2px #e9e9e9;
@@ -98,7 +109,7 @@ export default {
   font-weight: 600;
 }
 
-.select-item {
+.inner__item {
   font-size: 12px;
   padding: 10px;
   font-weight: 600;
@@ -107,7 +118,7 @@ export default {
   border-radius: 6px;
 }
 
-.form-input {
+.inner__input {
   border: none;
   outline: none;
   text-align: left;
@@ -132,26 +143,30 @@ input::placeholder {
   color: #babbc5;
 }
 
-.colmun-2 {
+.form-container-section--2 {
   display: none;
 }
 
 @media screen and (min-width: 1024px) {
-  .form-inner {
+  .form-container {
     width: 100%;
     z-index: 0;
+    border-top: none;
+    height: 60px;
+    opacity: 1;
+    pointer-events: all;
   }
 
-  .select-box {
+  .select__inner__item {
     height: 42px;
     margin-top: 9px;
     font-size: 12px;
   }
 
-  .select-item {
+  .inner__item {
     font-size: 14px;
   }
-  .form-input {
+  .inner__input {
     width: 35%;
     height: 42px;
     margin: 9px 0;

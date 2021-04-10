@@ -1,5 +1,4 @@
 <template>
-  <div>
     <nav id="footer">
       <ul class="nav-list">
         <li class="nav-list__child child-setting" @click="search_reset()">
@@ -27,7 +26,6 @@
         </li>
       </ul>
     </nav>
-  </div>
 </template>
 
 <style scoped>
@@ -44,17 +42,16 @@
   display: flex;
   flex-wrap: wrap-reverse;
   justify-content: center;
-  /* align-items: flex-end; */
   padding: 0;
   margin: 0;
   width: 100%;
   height: 100%;
 }
+
 .nav-list__child {
   border-top: solid 2px #e8e8e8;
   width: 30%;
   height: 100%;
-  /* padding: 10px; */
   text-align: center;
 }
 
@@ -82,6 +79,7 @@ svg {
   max-width: 35px;
   padding: 7px;
 }
+
 @media screen and (min-width: 1024px) {
   #footer {
     top: 60px;
@@ -126,7 +124,6 @@ svg {
 
   .button__link {
     display: block;
-    /* margin-top: 10px; */
   }
 
   .nav-add-button {
@@ -134,8 +131,8 @@ svg {
     margin: 0;
     margin-top: auto;
     flex-basis: 5%;
-    /* margin-top: 50px; */
   }
+  
   svg {
     max-width: 30px;
   }

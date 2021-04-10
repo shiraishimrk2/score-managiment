@@ -1,51 +1,50 @@
 <template>
-  <div class="header-box">
-    <div class="box-inner">
+  <div class="header-block">
+
+    <div class="header-block-section">
       <div @click="search_reset()">
-        <HeaderBackIcon class="back__icon" v-if="$route.name !== '楽譜リスト'" />
+        <HeaderBackIcon class="section__backicon" v-if="$route.name !== '楽譜リスト'" />
       </div>
-      <h2 class="inner__title">{{ $route.name }}</h2>
+      <h2 class="section__title">{{ $route.name }}</h2>
     </div>
-    <!-- <Search-form class="serch-icon" v-if="$route.name == '楽譜リスト'" /> -->
+    
     <div v-if="$route.name == '楽譜リスト' || $route.name == '管理'">
-      <div class="accbox">
+      <div class="header-block-accbox">
         <label for="check"><HeaderSearchIcon /></label>
       </div>
-      <input type="checkbox" id="check" class="accbox-input" />
+      <input type="checkbox" id="check" class="accbox__input" />
       <HeaderSearchInner />
     </div>
+    
   </div>
 </template>
 <style scoped>
-.form-select {
-  width: 100px;
-  height: 30px;
-}
-.header-box {
+
+.header-block {
   width: 100%;
   height: 45px;
   background-color: #f6f6f6;
   border-bottom: solid 2px #e8e8e8;
-  /* position: fixed; */
 }
 
-.inner__title {
+.section__title {
   margin-top: auto;
   padding: 10px;
 }
-.box-inner {
+
+.header-block-section {
   height: 45px;
   position: relative;
   /* z-index: 1; */
 }
 
-.back__icon {
+.section__backicon {
   position: absolute;
   left: 13px;
   top: 13px;
 }
 
-.accbox {
+.header-block-accbox {
   width: 25px;
   height: 25px;
   position: absolute;
@@ -67,40 +66,18 @@ label {
   background-color: #f6f6f6;
 }
 
-.accbox-icon {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  /* z-index: 2; */
-}
-
-.accbox-input {
+.accbox__input {
   display: none;
 }
 
-.form-inner {
-  width: 100%;
-  height: 70px;
-  position: absolute;
-  background: #f6f6f6;
-  border-bottom: solid 2px #e8e8e8;
-  border-top: solid 2px #e8e8e8;
-  overflow: hidden;
-  opacity: 0;
-  transition: 0.3s;
-  z-index: 1;
-  text-align: center;
-  pointer-events: none;
-}
-
-.accbox-input:checked + .form-inner {
+.accbox__input:checked + .form-container {
   opacity: 1;
   pointer-events: all;
   /* transition: all 1000ms 0s ease; */
 }
 
 @media screen and (min-width: 1024px) {
-  .header-box {
+  .header-block {
     position: relative;
     height: 60px;
     display: grid;
@@ -108,12 +85,12 @@ label {
     grid-template-columns: 1fr 1fr;
   }
 
-  .back__icon {
+  .section__backicon {
     left: 20px;
     top: 18px;
   }
 
-  .inner__title {
+  .section__title {
     text-align: left;
     padding: 0;
     padding-left: 110px;
@@ -121,26 +98,17 @@ label {
     /* font-size: 20px; */
   }
 
-  .form-inner {
-    border-top: none;
-    pointer-events: all;
-  }
-
-  .box-inner {
+  .header-block-section {
     height: 60px;
   }
 
-  .accbox {
+  .header-block-accbox {
     top: 16px;
     left: 63%;
   }
 
-  .form-inner {
-    height: 60px;
-    opacity: 1;
-  }
   @media screen and (min-width: 1900px) {
-    .accbox {
+    .header-block-accbox {
       left: 65%;
     }
   }

@@ -1,1 +1,312 @@
-[{"all_song":[{"title":"Make you happy","artist":"NiziU","composer":"Hae Sol Lee / Jin Young Park","arranger":"郷間幹男","publisher":"WindsScore","genre":"J-POP","shelf":"B","shelfNum":"1","tag":"","click":"false","movie":"true","youtube":["a"],"id":0},{"title":"レ・ミゼラブル","artist":"","composer":"クロード＝ミッシェル・シェーンベルク","arranger":"森田一浩","publisher":"BRAIN","genre":"ミュージカル","shelf":"B","shelfNum":"1","tag":"","click":"false","movie":"true","youtube":["あ"],"id":1},{"title":"ルパン三世","artist":"","composer":"大野雄二","arranger":"山下国俊","publisher":"ミュージックエイト","genre":"アニメソング","shelf":"C","shelfNum":"1","tag":"","click":"false","movie":"false","youtube":[],"id":2},{"title":"WEST SIDE STORY","artist":"","composer":"レナード・バーンスタイン","arranger":"W.J.デュソイト","publisher":"BRAIN","genre":"映画音楽","shelf":"A","shelfNum":"1","tag":"","click":"false","movie":"false","youtube":[],"id":3},{"title":"LEAD","artist":"","composer":"清水大輔","arranger":"","publisher":"ロケットミュージック","genre":"吹奏楽オリジナル","shelf":"A","shelfNum":"2","tag":"","click":"false","movie":"true","youtube":["PGVJf7zO4Z8"],"id":4},{"title":"コンクール課題曲「春」","artist":"","composer":"福島弘和","arranger":"","publisher":"全日本吹奏楽連盟","genre":"コンクール課題曲","shelf":"B","shelfNum":"2","tag":"","click":"false","movie":"false","youtube":[],"id":5},{"title":"コンクール課題曲「じゅげむ」","artist":"","composer":"足立正","arranger":"","publisher":"全日本吹奏楽連盟","genre":"コンクール課題曲","shelf":"C","shelfNum":"2","tag":"","click":"false","movie":"false","youtube":[],"id":6},{"title":" オーメンズオブラブ","artist":"","composer":"THE SQUARE","arranger":"和泉　宏隆","publisher":"New Sounds in Brass","genre":"吹奏楽オリジナル","shelf":"C","shelfNum":"1","tag":"","click":"false","movie":"false","youtube":[],"id":7},{"title":"私のお気に入り","artist":"熱帯JAZZ楽団","composer":"リチャード・ロジャース","arranger":"宮川成治","publisher":"WindsScore","genre":"JAZZ","shelf":"C","shelfNum":"2","tag":"","click":"false","movie":"false","youtube":[],"id":8},{"title":"フレンドライクミー","artist":"","composer":"アラン・メンケン","arranger":"郷間幹男","publisher":"WindsScore","genre":"ディズニー","shelf":"B","shelfNum":"1","tag":"","click":"false","movie":"true","youtube":["UNI7gOJYX0k"],"id":9},{"title":"乙女解剖","artist":"あらなるめい","composer":"","arranger":"","publisher":"","genre":"j-pop","shelf":"1","shelfNum":"2","tag":"","remarks":"","click":"false","movie":"true","youtube":["9jR_5DUsdzs","N5cSFdGANVc"],"id":10},{"title":"ジブリメドレー","artist":"","composer":"","arranger":"","publisher":"","genre":"ジブリ","shelf":"B","shelfNum":"2","tag":"","remarks":"","click":"false","movie":"true","youtube":[",HUvPhiHMa4A","B0-sCqaBY3A","TndEqzObcJw"],"id":11},{"title":"アラジン","artist":"","composer":"","arranger":"","publisher":"","genre":"ディズニー","shelf":"C","shelfNum":"3","tag":"","remarks":"","click":"false","movie":"false","youtube":[],"id":12},{"title":"っっj","artist":"j","composer":"","arranger":"","publisher":"","genre":"j","shelf":"j","shelfNum":"j","tag":"j","remarks":"j","click":"false","movie":"true","youtube":["j","k"],"id":13}]},{"all_genre":["ALL LIST","ディズニー","ミュージカル","映画音楽","JAZZ","アニメソング","吹奏楽オリジナル","コンクール課題曲","j-pop","ジブリ","j"]},{"notice_score":[{"title":"フレンドライクミー","click":"false","date":"2021.3.12"},{"title":"コンクール課題曲「じゅげむ」","click":"false","date":"2021.3.12"},{"title":"コンクール課題曲「春」","click":"false","date":"2021.3.12"},{"title":"ジブリメドレー","edit":"ジブリメドレー","date":"2021.3.12"},{"title":"レ・ミゼラブル","edit":"レ・ミゼラブル","date":"2021.3.12"},{"title":"レ・ミゼラブル","edit":"レ・ミゼラブル","date":"2021.3.12"},{"title":"レ・ミゼラブル","edit":"レ・ミゼラブル","date":"2021.3.12"},{"title":"レ・ミゼラブル","edit":"レ・ミゼラブル","date":"2021.3.12"},{"title":"レ・ミゼラブル","edit":"レ・ミゼラブル","date":"2021.3.12"},{"title":"レ・ミゼラブル","edit":"レ・ミゼラブル","date":"2021.3.12"},{"title":"レ・ミゼラブル","edit":"レ・ミゼラブル","date":"2021.3.12"},{"title":"レ・ミゼラブル","edit":"レ・ミゼラブル","date":"2021.3.12"}]}]
+[
+    {
+        "all_song": [
+            {
+                "title": "Make you happy",
+                "artist": "NiziU",
+                "composer": "Hae Sol Lee / Jin Young Park",
+                "arranger": "郷間幹男",
+                "publisher": "WindsScore",
+                "genre": "J-POP",
+                "shelf": "B",
+                "shelfNum": "1",
+                "tag": "",
+                "click": "false",
+                "movie": "true",
+                "youtube": [
+                    "a"
+                ],
+                "id": 0
+            },
+            {
+                "title": "レ・ミゼラブル",
+                "artist": "",
+                "composer": "クロード＝ミッシェル・シェーンベルク",
+                "arranger": "森田一浩",
+                "publisher": "BRAIN",
+                "genre": "ミュージカル",
+                "shelf": "B",
+                "shelfNum": "1",
+                "tag": "",
+                "click": "false",
+                "movie": "true",
+                "youtube": [
+                    "あ"
+                ],
+                "id": 1
+            },
+            {
+                "title": "ルパン三世",
+                "artist": "",
+                "composer": "大野雄二",
+                "arranger": "山下国俊",
+                "publisher": "ミュージックエイト",
+                "genre": "アニメソング",
+                "shelf": "C",
+                "shelfNum": "1",
+                "tag": "",
+                "click": "false",
+                "movie": "false",
+                "youtube": [],
+                "id": 2
+            },
+            {
+                "title": "WEST SIDE STORY",
+                "artist": "",
+                "composer": "レナード・バーンスタイン",
+                "arranger": "W.J.デュソイト",
+                "publisher": "BRAIN",
+                "genre": "映画音楽",
+                "shelf": "A",
+                "shelfNum": "1",
+                "tag": "",
+                "click": "false",
+                "movie": "false",
+                "youtube": [],
+                "id": 3
+            },
+            {
+                "title": "LEAD",
+                "artist": "",
+                "composer": "清水大輔",
+                "arranger": "",
+                "publisher": "ロケットミュージック",
+                "genre": "吹奏楽オリジナル",
+                "shelf": "A",
+                "shelfNum": "2",
+                "tag": "",
+                "click": "false",
+                "movie": "true",
+                "youtube": [
+                    "PGVJf7zO4Z8"
+                ],
+                "id": 4
+            },
+            {
+                "title": "コンクール課題曲「春」",
+                "artist": "",
+                "composer": "福島弘和",
+                "arranger": "",
+                "publisher": "全日本吹奏楽連盟",
+                "genre": "コンクール課題曲",
+                "shelf": "B",
+                "shelfNum": "2",
+                "tag": "",
+                "click": "false",
+                "movie": "false",
+                "youtube": [],
+                "id": 5
+            },
+            {
+                "title": "コンクール課題曲「じゅげむ」",
+                "artist": "",
+                "composer": "足立正",
+                "arranger": "",
+                "publisher": "全日本吹奏楽連盟",
+                "genre": "コンクール課題曲",
+                "shelf": "C",
+                "shelfNum": "2",
+                "tag": "",
+                "click": "false",
+                "movie": "false",
+                "youtube": [],
+                "id": 6
+            },
+            {
+                "title": " オーメンズオブラブ",
+                "artist": "",
+                "composer": "THE SQUARE",
+                "arranger": "和泉　宏隆",
+                "publisher": "New Sounds in Brass",
+                "genre": "吹奏楽オリジナル",
+                "shelf": "C",
+                "shelfNum": "1",
+                "tag": "",
+                "click": "false",
+                "movie": "false",
+                "youtube": [],
+                "id": 7
+            },
+            {
+                "title": "私のお気に入り",
+                "artist": "熱帯JAZZ楽団",
+                "composer": "リチャード・ロジャース",
+                "arranger": "宮川成治",
+                "publisher": "WindsScore",
+                "genre": "JAZZ",
+                "shelf": "C",
+                "shelfNum": "2",
+                "tag": "",
+                "click": "false",
+                "movie": "false",
+                "youtube": [],
+                "id": 8
+            },
+            {
+                "title": "フレンドライクミー",
+                "artist": "",
+                "composer": "アラン・メンケン",
+                "arranger": "郷間幹男",
+                "publisher": "WindsScore",
+                "genre": "ディズニー",
+                "shelf": "B",
+                "shelfNum": "1",
+                "tag": "",
+                "click": "false",
+                "movie": "true",
+                "youtube": [
+                    "UNI7gOJYX0k"
+                ],
+                "id": 9
+            },
+            {
+                "title": "乙女解剖",
+                "artist": "あらなるめい",
+                "composer": "",
+                "arranger": "",
+                "publisher": "",
+                "genre": "j-pop",
+                "shelf": "1",
+                "shelfNum": "2",
+                "tag": "",
+                "remarks": "",
+                "click": "false",
+                "movie": "true",
+                "youtube": [
+                    "9jR_5DUsdzs",
+                    "N5cSFdGANVc"
+                ],
+                "id": 10
+            },
+            {
+                "title": "ジブリメドレー",
+                "artist": "",
+                "composer": "",
+                "arranger": "",
+                "publisher": "",
+                "genre": "ジブリ",
+                "shelf": "B",
+                "shelfNum": "2",
+                "tag": "",
+                "remarks": "",
+                "click": "false",
+                "movie": "true",
+                "youtube": [
+                    ",HUvPhiHMa4A",
+                    "B0-sCqaBY3A",
+                    "TndEqzObcJw"
+                ],
+                "id": 11
+            },
+            {
+                "title": "アラジン",
+                "artist": "",
+                "composer": "",
+                "arranger": "",
+                "publisher": "",
+                "genre": "ディズニー",
+                "shelf": "C",
+                "shelfNum": "3",
+                "tag": "",
+                "remarks": "",
+                "click": "false",
+                "movie": "false",
+                "youtube": [],
+                "id": 12
+            },
+            {
+                "title": "っっj",
+                "artist": "j",
+                "composer": "",
+                "arranger": "",
+                "publisher": "",
+                "genre": "j",
+                "shelf": "j",
+                "shelfNum": "j",
+                "tag": "j",
+                "remarks": "j",
+                "click": "false",
+                "movie": "true",
+                "youtube": [
+                    "j",
+                    "k"
+                ],
+                "id": 13
+            }
+        ]
+    },
+    {
+        "all_genre": [
+            "ALL LIST",
+            "ディズニー",
+            "ミュージカル",
+            "映画音楽",
+            "JAZZ",
+            "アニメソング",
+            "吹奏楽オリジナル",
+            "コンクール課題曲",
+            "j-pop",
+            "ジブリ",
+            "j"
+        ]
+    },
+    {
+        "notice_score": [
+            {
+                "title": "レ・ミゼラブル",
+                "click": "false",
+                "date": "2021.3.29"
+            },
+            {
+                "title": "Make you happy",
+                "click": "false",
+                "date": "2021.3.29"
+            },
+            {
+                "title": "Make you happy",
+                "click": "true",
+                "date": "2021.3.29"
+            },
+            {
+                "title": "レ・ミゼラブル",
+                "click": "true",
+                "date": "2021.3.29"
+            },
+            {
+                "title": "フレンドライクミー",
+                "click": "false",
+                "date": "2021.3.12"
+            },
+            {
+                "title": "コンクール課題曲「じゅげむ」",
+                "click": "false",
+                "date": "2021.3.12"
+            },
+            {
+                "title": "コンクール課題曲「春」",
+                "click": "false",
+                "date": "2021.3.12"
+            },
+            {
+                "title": "ジブリメドレー",
+                "edit": "ジブリメドレー",
+                "date": "2021.3.12"
+            },
+            {
+                "title": "レ・ミゼラブル",
+                "edit": "レ・ミゼラブル",
+                "date": "2021.3.12"
+            },
+            {
+                "title": "レ・ミゼラブル",
+                "edit": "レ・ミゼラブル",
+                "date": "2021.3.12"
+            },
+            {
+                "title": "レ・ミゼラブル",
+                "edit": "レ・ミゼラブル",
+                "date": "2021.3.12"
+            }
+        ]
+    }
+]

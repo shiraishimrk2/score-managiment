@@ -14,9 +14,6 @@ export default {
     notice: function () {
       return this.$store.state.notice;
     },
-    tames: function () {
-      return this.tamesi();
-    },
   },
   data: function () {
     return {
